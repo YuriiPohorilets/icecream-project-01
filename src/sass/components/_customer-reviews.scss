@@ -13,7 +13,7 @@
     text-align: center;
     font-size: 18px;
 
-    background: #fff;
+    background: transparent;
 }
 
 .swiper-slide img {
@@ -25,6 +25,33 @@
     height: 85px;
 
     border-radius: 50%;
+
+    transition: transform getProperty(time) getProperty(cubic);
+
+    &:hover {
+        transform: scale(1.5);
+    }
+}
+
+// Control
+.swiper-button-next.custom,
+.swiper-button-prev.custom {
+    display: none;
+
+    @include bpoint(tablet) {
+        display: block;
+
+        color: getColor(dots-slider);
+
+        opacity: 0.5;
+
+        transition: opacity getProperty(time) getProperty(cubic);
+
+        &:hover,
+        &:focus {
+            opacity: 1;
+        }
+    }
 }
 
 // Pagination
@@ -119,7 +146,7 @@
         letter-spacing: 0.04em;
     }
 
-    @include bpoint(tablet) {
+    @include bpoint(desktop) {
         font-size: 16px;
         @include lh(30px, 16px);
     }
