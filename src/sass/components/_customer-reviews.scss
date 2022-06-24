@@ -1,0 +1,138 @@
+// Swiper
+.swiper {
+    width: 100%;
+    height: 100%;
+}
+
+.swiper-slide {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    text-align: center;
+    font-size: 18px;
+
+    background: #fff;
+}
+
+.swiper-slide img {
+    margin-bottom: 32px;
+    display: block;
+    object-fit: cover;
+
+    width: 85px;
+    height: 85px;
+
+    border-radius: 50%;
+}
+
+.swiper-pagination.custom {
+    position: relative;
+    bottom: 0;
+}
+
+.swiper-pagination.custom .swiper-pagination-bullet {
+    width: 12px;
+    height: 12px;
+    background-color: getColor(pagination);
+}
+
+.swiper-pagination.custom .swiper-pagination-bullet-active {
+    background-color: transparent;
+    background-image: url('../images/customer-reviews/pagination-active.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+
+    border-radius: 0;
+}
+
+// Comment
+.reviews__box {
+    position: relative;
+
+    margin-bottom: 16px;
+    padding-top: 43px;
+    padding-right: 58px;
+    padding-bottom: 26px;
+    padding-left: 65px;
+
+    background-color: getColor(background-slider);
+
+
+    &::before {
+        content: '';
+        position: absolute;
+        top: 30px;
+        left: 53px;
+        z-index: 0;
+
+        display: block;
+        width: 54px;
+        height: 40px;
+
+        background-image: url('../images/customer-reviews/brackets.png');
+        background-repeat: no-repeat;
+    }
+}
+
+.reviews__comment {
+    position: relative;
+    z-index: 1;
+    font-size: 12px;
+    @include lh(31px, 12px);
+    color: getColor(secondary);
+
+    text-align: center;
+    background: repeating-linear-gradient(transparent, transparent 30px,
+            getColor(line) 30px, getColor(line) 31px);
+}
+
+.reviews__dots {
+    position: relative;
+
+    margin-bottom: 16px;
+    width: 4px;
+    height: 4px;
+
+    background-color: getColor(dots-slider);
+    border-radius: 50%;
+
+    &::before {
+        content: '';
+        position: absolute;
+
+        top: 0;
+        left: 10px;
+
+        width: 4px;
+        height: 4px;
+
+        background-color: getColor(dots-slider);
+        border-radius: 50%;
+    }
+
+    &::after {
+        content: '';
+        position: absolute;
+
+        top: 0;
+        right: 10px;
+
+        width: 4px;
+        height: 4px;
+
+        background-color: getColor(dots-slider);
+        border-radius: 50%;
+    }
+}
+
+.reviews__name {
+    margin-bottom: 16px;
+
+    font-size: 14px;
+    @include lh(26px, 14px);
+
+    text-align: center;
+    color: getColor(secondary);
+}
