@@ -4,13 +4,8 @@
 
 .products__container {
 	width: 100%;
-	margin-left: auto;
-	margin-right: auto;
 	min-width: 320px;
 	max-width: 480px;
-	
-	padding-left: 20px;
-	padding-right: 20px;
 }
 
 .products__wrapper {
@@ -18,33 +13,20 @@
 }
 
 .products__subtitle {
-	margin-bottom: 15px;
-	
-	font-family: getFont(accent);
+	@extend %caption;
 	font-weight: 400;
-	font-size: 18px;
-	line-height: 1.16;
-	text-align: center;
-	text-transform: uppercase;
-	
-	
-	color: getColor(active-accent);;
+
+	margin-bottom: 15px;
 }
 
 .products__title {
-	font-family: getFont(accent);
-		font-weight: 400;
-		font-size: 34px;
-		line-height: 1.14;
-		text-align: center;
-		letter-spacing: 0.04em;
-		text-transform: uppercase;
-	
-		color:getColor(accent);
+	@extend %title;
+	font-weight: 400;
+		
 }
 
 .products__list{
-	list-style: none;
+	@extend %list;
 	text-align: center;
 }
 
@@ -99,7 +81,6 @@
 
 	font-family:getFont(basic);
 	font-weight: 700;
-	font-weight: bold;
 	font-size: 14px;
 	line-height: 1.5;
 
@@ -147,7 +128,7 @@
 	display: block;
 	border: none;
 	outline: none;
-	margin: auto;
+	margin: 0 auto;
 	width: 40px;
 	height: 40px;
 	margin-bottom: 40;
