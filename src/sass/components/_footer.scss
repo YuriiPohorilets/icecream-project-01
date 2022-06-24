@@ -39,6 +39,33 @@
 
 }
 
+.footer__socials-item:not(:last-child) {
+    margin-right: 30px;
+}
+
+.footer__socials-link {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 32px;
+    height: 32px;
+
+    background-color: getColor(active-accent);
+    color: getColor(primary);
+
+    transition: background-color getProperty(time) getProperty(cubic);
+    border-radius: 50%;
+
+    &:hover, &:focus {
+        background-color: getColor(btn-hover-dark);
+    }
+
+}
+
+.footer__socials-icon {
+    fill: currentColor;
+}
 .footer__contacts-phone {
     display: flex;
     justify-content: flex-end;
