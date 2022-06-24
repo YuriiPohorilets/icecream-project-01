@@ -27,6 +27,7 @@
     border-radius: 50%;
 }
 
+// Pagination
 .swiper-pagination.custom {
     position: relative;
     bottom: 0;
@@ -36,6 +37,8 @@
     width: 12px;
     height: 12px;
     background-color: getColor(pagination);
+
+    opacity: 1;
 }
 
 .swiper-pagination.custom .swiper-pagination-bullet-active {
@@ -59,7 +62,6 @@
 
     background-color: getColor(background-slider);
 
-
     &::before {
         content: '';
         position: absolute;
@@ -74,9 +76,33 @@
         background-image: url('../images/customer-reviews/brackets.png');
         background-repeat: no-repeat;
     }
+
+    @include bpoint(tablet) {
+        padding-top: 37px;
+        padding-right: 55px;
+        padding-bottom: 44px;
+        padding-left: 51px;
+
+        &::before {
+            top: 20px;
+            left: 6px;
+        }
+    }
+
+    @include bpoint(desktop) {
+        padding-top: 47px;
+        padding-right: 109px;
+        padding-bottom: 39px;
+        padding-left: 109px;
+
+        &::before {
+            top: 32px;
+            left: 72px;
+        }
+    }
 }
 
-.reviews__comment {
+.reviews__text {
     position: relative;
     z-index: 1;
     font-size: 12px;
@@ -86,6 +112,17 @@
     text-align: center;
     background: repeating-linear-gradient(transparent, transparent 30px,
             getColor(line) 30px, getColor(line) 31px);
+
+    @include bpoint(tablet) {
+        font-size: 14px;
+        @include lh(30px, 14px);
+        letter-spacing: 0.04em;
+    }
+
+    @include bpoint(tablet) {
+        font-size: 16px;
+        @include lh(30px, 16px);
+    }
 }
 
 .reviews__dots {
