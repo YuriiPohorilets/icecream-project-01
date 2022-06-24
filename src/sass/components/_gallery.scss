@@ -1,0 +1,98 @@
+.gallery {
+ 
+    height: 136px;
+    background-image: linear-gradient(to bottom,
+            getColor(background-section) 20%,
+                getColor(active-white) 20%
+                );
+                display: flex;
+                justify-content: center;
+
+
+    &__list {
+        position: relative;
+        @extend %list;
+        width: 320px;
+    }
+
+    &__item{
+        overflow: hidden;
+
+        &:nth-child(1) {
+                position: absolute;
+                left: 0;
+                top: 46px;
+            }
+        
+            &:nth-child(2) {
+                position: absolute;
+                left: 46px;
+                top: 24px;
+            }
+
+            &:nth-child(3){
+                position: absolute;
+                left: 46px;
+                top: 70px;
+            }
+
+            &:nth-child(4){
+                position: absolute;
+                left: 92px;
+                top: 0;
+            }
+
+            &:nth-child(5){
+                position: absolute;
+                left: 92px;
+                top: 92px;
+            }
+
+            &:nth-child(6){
+                position:absolute;
+                left: 184px;
+                top:30px;
+            }
+
+            &:nth-child(7){
+                position:absolute;
+                left: 184px;
+                top:76px;
+            }
+
+            &:nth-child(8){
+                position:absolute;
+                left: 230px;
+                top:15px;
+            }
+
+            &:nth-child(9){
+                position:absolute;
+                left: 230px;
+                top:61px;
+            }
+
+            &:nth-child(10){
+                position:absolute;
+                left: 276px;
+                top:40px;
+            }
+
+            &:hover .gallery__img,
+            &:focus .gallery__img {
+                transform: scale(1.2);
+                
+                
+            }
+
+    }
+
+    
+    
+    &__img {
+        
+        transition: transform getProperty(cubic) getProperty(time);
+    }
+    
+
+}
