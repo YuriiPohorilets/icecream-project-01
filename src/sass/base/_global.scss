@@ -1,0 +1,123 @@
+body {
+    font-family: getFont(basic);
+    font-weight: 500;
+    font-size: 12px;
+    @include lh (19px, 12px);
+    letter-spacing: 0.04em;
+    color: getColor(secondary);
+
+
+    @include bpoint(tablet) {
+        @include lh (25px, 12px);
+    }
+
+    @include bpoint(desktop) {
+        font-size: 16px;
+        @include lh (28px, 16px);
+    }
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ul {
+    margin: 0px;
+    padding: 0px;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+.container {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 15px;
+
+    @include bpoint(mobile) {
+        padding: 0 20px;
+    }
+
+    @include bpoint(tablet) {
+        width: getSize(tablet);
+        padding: 0 32px;
+    }
+
+    @include bpoint(desktop) {
+        width: getSize(desktop);
+        padding: 0 15px;
+    }
+}
+
+.hidden {
+    position: absolute;
+
+    margin: -1px;
+    padding: 0;
+    width: 1px;
+    height: 1px;
+
+    border: 0;
+
+    white-space: nowrap;
+    clip-path: inset(100%);
+    clip: rect(0 0 0 0);
+    overflow: hidden;
+}
+
+// Placeholders
+%list {
+    list-style: none;
+}
+
+%link {
+    text-decoration: none;
+    color: currentColor;
+}
+
+%title {
+    font-family: getFont(accent);
+    font-size: 34px;
+    @include lh(39px, 34px);
+    letter-spacing: 0.04em;
+    text-align: center;
+    text-transform: uppercase;
+    color: getColor(accent);
+
+    @include bpoint(tablet) {
+        font-size: 48px;
+        @include lh(55px, 48px);
+    }
+
+    @include bpoint(desktop) {
+        font-size: 58px;
+        @include lh(66px, 58px);
+        letter-spacing: 0.06em;
+    }
+}
+
+%caption {
+    font-family: getFont(accent);
+    font-size: 18px;
+    @include lh (21px, 18px);
+    text-align: center;
+    text-transform: uppercase;
+    color: getColor(active-accent);
+
+    @include bpoint(tablet) {
+        font-size: 26px;
+        @include lh(30px, 26px);
+    }
+
+    @include bpoint(desktop) {
+        font-size: 30px;
+        @include lh(34px, 30px);
+        letter-spacing: 0.04em;
+    }
+}

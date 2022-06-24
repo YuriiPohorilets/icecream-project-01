@@ -1,0 +1,73 @@
+// Maps
+$colors: (
+    'accent': #D41443,
+    'primary': #FFFFFF,
+    'secondary': #000000,
+    'copy': #907E82,
+
+    'background-hero': #FFB8CA,
+    'background-label-a': #F0D1A5,
+    'background-label-b': #C2E297,
+    'background-section': #FFF5F6,
+    'background-slider': #FAFAFA,
+    'background-menu': #E17992,
+
+    'active-accent': #FFA5BA,
+    'active-white': #FFFFFF,
+    'active-black': #000000,
+
+    'btn-hover-light': #ECEBEB,
+    'btn-hover-dark': #ff4a78,
+    'line-menu': #E18298,
+    'line': #E1E1E1,
+
+    'dots-slider': #C7133E,
+    'pagination': #D9D9D9,
+    'pagination-active': #D31342,
+);
+
+$shadows: (
+    'card': 0px 8px 30px rgba(212, 20, 67, 0.1),
+    'btn': 0px 6px 5px rgba(0, 0, 0, 0.29),
+);
+
+$properties: (
+    'cubic': cubic-bezier(0.175, 0.885, 0.32, 1.275),
+    'time': 350ms,
+);
+
+$fonts: (
+    'basic': ('DM Sans', sans-serif),
+    'accent': ('Titan One', sans-serif),
+);
+
+$breakpoints: (
+    'mobile': 320px,
+    'tablet': 768px,
+    'desktop': 1280px,
+);
+
+// Colors
+@function getColor($key) {
+    @return map-get($colors, $key);
+}
+
+// Shadows
+@function getShadow($key) {
+    @return map-get($shadows, $key);
+}
+
+// Properties
+@function getProperty($key) {
+    @return map-get($properties, $key);
+}
+
+// Fonts
+@function getFont($key) {
+    @return map-get($fonts, $key);
+}
+
+// Breakpoints
+@function getSize($key) {
+    @return map-get($breakpoints, $key);
+}
