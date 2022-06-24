@@ -3,7 +3,7 @@
     height: 136px;
     background-image: linear-gradient(to bottom,
             getColor(background-section) 20%,
-                #ffffff 20%
+                getColor(active-white) 20%
                 );
                 display: flex;
                 justify-content: center;
@@ -13,14 +13,11 @@
         position: relative;
         @extend %list;
         width: 320px;
-       
-       
- 
-
-   
-        
     }
+
     &__item{
+        overflow: hidden;
+
         &:nth-child(1) {
                 position: absolute;
                 left: 0;
@@ -81,12 +78,21 @@
                 top:40px;
             }
 
+            &:hover .gallery__img,
+            &:focus .gallery__img {
+                transform: scale(1.2);
+                
+                
+            }
+
     }
 
-    &__link {
-        @extend %link;
-    }
     
+    
+    &__img {
+        
+        transition: transform getProperty(cubic) getProperty(time);
+    }
     
 
 }
