@@ -1,0 +1,249 @@
+.contacts {
+    padding-bottom: 40px;
+    background: linear-gradient(180deg, #fff 302px,#fff5f6 0);
+
+    @include bpoint(tablet) {
+        padding-top: 20px;
+        background: linear-gradient(180deg, #fff 316px,#fff5f6 0);
+    }
+
+    @include bpoint(desktop) {
+        padding-top: 60px;
+        padding-bottom: 120px;
+        background: linear-gradient(180deg, #fff 159px,#fff5f6 0);
+    }
+}
+
+.contacts__card-wrap {
+    margin-bottom: 32px;
+
+    @include bpoint(tablet) {
+        margin-bottom: 60px;
+    }
+}
+
+.contacts__list {
+    @extend %list;
+
+    @include bpoint(tablet) {
+        display: flex;
+        flex-wrap: wrap;
+    }
+}
+
+.contacts__item {
+    width: 100%;
+    padding: 40px 32px;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: getColor(active-white);
+    box-shadow: getShadow(card);
+    border-radius: 24px;
+    transition: transform getProperty(time) getProperty(cubic), box-shadow getProperty(time) getProperty(cubic);
+
+    @include bpoint(mobile){
+        width: 280px;
+    }
+
+    @include bpoint(tablet) {
+        flex-basis: calc((100% - 64px) /3);
+
+        &:not(:last-child) {
+            margin-right: 32px;
+        }
+    }
+
+    @include bpoint(desktop) {
+        padding: 40px;
+
+    }
+    &:hover{
+        transform: scale(1.05);
+        box-shadow: 0px 8px 30px rgba(212, 20, 67, 0.3);
+    }
+}
+
+@media screen and(max-width: 767px){
+    .contacts__item:not(:last-child) {
+           margin-bottom: 20px;}
+        
+}
+
+.contacts__address {
+    padding-bottom: 24px;
+    @include bpoint(tablet){
+        padding-bottom: 32px;
+    }
+}
+
+.contacts__title {
+    display: flex;
+    margin-bottom: 20px;
+    align-items: center;
+    justify-content: center;
+    width: 80px;
+    height: 16px;
+
+    text-transform: uppercase;
+
+    color: getColor(primary);
+    background-color: getColor(background-label-a);
+    border-radius: 4px;
+
+    @include bpoint(tablet) {
+        margin-bottom: 32px;
+        width: 73px;
+        height: 28px;
+        font-size: 16px;
+
+        @include lh(30px, 16px);
+        
+    }
+
+    &--green {
+        width: 130px;
+        background-color: getColor(background-label-b);
+        @include bpoint(tablet){
+            width: 138px;
+        }
+    }
+}
+
+.contacts__location {
+    margin-bottom: 8px;
+    color: getColor(secondary);
+
+    @include bpoint(tablet) {
+        @include lh(26px, 14px);
+        margin-bottom: 12px;
+    }
+
+    @include bpoint(desktop) {
+        @include lh(30px, 16px);
+        margin-bottom: 8px;
+    }
+}
+
+.contacts__text {
+    color: getColor(copy);
+
+    @include bpoint(tablet) {
+        @include lh(23px, 14px);
+    }
+
+    @include bpoint(desktop) {
+        @include lh(30px, 16px);
+    }
+}
+
+.contacts__work {
+    padding: 24px 0;
+    @extend %list;
+    border-top: 1px solid getColor(line);
+    border-bottom: 1px solid getColor(line);
+
+    @include bpoint(tablet) {
+        padding: 32px 0;
+        
+    }
+
+}
+.contacts__work-time{
+    
+    &:not(:last-child) {
+        margin-bottom: 8px;
+    }
+
+}
+@include bpoint(tablet){
+        .contacts__work-time:not(:last-child){
+            margin-bottom: 12px;
+        }
+    }
+
+.contacts__day {
+
+    color: getColor(secondary);
+
+    @include bpoint(tablet) {
+        @include lh(26px, 14px);
+    }
+
+    @include bpoint(desktop) {
+        @include lh(30px, 16px);
+    }
+}
+
+.contacts__time {
+    color: getColor(active-accent);
+
+}
+
+.contacts__connection {
+    padding-top: 24px;
+   @extend %list;
+    
+    @include bpoint(tablet){
+        padding-top: 32px;
+    }
+}
+
+.contacts__link {
+    cursor: pointer;
+    color: getColor(copy);
+    text-decoration: none;
+    transition: color getProperty(time) getProperty(cubic);
+
+    @include bpoint(tablet) {
+        @include lh(26px, 14px);
+    }
+
+    @include bpoint(desktop) {
+        @include lh(30px, 16px);
+    }
+    
+    &:hover,
+    &:focus {
+        color: getColor(accent);
+    }
+}
+
+.contacts__button-wrap{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    
+    
+    @include bpoint(tablet){
+      flex-direction: row;
+    }
+}
+.contacts__button--locations{
+    margin-bottom: 10px;
+    @include  btn--dark(160px, 44px);
+
+    color: getColor(primary);
+
+    @include bpoint(tablet){
+        margin: 0 15px 0 0;
+        @include  btn--dark(200px, 44px)
+    }
+}
+.contacts__button--franchise{
+    @include  btn--light(160px, 44px);
+
+    color: getColor(accent);
+
+    @include bpoint(tablet){
+        @include  btn--light(200px, 44px)
+    }
+}
+.contacts__button--svg{
+    margin-left: 8px;
+    fill: currentColor;
+
+    @include bpoint(tablet){
+        margin-left: 14px;
+    }
+}
