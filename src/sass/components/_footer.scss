@@ -3,7 +3,7 @@
 }
 
 .footer__container {
-    margin-bottom: 40px;
+   padding: 40px 20px;
 }
 
 .footer__text {
@@ -66,12 +66,12 @@
 .footer__socials-icon {
     fill: currentColor;
 }
+
 .footer__contacts-phone {
-    display: flex;
-    justify-content: flex-end;
+    display: block;
+    text-align: right;
 
     font-weight: 700;
-    font-size: 12px;
     line-height: 1.833;
 
     color: getColor(active-black);
@@ -88,12 +88,7 @@
 .footer__copyright {
     border-top: 1px solid getColor(line);
 
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
     min-height: 83px;
-
 }
 
 .footer__copyright-text {
@@ -103,6 +98,7 @@
     line-height: 1.52;
     text-align: center;
 
+    margin: 16px auto 3px auto;
     padding: 0 20px;
 
     color: getColor(copy);
