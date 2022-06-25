@@ -80,3 +80,26 @@
         background-color: getColor(btn-hover-dark);
     }
 }
+
+@mixin btn--s-about($fs, $lh) {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 176px;
+    height: 44px;
+    font-weight: 700;
+    font-size: $fs;
+    line-height: $lh;
+    color: getColor(accent);
+    background-color: getColor(primary);
+    border: none;
+    border-radius: 22px;
+    transition: background-color getProperty(time) getProperty(cubic);
+    cursor: pointer;
+
+    &:hover,
+    &:focus {
+        color: getColor(primary);
+        background-color: getColor(accent);
+    }
+}
