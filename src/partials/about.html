@@ -80,16 +80,16 @@
           tincidunt.
         </p>
         <p class="about__additional">Aliquam erat volutpat. Aenean accumsan.</p>
-        <button class="about__button" data-modal-open>
+        <button class="about__button js-open-modal" data-modal="2">
           Read more
-          <svg>
-            <use></use>
-          </svg>
+          <!-- <svg>
+            <use href="/src/images/about/symbol-defs.svg#icon-arrow"></use>
+          </svg> -->
         </button>
       </div>
     </div>
-    <div class="backdrop is-hidden" data-modal>
-      <div class="modal">
+    <div class="overlay js-overlay-modal">
+      <div class="modal" data-modal="2">
         <p class="modal__content">
           Curabitur lacinia enim at ex blandit, vel pellentesque odio elementum.
           Mauris rhoncus orci in imperdiet placerat. Vestibulum euismod nisl
@@ -97,7 +97,7 @@
           tincidunt.
         </p>
         <div class="form__container">
-          <button class="modal__btn" data-modal-close>
+          <button class="modal__btn js-modal-close">
             <svg class="modal__icon" width="15" height="15">
               <use href="/src/images/about/symbol-defs.svg#icon-cross"></use>
             </svg>
@@ -160,29 +160,37 @@
                 <use href="/src/images/about/symbol-defs.svg#icon-phone"></use>
               </svg>
             </label>
-            <label class="form__policy-group">
-              <input class="form__checkbox" type="checkbox" required />
-              <span
-                class="form__custom-checkbox"
-                role="checkbox"
-                aria-checked="false"
-              >
-                <svg class="form__custom-checkbox-icon" width="20" height="20">
+            <label class="form-policy">
+              <div class="form-policy__container">
+                <input
+                  class="form-policy__checkbox hidden"
+                  type="checkbox"
+                  name="policy"
+                  required
+                />
+                <svg
+                  class="form-policy__icon form-policy__icon--check"
+                  width="20"
+                  height="20"
+                >
                   <use
                     href="/src/images/about/symbol-defs.svg#icon-check-mark"
                   ></use>
                 </svg>
-              </span>
-              <span class="form__policy"
-                >I have read and understood the
-                <a
-                  class="form__policy-link"
-                  href="#"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  >Privacy Statement</a
-                ></span
-              >
+                <span
+                  class="form-policy__icon form-policy__icon--uncheck"
+                ></span>
+                <div class="form-policy__check"
+                  >I agree with the
+                  <a
+                    class="form-policy--link"
+                    href="#"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    >Privacy Statement</a
+                  ></span
+                >
+              </div>
             </label>
             <button class="form__btn" type="submit">submit</button>
           </form>
@@ -191,20 +199,3 @@
     </div>
   </div>
 </section>
-<script>
-  (() => {
-    const refs = {
-      openModalBtn: document.querySelector('[data-modal-open]'),
-      closeModalBtn: document.querySelector('[data-modal-close]'),
-      modal: document.querySelector('[data-modal]'),
-    };
-
-    refs.openModalBtn.addEventListener('click', toggleModal);
-    refs.closeModalBtn.addEventListener('click', toggleModal);
-
-    function toggleModal() {
-      refs.modal.classList.toggle('is-hidden');
-      document.body.classList.toggle('is-modal-shown');
-    }
-  })();
-</script>
