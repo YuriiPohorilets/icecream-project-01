@@ -1,0 +1,227 @@
+.about--overlay {
+    background-color: getColor(background-section);
+
+    @media screen and (max-width: 767.98px) {
+
+        // background-image: -webkit-image-set(url(/src/images/about/mobile/1x/sectionbg1x-webp.webp) 1x);
+        background-image: url('/src/images/about/mobile/1x/sectionbg1x.png');
+        background-size: 100%;
+        background-repeat: no-repeat;
+        background-position: 70% 60%;
+
+        @media (min-device-pixel-ratio: 2),
+        (min-resolution: 192dpi),
+        (min-resolution: 2dppx) {
+            & {
+                background-image: url('/src/images/about/mobile/2x/sectionbg2x.png');
+            }
+        }
+
+        @media (min-device-pixel-ratio: 3),
+        (min-resolution: 288dpi),
+        (min-resolution: 3dppx) {
+            & {
+                background-image: url('/src/images/about/mobile/3x/sectionbg3x.png');
+            }
+        }
+    }
+
+    @media screen and (min-width: getSize(desktop)) {
+        background-image: url('/src/images/about/desktop/1x/sectionbg1x.png');
+        background-size: 100%;
+        background-repeat: no-repeat;
+        background-position: 70% 60%;
+
+        @media (min-device-pixel-ratio: 2),
+        (min-resolution: 192dpi),
+        (min-resolution: 2dppx) {
+            & {
+                background-image: url('/src/images/about/desktop/2x/sectionbg2x.png');
+            }
+        }
+
+        @media (min-device-pixel-ratio: 3),
+        (min-resolution: 288dpi),
+        (min-resolution: 3dppx) {
+            & {
+                background-image: url('/src/images/about/desktop/3x/sectionbg3x.png');
+            }
+        }
+    }
+
+}
+
+.about__container--img {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 40px;
+
+    @media screen and (min-width: getSize(tablet)) and (max-width: 1279.98px) {
+        margin-right: 32px;
+        margin-bottom: 0;
+    }
+
+    @media screen and (min-width: getSize(desktop)) {
+        margin-bottom: 0;
+    }
+}
+
+.about__img {
+    width: 280px;
+    height: 279px;
+
+    @media screen and (min-width: getSize(tablet)) {
+        width: 336px;
+        height: 335px;
+    }
+
+    @media screen and (min-width: getSize(desktop)) {
+        width: 501px;
+        height: 501px;
+    }
+}
+
+.about__container {
+    @media screen and (min-width: getSize(tablet)) {
+        display: flex;
+    }
+
+    @media screen and (min-width: getSize(desktop)) {
+        justify-content: space-evenly;
+    }
+}
+
+.about__content {
+    padding-right: 40px;
+
+    @media screen and (min-width: getSize(tablet)) {
+        padding: 0;
+        width: 334px;
+    }
+
+    @media screen and (min-width: getSize(desktop)) {
+        width: 463px;
+        padding-top: 60px;
+    }
+}
+
+.about__uppertitle {
+    @extend %caption;
+
+    margin-bottom: 15px;
+
+    @media screen and (min-width: getSize(desktop)) {
+
+        transition: transform 500ms getProperty(cubic);
+        cursor: pointer;
+
+        &:hover,
+        &:focus {
+            transform: scale(1.1);
+        }
+    }
+}
+
+.about__title {
+    @extend %title;
+    margin-bottom: 32px;
+
+    @media screen and (min-width: getSize(tablet)) {
+        margin-bottom: 40px;
+    }
+
+    @media screen and (min-width: getSize(desktop)) {
+        cursor: pointer;
+        margin-bottom: 60px;
+        transition: transform 500ms getProperty(cubic);
+
+        &:hover,
+        &:focus {
+            transform: scale(1.1);
+        }
+    }
+}
+
+.about__subtitle {
+    margin-bottom: 40px;
+
+    @media screen and (min-width: getSize(tablet)) {
+        font-size: 14px;
+        line-height: 25px;
+    }
+
+    @media screen and (min-width: getSize(desktop)) {
+        font-size: 16px;
+        line-height: 28px;
+    }
+}
+
+.about__description,
+.about__additional {
+    margin-bottom: 20px;
+    color: getColor(copy);
+
+}
+
+// .about__button {
+//     @include btn--s-about(14px, 18px);
+//     padding: 17px 0;
+
+//     @media screen and (min-width: getSize(tablet)) {
+//         @include btn--s-about(16px, 25px);
+//     }
+// }
+
+.about__button {
+    width: 176px;
+    height: 44px;
+}
+
+
+
+
+%backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: #d4144380;
+    width: 100%;
+    height: 100%;
+    opacity: 1;
+    z-index: 10;
+    transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+@mixin centering($pos, $top, $left) {
+    position: $pos;
+    top: $top;
+    left: $left;
+}
+
+.backdrop {
+    @extend %backdrop;
+
+    &.is-hidden {
+        pointer-events: none;
+        opacity: 0;
+
+        & .modal {
+            transform: translate(-50%, -50%) scale(0.9);
+        }
+    }
+}
+
+.is-modal-shown {
+    overflow: hidden;
+}
+
+.modal {
+    @include centering(absolute, 50%, 50%);
+    transform: translate(-50%, -50%) scale(1);
+    transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    background-color: #fff;
+    overflow-y: auto;
+    border-radius: 15px;
+    padding: 20px;
+    width: 90vw;
+}
