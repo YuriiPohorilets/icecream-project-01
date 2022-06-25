@@ -14,34 +14,6 @@
     }
 }
 
-.container__contacts {
-    padding: 0 20px;
-    margin: 0 auto;
-    width: 100%;
-
-    @include bpoint(tablet) {
-        width: 768px;
-        padding: 0 16px;
-    }
-
-    @include bpoint(desktop) {
-        width: 1280px;
-    }
-}
-
-.contacts__visually-hidden {
-    position: absolute;
-    white-space: nowrap;
-    width: 1px;
-    height: 1px;
-    overflow: hidden;
-    border: 0;
-    padding: 0;
-    clip: rect(0 0 0 0);
-    clip-path: inset(50%);
-    margin: -1px;
-}
-
 .contacts__card-wrap {
     margin-bottom: 32px;
 
@@ -51,7 +23,7 @@
 }
 
 .contacts__list {
-    list-style: none;
+    @extend %list;
 
     @include bpoint(tablet) {
         display: flex;
@@ -67,19 +39,14 @@
     background-color: getColor(active-white);
     box-shadow: getShadow(card);
     border-radius: 24px;
-    transition: background getProperty(time) getProperty(cubic);
+    transition: transform getProperty(time) getProperty(cubic), box-shadow getProperty(time) getProperty(cubic);
 
-    &:not(:last-child) {
-        margin-bottom: 20px;
-    }
     @include bpoint(mobile){
         width: 280px;
     }
 
     @include bpoint(tablet) {
-        // width: 224px;
         flex-basis: calc((100% - 64px) /3);
-        margin-bottom: 20px;
 
         &:not(:last-child) {
             margin-right: 32px;
@@ -90,11 +57,23 @@
         padding: 40px;
 
     }
+    &:hover{
+        transform: scale(1.05);
+        box-shadow: 0px 8px 30px rgba(212, 20, 67, 0.3);
+    }
+}
+
+@media screen and(max-width: 767px){
+    .contacts__item:not(:last-child) {
+           margin-bottom: 20px;}
+        
 }
 
 .contacts__address {
     padding-bottom: 24px;
-    border-bottom: 1px solid getColor(line);
+    @include bpoint(tablet){
+        padding-bottom: 32px;
+    }
 }
 
 .contacts__title {
@@ -105,10 +84,6 @@
     width: 80px;
     height: 16px;
 
-    font-family: getFont(basic);
-    font-weight: getWeight(500);
-    @include lh(22px, 12px);
-    letter-spacing: 0.04em;
     text-transform: uppercase;
 
     color: getColor(primary);
@@ -119,6 +94,7 @@
         margin-bottom: 32px;
         width: 73px;
         height: 28px;
+        font-size: 16px;
 
         @include lh(30px, 16px);
         
@@ -135,11 +111,6 @@
 
 .contacts__location {
     margin-bottom: 8px;
-    font-family: getFont(basic);
-    font-weight: getWeight(500);
-    @include lh(22px, 12px);
-    letter-spacing: 0.04em;
-
     color: getColor(secondary);
 
     @include bpoint(tablet) {
@@ -154,11 +125,6 @@
 }
 
 .contacts__text {
-    font-family: getFont(basic);
-    font-weight: getWeight(500);
-    @include lh(18px, 12px);
-    letter-spacing: 0.04em;
-
     color: getColor(copy);
 
     @include bpoint(tablet) {
@@ -170,47 +136,52 @@
     }
 }
 
-.contacts__work-time {
+.contacts__work {
     padding: 24px 0;
-
-    font-family: getFont(basic);
-    font-weight: getWeight(500);
-    @include lh(22px, 12px);
-
+    @extend %list;
+    border-top: 1px solid getColor(line);
     border-bottom: 1px solid getColor(line);
 
     @include bpoint(tablet) {
         padding: 32px 0;
+        
+    }
+
+}
+.contacts__work-time{
+    
+    &:not(:last-child) {
+        margin-bottom: 8px;
+    }
+
+}
+@include bpoint(tablet){
+        .contacts__work-time:not(:last-child){
+            margin-bottom: 12px;
+        }
+    }
+
+.contacts__day {
+
+    color: getColor(secondary);
+
+    @include bpoint(tablet) {
         @include lh(26px, 14px);
     }
 
     @include bpoint(desktop) {
         @include lh(30px, 16px);
     }
-
-}
-
-.contacts__day {
-
-    color: getColor(secondary);
 }
 
 .contacts__time {
     color: getColor(active-accent);
 
-    &:not(:last-child) {
-        margin-bottom: 8px;
-    }
-}
-@include bpoint(tablet){
-    .contacts__time:not(:last-child){
-        margin-bottom: 12px;
-    }
 }
 
 .contacts__connection {
     padding-top: 24px;
-    list-style: none;
+   @extend %list;
     
     @include bpoint(tablet){
         padding-top: 32px;
@@ -218,9 +189,6 @@
 }
 
 .contacts__link {
-    font-family: getFont(basic);
-    font-weight: getWeight(500);
-    @include lh(18px, 12px);
     cursor: pointer;
     color: getColor(copy);
     text-decoration: none;

@@ -1,86 +1,122 @@
 <section class="contacts">
-    <div class="container__contacts">
-        <h2 class="contacts__visually-hidden">Address, working hours and contacts</h2>
-        <div class="contacts__card-wrap">
-            <ul class="contacts__list">
-                <li class="contacts__item">
-                    <div class="contacts__address">
-                        <p class="contacts__title">Cafe</p>
-                        <h3 class="contacts__location">Chicago</h3>
-                        <p class="contacts__text">Fusce ut velit laoreet, tempus arcu molestie vulputate</p> 
-                    </div>
-                    <div class="contacts__work-time">
-                        <h3 class="contacts__day">Monday - Friday</h3>
-                        <p class="contacts__time">06:00 AM - 10:00 PM</p>
-                        <h3 class="contacts__day">Saturday - Sunday</h3>
-                        <p class="contacts__time">08:00 AM - 16:00 PM</p>
-                    </div>
-                    <ul class="contacts__connection">
-                        <li class="contacts__tel">
-                            <a href="tel:+610383766284" class="contacts__link">+61(0) 383 766 284</a>
-                        </li>
-                        <li class="contacts__mail">
-                            <a href="mailto:noreply@envato.com" class="contacts__link">noreply@envato.com</a>
-                        </li>
-                    </ul>
-                </li>
-                <li class="contacts__item">
-                    <div class="contacts__address">
-                        <p class="contacts__title contacts__title--green">Food truck</p>
-                        <h3 class="contacts__location">Los Angeles</h3>
-                        <p class="contacts__text">Fusce ut velit laoreet, tempus arcu molestie vulputate</p>
-                    </div>
-                    <div class="contacts__work-time">
-                        <h3 class="contacts__day">Monday - Friday</h3>
-                        <p class="contacts__time">06:00 AM - 10:00 PM</p>
-                        <h3 class="contacts__day">Saturday - Sunday</h3>
-                        <p class="contacts__time">08:00 AM - 16:00 PM</p>
-                    </div>
-                    <ul class="contacts__connection">
-                        <li class="contacts__tel">
-                            <a href="tel:+610383766284" class="contacts__link">+61(0) 383 766 284</a>
-                        </li>
-                        <li class="contacts__mail">
-                            <a href="mailto:noreply@envato.com" class="contacts__link">noreply@envato.com</a>
-                        </li>
-                    </ul>
-                </li>
-                <li class="contacts__item">
-                    <div class="contacts__address">
-                        <p class="contacts__title">Cafe</p>
-                        <h3 class="contacts__location">New York</h3>
-                        <p class="contacts__text">Fusce ut velit laoreet, tempus arcu molestie vulputate</p>
-                    </div>
-                    <div class="contacts__work-time">
-                        <h3 class="contacts__day">Monday - Friday</h3>
-                        <p class="contacts__time">06:00 AM - 10:00 PM</p>
-                        <h3 class="contacts__day">Saturday - Sunday</h3>
-                        <p class="contacts__time">08:00 AM - 16:00 PM</p>
-                    </div>
-                    <ul class="contacts__connection">
-                        <li class="contacts__tel">
-                            <a href="tel:+610383766284" class="contacts__link">+61(0) 383 766 284</a>
-                        </li>
-                        <li class="contacts__mail">
-                            <a href="mailto:noreply@envato.com" class="contacts__link">noreply@envato.com</a>
-                        </li>
-                    </ul>
-                </li>
-            </ul>
-        </div>
-        <div class="contacts__button-wrap">
-            <button class="contacts__button--locations" type="button" href="https://goo.gl/maps/SASpggLvsRJD93AF9">
-                Our Locations
-                <svg class="contacts__button--svg" width="5" height="8" >
-                    <use href="./images/icon-sprite.svg#icon-bracket"></use>
-                </svg>
-            </button>
-            <button class="contacts__button--franchise" type="button">
-                Franchise
-                <svg class="contacts__button--svg" width="5" height="8">
-                    <use href="./images/icon-sprite.svg#icon-bracket"></use>
-                </svg>
-            </button>
-        </div>
+  <div class="container">
+    <h2 class="hidden">
+      Address, working hours and contacts
+    </h2>
+    <div class="contacts__card-wrap">
+      <ul class="contacts__list">
+        <li class="contacts__item">
+          <span class="contacts__title"><p>Cafe</p></span>
+          <div class="contacts__address">
+            <h3 class="contacts__location">Chicago</h3>
+            <p class="contacts__text">
+              Fusce ut velit laoreet, tempus arcu molestie vulputate
+            </p>
+          </div>
+          <ul class="contacts__work">
+            <li class="contacts__work-time">
+              <h3 class="contacts__day">Monday - Friday</h3>
+              <p class="contacts__time">06:00 AM - 10:00 PM</p>
+            </li>
+            <li class="contacts__work-time">
+              <h3 class="contacts__day">Saturday - Sunday</h3>
+              <p class="contacts__time">08:00 AM - 16:00 PM</p>
+            </li>
+          </ul>
+          <ul class="contacts__connection">
+            <li class="contacts__tel">
+              <a href="tel:+610383766284" class="contacts__link"
+                >+61(0) 383 766 284</a
+              >
+            </li>
+            <li class="contacts__mail">
+              <a href="mailto:noreply@envato.com" class="contacts__link"
+                >noreply@envato.com</a
+              >
+            </li>
+          </ul>
+        </li>
+        <li class="contacts__item">
+            <span class="contacts__title contacts__title--green"><p>Food truck</p></span>
+          <div class="contacts__address">
+            <h3 class="contacts__location">Los Angeles</h3>
+            <p class="contacts__text">
+              Fusce ut velit laoreet, tempus arcu molestie vulputate
+            </p>
+          </div>
+          <ul class="contacts__work">
+            <li class="contacts__work-time">
+              <h3 class="contacts__day">Monday - Friday</h3>
+              <p class="contacts__time">06:00 AM - 10:00 PM</p>
+            </li>
+            <li class="contacts__work-time">
+              <h3 class="contacts__day">Saturday - Sunday</h3>
+              <p class="contacts__time">08:00 AM - 16:00 PM</p>
+            </li>
+          </ul>
+          <ul class="contacts__connection">
+            <li class="contacts__tel">
+              <a href="tel:+610383766284" class="contacts__link"
+                >+61(0) 383 766 284</a
+              >
+            </li>
+            <li class="contacts__mail">
+              <a href="mailto:noreply@envato.com" class="contacts__link"
+                >noreply@envato.com</a
+              >
+            </li>
+          </ul>
+        </li>
+        <li class="contacts__item">
+          <span class="contacts__title"><p>Cafe</p></span>
+          <div class="contacts__address">
+            <h3 class="contacts__location">New York</h3>
+            <p class="contacts__text">
+              Fusce ut velit laoreet, tempus arcu molestie vulputate
+            </p>
+          </div>
+          <ul class="contacts__work">
+            <li class="contacts__work-time">
+              <h3 class="contacts__day">Monday - Friday</h3>
+              <p class="contacts__time">06:00 AM - 10:00 PM</p>
+            </li>
+            <li class="contacts__work-time">
+              <h3 class="contacts__day">Saturday - Sunday</h3>
+              <p class="contacts__time">08:00 AM - 16:00 PM</p>
+            </li>
+          </ul>
+          <ul class="contacts__connection">
+            <li class="contacts__tel">
+              <a href="tel:+610383766284" class="contacts__link"
+                >+61(0) 383 766 284</a
+              >
+            </li>
+            <li class="contacts__mail">
+              <a href="mailto:noreply@envato.com" class="contacts__link"
+                >noreply@envato.com</a
+              >
+            </li>
+          </ul>
+        </li>
+      </ul>
     </div>
+    <div class="contacts__button-wrap">
+      <button
+        class="contacts__button--locations"
+        type="button"
+        href="https://goo.gl/maps/SASpggLvsRJD93AF9"
+      >
+        Our Locations
+        <svg class="contacts__button--svg" width="5" height="8">
+          <use href="./images/icon-sprite.svg#icon-bracket"></use>
+        </svg>
+      </button>
+      <button class="contacts__button--franchise" type="button">
+        Franchise
+        <svg class="contacts__button--svg" width="5" height="8">
+          <use href="./images/icon-sprite.svg#icon-bracket"></use>
+        </svg>
+      </button>
+    </div>
+  </div>
 </section>
