@@ -1,30 +1,29 @@
 // ................................................Bcg img
 .about--overlay {
     background-color: getColor(background-section);
+    background-image: url('/src/images/about/mobile/1x/sectionbg1x.png');
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-position: 70% 60%;
 
-    @media screen and (max-width: 767.98px) {
-
-        // background-image: -webkit-image-set(url(/src/images/about/mobile/1x/sectionbg1x-webp.webp) 1x);
-        background-image: url('/src/images/about/mobile/1x/sectionbg1x.png');
-        background-size: 100%;
-        background-repeat: no-repeat;
-        background-position: 70% 60%;
-
-        @media (min-device-pixel-ratio: 2),
-        (min-resolution: 192dpi),
-        (min-resolution: 2dppx) {
-            & {
-                background-image: url('/src/images/about/mobile/2x/sectionbg2x.png');
-            }
+    @media (min-device-pixel-ratio: 2),
+    (min-resolution: 192dpi),
+    (min-resolution: 2dppx) {
+        & {
+            background-image: url('/src/images/about/mobile/2x/sectionbg2x.png');
         }
+    }
 
-        @media (min-device-pixel-ratio: 3),
-        (min-resolution: 288dpi),
-        (min-resolution: 3dppx) {
-            & {
-                background-image: url('/src/images/about/mobile/3x/sectionbg3x.png');
-            }
+    @media (min-device-pixel-ratio: 3),
+    (min-resolution: 288dpi),
+    (min-resolution: 3dppx) {
+        & {
+            background-image: url('/src/images/about/mobile/3x/sectionbg3x.png');
         }
+    }
+
+    @media screen and (min-width: getSize(tablet)) {
+        background-image: none;
     }
 
     @media screen and (min-width: getSize(desktop)) {
@@ -105,13 +104,14 @@
     justify-content: center;
     margin-bottom: 40px;
 
-    @media screen and (min-width: getSize(tablet)) and (max-width: 1279.98px) {
+    @media screen and (min-width: getSize(tablet)) {
         margin-right: 32px;
         margin-bottom: 0;
     }
 
     @media screen and (min-width: getSize(desktop)) {
         margin-bottom: 0;
+        margin-right: 0;
     }
 }
 
