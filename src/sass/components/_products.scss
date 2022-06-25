@@ -85,8 +85,7 @@
 		width: 370px;
 	}
 
-	&:hover,
-	&:focus {
+	&:hover {
 	transform: rotateY(180deg);
 	
 	.products-card__info {
@@ -280,7 +279,7 @@
 	height: 100%;
 	display: flex;
 	align-items: center;
-	padding: 40px;
+	padding: 20px;
 	border-radius: 24px;
 
 	z-index: -1  ;
