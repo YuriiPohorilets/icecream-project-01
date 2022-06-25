@@ -1,3 +1,4 @@
+// ................................................Bcg img
 .about--overlay {
     background-color: getColor(background-section);
 
@@ -51,6 +52,54 @@
 
 }
 
+// ............................................Titles section
+.about__uppertitle {
+    @extend %caption;
+    margin-bottom: 15px;
+
+    @media screen and (min-width: getSize(desktop)) {
+        cursor: pointer;
+        transition: transform 500ms getProperty(cubic);
+
+        &:hover,
+        &:focus {
+            transform: scale(1.1);
+        }
+    }
+}
+
+.about__title {
+    @extend %title;
+    margin-bottom: 32px;
+
+    @media screen and (min-width: getSize(tablet)) {
+        margin-bottom: 40px;
+    }
+
+    @media screen and (min-width: getSize(desktop)) {
+        margin-bottom: 60px;
+        cursor: pointer;
+        transition: transform 500ms getProperty(cubic);
+
+        &:hover,
+        &:focus {
+            transform: scale(1.1);
+        }
+    }
+}
+
+// ...........................................Container main inform.
+.about__container {
+    @media screen and (min-width: getSize(tablet)) {
+        display: flex;
+    }
+
+    @media screen and (min-width: getSize(desktop)) {
+        justify-content: space-evenly;
+    }
+}
+
+// ...........................................Container all img
 .about__container--img {
     display: flex;
     justify-content: center;
@@ -81,64 +130,18 @@
     }
 }
 
-.about__container {
-    @media screen and (min-width: getSize(tablet)) {
-        display: flex;
-    }
-
-    @media screen and (min-width: getSize(desktop)) {
-        justify-content: space-evenly;
-    }
-}
-
+// .............................................Main inform.
 .about__content {
     padding-right: 40px;
 
     @media screen and (min-width: getSize(tablet)) {
-        padding: 0;
         width: 334px;
+        padding: 0;
     }
 
     @media screen and (min-width: getSize(desktop)) {
         width: 463px;
         padding-top: 60px;
-    }
-}
-
-.about__uppertitle {
-    @extend %caption;
-
-    margin-bottom: 15px;
-
-    @media screen and (min-width: getSize(desktop)) {
-
-        transition: transform 500ms getProperty(cubic);
-        cursor: pointer;
-
-        &:hover,
-        &:focus {
-            transform: scale(1.1);
-        }
-    }
-}
-
-.about__title {
-    @extend %title;
-    margin-bottom: 32px;
-
-    @media screen and (min-width: getSize(tablet)) {
-        margin-bottom: 40px;
-    }
-
-    @media screen and (min-width: getSize(desktop)) {
-        cursor: pointer;
-        margin-bottom: 60px;
-        transition: transform 500ms getProperty(cubic);
-
-        &:hover,
-        &:focus {
-            transform: scale(1.1);
-        }
     }
 }
 
@@ -163,6 +166,7 @@
 
 }
 
+// .............................................Main button
 // .about__button {
 //     @include btn--s-about(14px, 18px);
 //     padding: 17px 0;
@@ -177,19 +181,21 @@
     height: 44px;
 }
 
-
-
-
+// ...........................................Modal menu
 %backdrop {
     position: fixed;
     top: 0;
     left: 0;
-    background-color: #d4144380;
+    z-index: 10;
+
     width: 100%;
     height: 100%;
-    opacity: 1;
-    z-index: 10;
+
+
+    background-color: #d4144380;
     transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
+    opacity: 1;
 }
 
 @mixin centering($pos, $top, $left) {
@@ -198,11 +204,13 @@
     left: $left;
 }
 
+// After adding mix and plac, delete, to top 2 infos
 .backdrop {
     @extend %backdrop;
 
     &.is-hidden {
         pointer-events: none;
+        visibility: hidden;
         opacity: 0;
 
         & .modal {
@@ -217,11 +225,194 @@
 
 .modal {
     @include centering(absolute, 50%, 50%);
+
+    width: 90vw;
+    height: 60vh;
+    padding: 20px;
+
+
+    background-color: getColor(primary);
     transform: translate(-50%, -50%) scale(1);
-    transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
-    background-color: #fff;
     overflow-y: auto;
     border-radius: 15px;
-    padding: 20px;
-    width: 90vw;
+    transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
+    @media screen and (min-width: getSize(tablet)) {
+        display: flex;
+        width: 590px;
+        height: 350px;
+    }
+
+    @media screen and (min-width: getSize(desktop)) {
+        width: 650px;
+        height: 400px;
+    }
+}
+
+// ........................................Read more inform.
+.modal__content {
+    max-width: 250px;
+    padding: 30px;
+
+    font-size: 12px;
+
+    @media screen and (max-width: 767.98px) {
+        display: none;
+    }
+}
+
+.modal__btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 30px;
+    height: 30px;
+    padding: 0;
+
+    border: 1px solid getColor(accent);
+    border-radius: 15%;
+    background-color: transparent;
+
+    cursor: pointer;
+}
+
+.modal__title {
+    display: block;
+    margin-bottom: 10px;
+
+    font-size: 16px;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.form__group {
+    position: relative;
+    display: block;
+    margin-bottom: 15px;
+}
+
+.form__label {
+    position: relative;
+    display: inline-block;
+    margin-bottom: 5px;
+
+    font-size: 14px;
+
+    &:before {
+        content: "\002A";
+        position: absolute;
+        top: 0;
+        right: -12px;
+        color: getColor(accent);
+    }
+}
+
+.form__input {
+    width: 100%;
+    padding: 10px 30px;
+
+    border-radius: 5px;
+    border: 1px solid getColor(pagination-active);
+    outline: transparent;
+}
+
+// ........................................Part of icons
+.alert__warning,
+.alert__error {
+    position: absolute;
+    bottom: -22px;
+    left: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+
+    font-size: 10px;
+    letter-spacing: -0.6em;
+    opacity: 0;
+    transition: 350ms getProperty(cubic) 100ms;
+}
+
+.alert__error {
+    color: #e22f37;
+}
+
+.alert__warning {
+    color: #ffc039;
+}
+
+.form__input:not(:placeholder-shown)~.alert__warning,
+.form__input:not(:placeholder-shown)~.alert__icon--warning {
+    opacity: 0;
+}
+
+.form__input:focus~.alert__warning,
+.form__input:focus~.alert__icon--warning {
+    letter-spacing: 0.01em;
+    opacity: 1;
+    transform: scale(1);
+}
+
+.form__input:invalid:not(:placeholder-shown)~.alert__error,
+.form__input:invalid:not(:placeholder-shown)~.alert__icon--error {
+    letter-spacing: 0.01em;
+    opacity: 1;
+    transform: scale(1);
+}
+
+.alert__icon--error,
+.alert__icon--warning {
+    position: absolute;
+    right: 10px;
+    bottom: 12%;
+    transform: translateY(-12%);
+    display: inline-flex;
+    fill: currentColor;
+    opacity: 0;
+    transform: scale(0.3);
+
+    transition: opacity 350ms getProperty(cubic) 100ms, transform 350ms getProperty(cubic) 100ms;
+}
+
+.alert__icon--error {
+    fill: #e22f37;
+}
+
+.alert__icon--warning {
+    fill: #ffc039;
+}
+
+// ...............................Icon phone and tel
+.alert__icon--user {
+    position: absolute;
+    bottom: 10px;
+    left: 8px;
+
+    fill: getColor(accent);
+    transition: transform 350ms getProperty(cubic), fill 400ms getProperty(cubic);
+}
+
+.form__input:valid:not(:placeholder-shown)~.alert__icon--user {
+    fill: #69e883;
+}
+
+.form__input:focus~.alert__icon--user {
+    fill: #ffc039;
+}
+
+.form__input:invalid:not(:placeholder-shown)~.alert__icon--user {
+    fill: #e22f37;
+}
+
+.form__input:invalid:not(:placeholder-shown) {
+    border-color: #e22f37;
+}
+
+.form__input:valid:not(:placeholder-shown) {
+    border-color: #69e883;
 }
