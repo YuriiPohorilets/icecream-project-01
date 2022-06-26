@@ -1,38 +1,39 @@
 .contacts {
     padding-bottom: 40px;
-    background: linear-gradient(180deg, #fff 302px,#fff5f6 0);
+    background: linear-gradient(180deg, #fff 302px, #fff5f6 0);
 
-    @include bpoint(tablet) {
-        padding-top: 20px;
-        background: linear-gradient(180deg, #fff 316px,#fff5f6 0);
-    }
+    // @include bpoint(tablet) {
+    //     padding-top: 20px;
+    //     background: linear-gradient(180deg, #fff 316px,#fff5f6 0);
+    // }
 
-    @include bpoint(desktop) {
-        padding-top: 60px;
-        padding-bottom: 120px;
-        background: linear-gradient(180deg, #fff 159px,#fff5f6 0);
-    }
+    // @include bpoint(desktop) {
+    //     padding-top: 60px;
+    //     padding-bottom: 120px;
+    //     background: linear-gradient(180deg, #fff 159px,#fff5f6 0);
+    // }
 }
 
 .contacts__card-wrap {
     margin-bottom: 32px;
 
-    @include bpoint(tablet) {
-        margin-bottom: 60px;
-    }
+    // @include bpoint(tablet) {
+    //     margin-bottom: 60px;
+    // }
 }
 
 .contacts__list {
     @extend %list;
 
-    @include bpoint(tablet) {
-        display: flex;
-        flex-wrap: wrap;
-    }
+    // @include bpoint(tablet) {
+    //     display: flex;
+    //     flex-wrap: wrap;
+    // }
 }
 
 .contacts__item {
-    width: 100%;
+    // width: 100%;
+    max-width: 280px;
     padding: 40px 32px;
     margin-left: auto;
     margin-right: auto;
@@ -41,39 +42,40 @@
     border-radius: 24px;
     transition: transform getProperty(time) getProperty(cubic), box-shadow getProperty(time) getProperty(cubic);
 
-    @include bpoint(mobile){
-        width: 280px;
-    }
+    // @include bpoint(mobile){
+    //     width: 280px;
+    // }
 
-    @include bpoint(tablet) {
-        flex-basis: calc((100% - 64px) /3);
+    // @include bpoint(tablet) {
+    //     flex-basis: calc((100% - 64px) /3);
 
-        &:not(:last-child) {
-            margin-right: 32px;
-        }
-    }
+    //     &:not(:last-child) {
+    //         margin-right: 32px;
+    //     }
+    // }
 
-    @include bpoint(desktop) {
-        padding: 40px;
+    // @include bpoint(desktop) {
+    //     padding: 40px;
 
-    }
-    &:hover{
+    // }
+    &:hover {
         transform: scale(1.05);
         box-shadow: 0px 8px 30px rgba(212, 20, 67, 0.3);
     }
 }
 
-@media screen and(max-width: 767px){
+@media screen and(max-width: 767px) {
     .contacts__item:not(:last-child) {
-           margin-bottom: 20px;}
-        
+        margin-bottom: 20px;
+    }
+
 }
 
 .contacts__address {
     padding-bottom: 24px;
-    @include bpoint(tablet){
-        padding-bottom: 32px;
-    }
+    // @include bpoint(tablet){
+    //     padding-bottom: 32px;
+    // }
 }
 
 .contacts__title {
@@ -90,22 +92,22 @@
     background-color: getColor(background-label-a);
     border-radius: 4px;
 
-    @include bpoint(tablet) {
-        margin-bottom: 32px;
-        width: 73px;
-        height: 28px;
-        font-size: 16px;
+    // @include bpoint(tablet) {
+    //     margin-bottom: 32px;
+    //     width: 73px;
+    //     height: 28px;
+    //     font-size: 16px;
 
-        @include lh(30px, 16px);
-        
-    }
+    //     @include lh(30px, 16px);
+
+    // }
 
     &--green {
         width: 130px;
         background-color: getColor(background-label-b);
-        @include bpoint(tablet){
-            width: 138px;
-        }
+        // @include bpoint(tablet){
+        //     width: 138px;
+        // }
     }
 }
 
@@ -113,27 +115,27 @@
     margin-bottom: 8px;
     color: getColor(secondary);
 
-    @include bpoint(tablet) {
-        @include lh(26px, 14px);
-        margin-bottom: 12px;
-    }
+    // @include bpoint(tablet) {
+    //     @include lh(26px, 14px);
+    //     margin-bottom: 12px;
+    // }
 
-    @include bpoint(desktop) {
-        @include lh(30px, 16px);
-        margin-bottom: 8px;
-    }
+    // @include bpoint(desktop) {
+    //     @include lh(30px, 16px);
+    //     margin-bottom: 8px;
+    // }
 }
 
 .contacts__text {
     color: getColor(copy);
 
-    @include bpoint(tablet) {
-        @include lh(23px, 14px);
-    }
+    // @include bpoint(tablet) {
+    //     @include lh(23px, 14px);
+    // }
 
-    @include bpoint(desktop) {
-        @include lh(30px, 16px);
-    }
+    // @include bpoint(desktop) {
+    //     @include lh(30px, 16px);
+    // }
 }
 
 .contacts__work {
@@ -142,36 +144,38 @@
     border-top: 1px solid getColor(line);
     border-bottom: 1px solid getColor(line);
 
-    @include bpoint(tablet) {
-        padding: 32px 0;
-        
-    }
+    // @include bpoint(tablet) {
+    //     padding: 32px 0;
+
+    // }
 
 }
-.contacts__work-time{
-    
+
+.contacts__work-time {
+
     &:not(:last-child) {
         margin-bottom: 8px;
     }
 
 }
-@include bpoint(tablet){
-        .contacts__work-time:not(:last-child){
-            margin-bottom: 12px;
-        }
-    }
+
+// @include bpoint(tablet){
+//         .contacts__work-time:not(:last-child){
+//             margin-bottom: 12px;
+//         }
+//     }
 
 .contacts__day {
 
     color: getColor(secondary);
 
-    @include bpoint(tablet) {
-        @include lh(26px, 14px);
-    }
+    // @include bpoint(tablet) {
+    //     @include lh(26px, 14px);
+    // }
 
-    @include bpoint(desktop) {
-        @include lh(30px, 16px);
-    }
+    // @include bpoint(desktop) {
+    //     @include lh(30px, 16px);
+    // }
 }
 
 .contacts__time {
@@ -181,11 +185,11 @@
 
 .contacts__connection {
     padding-top: 24px;
-   @extend %list;
-    
-    @include bpoint(tablet){
-        padding-top: 32px;
-    }
+    @extend %list;
+
+    // @include bpoint(tablet){
+    //     padding-top: 32px;
+    // }
 }
 
 .contacts__link {
@@ -194,56 +198,283 @@
     text-decoration: none;
     transition: color getProperty(time) getProperty(cubic);
 
-    @include bpoint(tablet) {
-        @include lh(26px, 14px);
-    }
+    // @include bpoint(tablet) {
+    //     @include lh(26px, 14px);
+    // }
 
-    @include bpoint(desktop) {
-        @include lh(30px, 16px);
-    }
-    
+    // @include bpoint(desktop) {
+    //     @include lh(30px, 16px);
+    // }
+
     &:hover,
     &:focus {
         color: getColor(accent);
     }
 }
 
-.contacts__button-wrap{
+.contacts__button-wrap {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    
-    
-    @include bpoint(tablet){
-      flex-direction: row;
-    }
+
+
+    // @include bpoint(tablet){
+    //   flex-direction: row;
+    // }
 }
-.contacts__button--locations{
+
+.contacts__button--locations {
     margin-bottom: 10px;
-    @include  btn--dark(160px, 44px);
+    @include btn--dark(160px, 44px);
 
     color: getColor(primary);
 
-    @include bpoint(tablet){
-        margin: 0 15px 0 0;
-        @include  btn--dark(200px, 44px)
-    }
+    // @include bpoint(tablet){
+    //     margin: 0 15px 0 0;
+    //     @include  btn--dark(200px, 44px)
+    // }
 }
-.contacts__button--franchise{
-    @include  btn--light(160px, 44px);
+
+.contacts__button--franchise {
+    @include btn--light(160px, 44px);
 
     color: getColor(accent);
 
-    @include bpoint(tablet){
-        @include  btn--light(200px, 44px)
-    }
+    // @include bpoint(tablet){
+    //     @include  btn--light(200px, 44px)
+    // }
 }
-.contacts__button--svg{
+
+.contacts__button--svg {
     margin-left: 8px;
     fill: currentColor;
 
-    @include bpoint(tablet){
-        margin-left: 14px;
+    // @include bpoint(tablet){
+    //     margin-left: 14px;
+    // }
+}
+
+
+// Modal Franchise
+
+
+
+.contacts-modal {
+    position: fixed;
+    background-color: getColor(active-accent);
+    width: 90vw;
+    height: 500px;
+}
+
+.contacts-franchise__btn {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+
+    width: 30px;
+    height: 30px;
+
+    border: 2px solid getColor(accent);
+    border-radius: 50%;
+    cursor: pointer;
+
+    &:hover,
+    &:focus {
+        background-color: getColor(btn-hover-dark);
+        // border: 3px solid getColor(btn-hover-dark);
     }
+}
+
+.contacts-modal__icon {
+    fill: currentColor;
+}
+
+.contacts-modal__title {
+    // display: flex;
+    margin-bottom: 30px;
+    padding-top: 40px;
+    justify-content: center;
+
+    font-family: getFont(accent);
+    line-height: 30px;
+    font-size: 18px;
+    color: getColor(accent);
+}
+
+.franchise-form {
+    display: flex;
+    flex-direction: column;
+
+    &__label {
+        display: block;
+        flex-direction: column;
+        margin-bottom: 10px;
+
+    }
+
+    &__name {
+        display: block;
+        text-align: left;
+        color: getColor(accent);
+
+        margin-bottom: 5px;
+    }
+
+    &__container {
+        position: relative;
+        display: block;
+
+    }
+
+    &__input {
+        display: block;
+        width: 100%;
+        height: 40px;
+        padding: 12px 12px 12px 42px;
+
+        color: getColor(accent);
+        border: 2px solid getColor(accent);
+        border-radius: 4px;
+        cursor: pointer;
+        outline: transparent;
+
+        transition: border getProperty(time) getProperty(cubic);
+
+    }
+}
+
+.franchise-form__label:hover .franchise-form__input,
+.franchise-form__label:focus-within .franchise-form__input {
+    border: 2px solid getColor(btn-hover-dark);
+}
+
+
+.checkbox-franchise {
+    position: relative;
+    display: flex;
+
+    font-size: 12px;
+    line-height: 22px;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    margin-top: 10px;
+    margin-bottom: 30px;
+
+    &__input {
+        position: absolute;
+    }
+}
+
+.checkbox-franchise__icon {
+    fill: getColor(primary);
+    margin-right: 8px;
+
+    background-color: getColor(primary);
+    border: 2px solid getColor(accent);
+    border-radius: 4px;
+
+    transition: border getProperty(time) getProperty(cubic);
+
+    .checkbox-franchise__input:checked+& {
+        // border-color: getColor(active-black);
+        background-color: getColor(active-accent);
+        fill: getColor(secondary);
+        background-size: contain;
+        background-origin: border-box;
+    }
+
+    .checkbox-franchice__input:hover~&,
+    .checkbox-franchice__input:focus~& {
+        border: 2px solid getColor(btn-hover-dark);
+    }
+
+}
+
+.checkbox-franchise__label {
+    color: getColor(accent);
+}
+
+.franchise-btn {
+    display: flex;
+    margin: 8px auto 0 auto;
+    align-items: center;
+    justify-content: center;
+
+    width: 160px;
+    height: 44px;
+
+    font-family: getFont(accent);
+    font-weight: 700;
+    font-size: 18px;
+    @include lh (30px, 18px);
+    color: getColor(accent);
+
+    // background-color: getColor(accent);
+    border: 2px solid getColor(accent);
+    border-radius: 22px;
+
+    transition: color getProperty(time) getProperty(cubic), background-color getProperty(time) getProperty(cubic);
+
+    cursor: pointer;
+
+    &:hover,
+    &:focus {
+        color: getColor(primary);
+        background-color: getColor(btn-hover-dark);
+    }
+}
+
+// Modal Location
+
+.contacts-location__modal {
+    position: fixed;
+    background-color: getColor(active-accent);
+    width: 90vw;
+    height: 500px;
+}
+
+.contacts-location__btn {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+
+    width: 30px;
+    height: 30px;
+
+    border: 2px solid getColor(accent);
+    border-radius: 50%;
+    cursor: pointer;
+
+    &:hover,
+    &:focus {
+        background-color: getColor(btn-hover-dark);
+        // border: 3px solid getColor(btn-hover-dark);
+    }
+}
+
+.contacts-location__title{
+    margin-bottom: 15px;
+    padding-top: 15px;
+    justify-content: center;
+
+    font-family: getFont(accent);
+    line-height: 30px;
+    font-size: 18px;
+    color: getColor(accent);
+}
+.frame{
+    width: 90%;
+    height: 80%;
 }
