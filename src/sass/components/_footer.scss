@@ -87,19 +87,16 @@
 
 .footer__copyright {
     border-top: 1px solid getColor(line);
-
-    min-height: 83px;
 }
 
 .footer__copyright-text {
-    width: 200px;
     font-weight: 700;
     font-size: 14px;
     line-height: 1.52;
     text-align: center;
 
     margin: 16px auto 3px auto;
-    padding: 0 20px;
+    padding: 0 82px;
 
     color: getColor(copy);
 }
