@@ -106,7 +106,9 @@
     color: getColor(copy);
 }
 
-.scroll-top {
+// SCROLL_TO_TOP
+
+.scroll-to-top {
     position: fixed;
     bottom: 40px;
     right: 40px;
@@ -114,23 +116,52 @@
     display: flex;
     align-items: center;
     justify-content: center;
+
     width: 50px;
     height: 50px;
 
-    background-color: getColor(active-accent);
-    transition: background-color getProperty(time) getProperty(cubic);
+    background-color: getColor(btn-hover-dark);
+
     border: none;
     border-radius: 50%;
     cursor: pointer;
 
-    animation: slide-top 1s linear 2s infinite alternate both;
     z-index: 999;
-
-    &:hover, &:focus {
-        background-color: getColor(btn-hover-dark);
-    }
 }
 
-.arrow-top {
+.scroll__face,
+.scroll__back {
+    position: absolute;
+
+    transition: 750ms;
+    backface-visibility: hidden;
+    background-color: getColor(btn-hover-dark);
+    border-radius: 50%;
+    border: none;
+}
+
+.scroll__face {
+    width: 35px;
+    height: 35px;
     fill: getColor(primary);
+}
+
+.scroll__back {
+    width: 100%;
+
+    font-size: 26px;
+    line-height: 1.14;
+    color: getColor(accent);
+
+    transform: rotateY(180deg);
+}
+
+.scroll-to-top:hover .scroll__face,
+.scroll-to-top:focus .scroll__face {
+    transform: rotateY(180deg);
+}
+
+.scroll-to-top:hover .scroll__back,
+.scroll-to-top:focus .scroll__back {
+    transform: rotateY(360deg);
 }
