@@ -5,7 +5,7 @@
     <div class="about__container">
       <div class="about__container--img">
         <picture>
-          <source
+          <!-- <source
             srcset="
               /src/images/about/mobile/1x/home-pic1x-webp.webp 1x,
               /src/images/about/mobile/2x/home-pic2x-webp.webp 2x,
@@ -41,30 +41,30 @@
             media="(min-width:
           768px)"
             type="image/ipg"
-          />
+          /> -->
           <source
             srcset="
-              /src/images/about/desktop/1x/home-pic1x-webp.webp 1x,
-              /src/images/about/desktop/2x/home-pic2x-webp.webp 2x,
-              /src/images/about/desktop/3x/home-pic3x-webp.webp 3x
+              ./images/about/desktop/1x/home-pic1x-webp.webp 1x,
+              ./images/about/desktop/2x/home-pic2x-webp.webp 2x,
+              ./images/about/desktop/3x/home-pic3x-webp.webp 3x
             "
             media="(min-width: 1280px)"
             type="image/webp"
           />
           <source
             srcset="
-              /src/images/about/desktop/1x/home-pic1x.png 1x,
-              /src/images/about/desktop/2x/home-pic2x.png 2x,
-              /src/images/about/desktop/3x/home-pic3x.png 3x
+              ./images/about/desktop/1x/home-pic1x.png 1x,
+              ./images/about/desktop/2x/home-pic2x.png 2x,
+              ./images/about/desktop/3x/home-pic3x.png 3x
             "
             media="(min-width: 1280px)"
             type="image/ipg"
           />
-          <img
+          <!-- <img
             class="about__img"
-            src="/src/images/about/tablet/2x/home-pic2x.png"
+            src="./src/images/about/tablet/2x/home-pic2x.png"
             alt="You can see a Cow and some Milk"
-          />
+          /> -->
         </picture>
       </div>
       <div class="about__content">
@@ -98,7 +98,7 @@
       <div class="form__container">
         <button class="modal__btn js-modal-close">
           <svg class="modal__icon" width="12" height="15">
-            <use href="/src/images/about/symbol-defs.svg#icon-cross"></use>
+            <use href="../src/images/icon-sprite.svg#icon-cross"></use>
           </svg>
         </button>
         <strong class="modal__title">Contact form</strong>
@@ -117,18 +117,14 @@
               The name must be at least 3 characters long
             </span>
             <svg class="alert__icon--warning" width="20" height="20">
-              <use
-                href="/src/images/about/symbol-defs.svg#icon-two-ice-creams"
-              ></use>
+              <use href="/src/images/icon-sprite.svg#icon-two-ice-creams"></use>
             </svg>
             <span class="alert__error"> You entered incorrect data </span>
             <svg class="alert__icon--error" width="20" height="20">
-              <use
-                href="/src/images/about/symbol-defs.svg#icon-ice-cream"
-              ></use>
+              <use href="/src/images/icon-sprite.svg#icon-ice-cream"></use>
             </svg>
             <svg class="alert__icon--user" width="20" height="20">
-              <use href="/src/images/about/symbol-defs.svg#icon-person"></use>
+              <use href="/src/images/icon-sprite.svg#icon-person"></use>
             </svg>
           </label>
           <label class="form__group">
@@ -145,18 +141,14 @@
               Enter your phone number in the format +38 097 111 11 11
             </span>
             <svg class="alert__icon--warning" width="20" height="20">
-              <use
-                href="/src/images/about/symbol-defs.svg#icon-two-ice-creams"
-              ></use>
+              <use href="/src/images/icon-sprite.svg#icon-two-ice-creams"></use>
             </svg>
             <span class="alert__error"> You entered incorrect data</span>
             <svg class="alert__icon--error" width="20" height="20">
-              <use
-                href="/src/images/about/symbol-defs.svg#icon-ice-cream"
-              ></use>
+              <use href="/src/images/icon-sprite.svg#icon-ice-cream"></use>
             </svg>
             <svg class="alert__icon--user" width="20" height="20">
-              <use href="/src/images/about/symbol-defs.svg#icon-phone"></use>
+              <use href="/src/images/icon-sprite.svg#icon-phone"></use>
             </svg>
           </label>
           <label class="form-policy">
@@ -172,9 +164,7 @@
                 width="20"
                 height="20"
               >
-                <use
-                  href="/src/images/about/symbol-defs.svg#icon-check-mark"
-                ></use>
+                <use href="/src/images/icon-sprite.svg#icon-check-mark"></use>
               </svg>
               <span class="form-policy__icon form-policy__icon--uncheck"></span>
             </div>
