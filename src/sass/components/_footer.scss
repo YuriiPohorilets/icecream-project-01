@@ -83,6 +83,11 @@
     margin-left: 3px;
 
     color: getColor(accent);
+    transition: color getProperty(time) getProperty(cubic);
+
+    &:hover, &:focus {
+        color: getColor(copy);
+    }
 }
 
 .footer__copyright {
