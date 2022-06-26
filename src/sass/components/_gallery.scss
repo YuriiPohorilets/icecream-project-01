@@ -8,11 +8,11 @@
                 display: flex;
                 justify-content: center;
 
-                @media screen and (min-width:768px) {
+                @include bpoint(tablet) {
                     height: 325px;
                     }
                 
-                    @media screen and (min-width:1280px) {
+                    @include bpoint(desktop) {
                         height: 430px;
                 
                     }
@@ -23,17 +23,17 @@
         @extend %list;
         width: 320px;
 
-        @media screen and (min-width:768px) {
+        @include bpoint(tablet) {
                 width: 747px;
             }
         
-            @media screen and (min-width:1280px) {
+        @include bpoint(desktop) {
                 width: 1000px;
         
             }
     }
 
-    &__item{
+    &__item {
         overflow: hidden;
 
         &:nth-child(1) {
@@ -104,7 +104,7 @@
                 
             }
 
-                         @media screen and (min-width:768px) {
+                         @include bpoint(tablet) {
                         &:nth-child(1) {
                                 position: absolute;
                                 left: 0;
@@ -166,7 +166,7 @@
                             }
                          }
             
-                         @media screen and (min-width:1280px) {
+                            @include bpoint(desktop) {
                             &:nth-child(1) {
                                     position: absolute;
                                     left: 0;
