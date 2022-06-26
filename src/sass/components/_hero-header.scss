@@ -1,0 +1,81 @@
+// Header
+.header {
+    background-color: getColor(background-hero);
+}
+
+.nav {
+    display: none;
+}
+
+// Hero
+.hero {
+    position: relative;
+
+    padding-top: 136px;
+    padding-bottom: 158px;
+    background-color: getColor(background-hero);
+    background-image: url('../images/hero-header/icecream.png'), url('../images/hero-header/circle.png');
+    background-repeat: no-repeat;
+    background-size: 171px 410px, 346px 346px;
+    background-position: 117px 42px, 33px 36px;
+
+    overflow: hidden;
+}
+
+.hero__box {
+    position: relative;
+    z-index: 2;
+}
+
+.hero__title {
+    margin-bottom: 20px;
+
+    font-family: getFont(accent);
+    font-weight: 400;
+    font-size: 26px;
+    line-height: 1.15;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: getColor(active-white);
+}
+
+.accent {
+    font-size: 48px;
+    line-height: 0.965;
+    color: getColor(accent);
+}
+
+.hero__list {
+    @extend %list;
+
+    display: flex;
+}
+
+.hero__item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 62px;
+    height: 24px;
+
+    color: getColor(active-white);
+    background-color: getColor(accent);
+    border-radius: 20px;
+
+    &:nth-child(2) {
+        margin-left: 8px;
+        width: 83px;
+        color: getColor(accent);
+        background-color: getColor(active-white);
+    }
+}
+
+.hero__link {
+    @extend %link;
+
+    font-weight: 400;
+    font-size: 8px;
+    line-height: 1.25;
+
+}
