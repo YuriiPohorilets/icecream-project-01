@@ -8,32 +8,32 @@
                 display: flex;
                 justify-content: center;
 
-                @include bpoint(tablet) {
-                    height: 325px;
-                    }
+                // @include bpoint(tablet) {
+                //     height: 325px;
+                //     }
                 
-                    @include bpoint(desktop) {
-                        height: 430px;
+                //     @include bpoint(desktop) {
+                //         height: 430px;
                 
-                    }
+                //     }
 
 
-    &__list {
+    .gallery__list {
         position: relative;
         @extend %list;
         width: 320px;
 
-        @include bpoint(tablet) {
-                width: 747px;
-            }
+        // @include bpoint(tablet) {
+        //         width: 747px;
+        //     }
         
-        @include bpoint(desktop) {
-                width: 1000px;
+        // @include bpoint(desktop) {
+        //         width: 1000px;
         
-            }
+        //     }
     }
 
-    &__item {
+    .gallery__item {
         overflow: hidden;
 
         &:nth-child(1) {
@@ -104,136 +104,136 @@
                 
             }
 
-                         @include bpoint(tablet) {
-                        &:nth-child(1) {
-                                position: absolute;
-                                left: 0;
-                                top: 110px;
-                            }
+                        //  @include bpoint(tablet) {
+                        // &:nth-child(1) {
+                        //         position: absolute;
+                        //         left: 0;
+                        //         top: 110px;
+                        //     }
                         
-                            &:nth-child(2) {
-                                position: absolute;
-                                left: 107px;
-                                top: 55px;
-                            }
+                        //     &:nth-child(2) {
+                        //         position: absolute;
+                        //         left: 107px;
+                        //         top: 55px;
+                        //     }
                         
-                            &:nth-child(3) {
-                                position: absolute;
-                                left: 107px;
-                                top: 165px;
-                            }
+                        //     &:nth-child(3) {
+                        //         position: absolute;
+                        //         left: 107px;
+                        //         top: 165px;
+                        //     }
                         
-                            &:nth-child(4) {
-                                position: absolute;
-                                left: 214px;
-                                top: 0;
-                            }
+                        //     &:nth-child(4) {
+                        //         position: absolute;
+                        //         left: 214px;
+                        //         top: 0;
+                        //     }
                         
-                            &:nth-child(5) {
-                                position: absolute;
-                                left: 214px;
-                                top: 220px;
-                            }
+                        //     &:nth-child(5) {
+                        //         position: absolute;
+                        //         left: 214px;
+                        //         top: 220px;
+                        //     }
                         
-                            &:nth-child(6) {
-                                position: absolute;
-                                left: 428px;
-                                top: 65px;
-                            }
+                        //     &:nth-child(6) {
+                        //         position: absolute;
+                        //         left: 428px;
+                        //         top: 65px;
+                        //     }
                         
-                            &:nth-child(7) {
-                                position: absolute;
-                                left: 428px;
-                                top: 175px;
-                            }
+                        //     &:nth-child(7) {
+                        //         position: absolute;
+                        //         left: 428px;
+                        //         top: 175px;
+                        //     }
                         
-                            &:nth-child(8) {
-                                position: absolute;
-                                left: 535px;
-                                top: 45px;
-                            }
+                        //     &:nth-child(8) {
+                        //         position: absolute;
+                        //         left: 535px;
+                        //         top: 45px;
+                        //     }
                         
-                            &:nth-child(9) {
-                                position: absolute;
-                                left: 535px;
-                                top: 155px;
-                            }
+                        //     &:nth-child(9) {
+                        //         position: absolute;
+                        //         left: 535px;
+                        //         top: 155px;
+                        //     }
                         
-                            &:nth-child(10) {
-                                position: absolute;
-                                left: 642px;
-                                top: 120px;
-                            }
-                         }
+                        //     &:nth-child(10) {
+                        //         position: absolute;
+                        //         left: 642px;
+                        //         top: 120px;
+                        //     }
+                        //  }
             
-                            @include bpoint(desktop) {
-                            &:nth-child(1) {
-                                    position: absolute;
-                                    left: 0;
-                                    top: 148px;
-                                }
+                        //     @include bpoint(desktop) {
+                        //     &:nth-child(1) {
+                        //             position: absolute;
+                        //             left: 0;
+                        //             top: 148px;
+                        //         }
                             
-                                &:nth-child(2) {
-                                    position: absolute;
-                                    left: 143px;
-                                    top: 75px;
-                                }
+                        //         &:nth-child(2) {
+                        //             position: absolute;
+                        //             left: 143px;
+                        //             top: 75px;
+                        //         }
                             
-                                &:nth-child(3) {
-                                    position: absolute;
-                                    left: 143px;
-                                    top: 218px;
-                                }
+                        //         &:nth-child(3) {
+                        //             position: absolute;
+                        //             left: 143px;
+                        //             top: 218px;
+                        //         }
                             
-                                &:nth-child(4) {
-                                    position: absolute;
-                                    left: 286px;
-                                    top: 0;
-                                }
+                        //         &:nth-child(4) {
+                        //             position: absolute;
+                        //             left: 286px;
+                        //             top: 0;
+                        //         }
                             
-                                &:nth-child(5) {
-                                    position: absolute;
-                                    left: 286px;
-                                    top: 288px;
-                                }
+                        //         &:nth-child(5) {
+                        //             position: absolute;
+                        //             left: 286px;
+                        //             top: 288px;
+                        //         }
                             
-                                &:nth-child(6) {
-                                    position: absolute;
-                                    left: 574px;
-                                    top: 85px;
-                                }
+                        //         &:nth-child(6) {
+                        //             position: absolute;
+                        //             left: 574px;
+                        //             top: 85px;
+                        //         }
                             
-                                &:nth-child(7) {
-                                    position: absolute;
-                                    left: 574px;
-                                    top: 227px;
-                                }
+                        //         &:nth-child(7) {
+                        //             position: absolute;
+                        //             left: 574px;
+                        //             top: 227px;
+                        //         }
                             
-                                &:nth-child(8) {
-                                    position: absolute;
-                                    left: 717px;
-                                    top: 65px;
-                                }
+                        //         &:nth-child(8) {
+                        //             position: absolute;
+                        //             left: 717px;
+                        //             top: 65px;
+                        //         }
                             
-                                &:nth-child(9) {
-                                    position: absolute;
-                                    left: 717px;
-                                    top: 208px;
-                                }
+                        //         &:nth-child(9) {
+                        //             position: absolute;
+                        //             left: 717px;
+                        //             top: 208px;
+                        //         }
                             
-                                &:nth-child(10) {
-                                    position: absolute;
-                                    left: 860px;
-                                    top: 105px;
-                                }
+                        //         &:nth-child(10) {
+                        //             position: absolute;
+                        //             left: 860px;
+                        //             top: 105px;
+                        //         }
             
-                         }
+                        //  }
 
     }
 
     
     
-    &__img {
+    .gallery__img {
         
         transition: transform getProperty(cubic) getProperty(time);
     }
