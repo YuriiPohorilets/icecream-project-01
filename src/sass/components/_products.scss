@@ -49,6 +49,7 @@
 }
 
 .products__list{
+	perspective: 1000px;
 	text-align: center;
 
 	@extend %list;
@@ -63,10 +64,15 @@
 
 .products-card {
 	position: relative;
+	transform-style: preserve-3d;
+	backface-visibility: hidden;
+
 	display: inline-block;
 	width: 280px;
 	padding: 160px 40px 40px 40px;
 	border-radius: 24px;
+
+	transition-duration: 1s;
 
 	@include bpoint(tablet) {
 		width: 224px;
@@ -79,12 +85,21 @@
 		width: 370px;
 	}
 
+	&:hover {
+	transform: rotateY(180deg);
+	
+	.products-card__info {
+				z-index: 1;
+		}
+	}
+
 	&::before {
 		content: "";
 		position: absolute;
 		top: 0;
 		left: 50%;
 		transform: translate(-50%, -50%);
+		z-index: 2;
 
 		display: block;
 		max-width: 100%;
@@ -166,27 +181,21 @@
 	}
 
 		&::before {
-			background: url(../images/products/320/ice-cream_mob@1x.png);
+			background-image: url(../images/products/320/ice-cream_mob@1x.png);
 			background-size: contain;
 			background-repeat: no-repeat;
 			
 
 			@include bpoint(mobile) {
-				background: url(../images/products/320/ice-cream_mob@1x.png);
-				background-size: contain;
-				background-repeat: no-repeat;
+				background-image: url(../images/products/320/ice-cream_mob@1x.png);
 			}
 
 			@include bpoint(tablet) {
-				background: url(../images/products/768/ice-cream_tablet@2x.png);
-				background-size: contain;
-				background-repeat: no-repeat;
+				background-image: url(../images/products/768/ice-cream_tablet@2x.png);
 			}
 
 			@include bpoint(desktop) {
-				background: url(../images/products/1280/ice-cream_desc@3x.png);
-				background-size: contain;
-				background-repeat: no-repeat;
+				background-image: url(../images/products/1280/ice-cream_desc@3x.png);
 			}
 	}
 }
@@ -201,54 +210,42 @@
 	}
 
 	&::before {
-		background: url(../images/products/320/ice-coffe_mob@1x.png);
+		background-image: url(../images/products/320/ice-coffe_mob@1x.png);
 		background-size: contain;
 		background-repeat: no-repeat;
 
 		@include bpoint(mobile) {
-				background: url(../images/products/320/ice-coffe_mob@1x.png);
-				background-size: contain;
-				background-repeat: no-repeat;
+				background-image: url(../images/products/320/ice-coffe_mob@1x.png);
 			}
 		
 			@include bpoint(tablet) {
-				background: url(../images/products/768/ice-coffe_tablet@2x.png);
-				background-size: contain;
-				background-repeat: no-repeat;
+				background-image: url(../images/products/768/ice-coffe_tablet@2x.png);
 			}
 		
 			@include bpoint(desktop) {
-				background: url(../images/products/1280/ice-coffe_desc@3x.png);
-				background-size: contain;
-				background-repeat: no-repeat;
+				background-image: url(../images/products/1280/ice-coffe_desc@3x.png);
 			}
 	}
 }
 
-.products-card--milk-shake{
+.products-card--milk-shake {
 	background-color: getColor(background-label-b);
 
 	&::before {
-		background: url(../images/products/320/milkshakes_mob@1x.png);
+		background-image: url(../images/products/320/milkshakes_mob@1x.png);
 		background-size: contain;
 		background-repeat: no-repeat;
 
 		@include bpoint(mobile) {
-				background: url(../images/products/320/milkshakes_mob@1x.png);
-				background-size: contain;
-				background-repeat: no-repeat;
+				background-image: url(../images/products/320/milkshakes_mob@1x.png);
 			}
 		
 			@include bpoint(tablet) {
-				background: url(../images/products/768/milkshakes_tablet@2x.png);
-				background-size: contain;
-				background-repeat: no-repeat;
+				background-image: url(../images/products/768/milkshakes_tablet@2x.png);
 			}
 		
 			@include bpoint(desktop) {
-				background: url(../images/products/1280/milkshakes_desc@3x.png);
-				background-size: contain;
-				background-repeat: no-repeat;
+				background-image: url(../images/products/1280/milkshakes_desc@3x.png);
 			}
 	}
 }
@@ -260,15 +257,45 @@
 	height: 40px;
 	padding-bottom: 40;
 	
+	border-radius: 50%;
 	border: none;
-	outline: none;
+	
 	
 	cursor: pointer;
-	background-color: transparent;
-	background-image: url(../images/products/products-btn_mob@1x.png);
+	background-color: getColor(active-white);
+	background-image: url(../images/products/arrow-right.svg);
 	background-repeat: no-repeat;
 
 	@include bpoint(desktop) {
 		margin-bottom: 60px;
 	}
 }
+
+.products-card__info{
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	display: flex;
+	align-items: center;
+	padding: 20px;
+	border-radius: 24px;
+
+	z-index: -1  ;
+	transform: rotateY(180deg);
+	backface-visibility: hidden;
+}
+
+.products-card__info--ice-cream {
+	background-color: getColor(background-hero);
+}
+
+.products-card__info--ice-coffee {
+	background-color: getColor(background-label-a);
+}
+
+.products-card__info--milk-shake {
+	background-color: getColor(background-label-b);
+}
+
