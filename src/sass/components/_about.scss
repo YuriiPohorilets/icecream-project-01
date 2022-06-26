@@ -22,11 +22,11 @@
         }
     }
 
-    @media screen and (min-width: getSize(tablet)) {
+    @include bpoint(tablet) {
         background-image: none;
     }
 
-    @media screen and (min-width: getSize(desktop)) {
+    @include bpoint(desktop) {
         background-image: url('/src/images/about/desktop/1x/sectionbg1x.png');
         background-size: 100%;
         background-repeat: no-repeat;
@@ -56,7 +56,7 @@
     @extend %caption;
     margin-bottom: 15px;
 
-    @media screen and (min-width: getSize(desktop)) {
+    @include bpoint(desktop) {
         transition: transform 500ms getProperty(cubic);
 
         &:hover,
@@ -70,11 +70,11 @@
     @extend %title;
     margin-bottom: 32px;
 
-    @media screen and (min-width: getSize(tablet)) {
+    @include bpoint(tablet) {
         margin-bottom: 40px;
     }
 
-    @media screen and (min-width: getSize(desktop)) {
+    @include bpoint(desktop) {
         margin-bottom: 60px;
         transition: transform 500ms getProperty(cubic);
 
@@ -87,11 +87,11 @@
 
 // ...........................................Container main inform.
 .about__container {
-    @media screen and (min-width: getSize(tablet)) {
+    @include bpoint(tablet) {
         display: flex;
     }
 
-    @media screen and (min-width: getSize(desktop)) {
+    @include bpoint(desktop) {
         justify-content: space-evenly;
     }
 }
@@ -102,27 +102,25 @@
     justify-content: center;
     margin-bottom: 40px;
 
-    @media screen and (min-width: getSize(tablet)) {
+    @include bpoint(tablet) {
         margin-right: 32px;
         margin-bottom: 0;
     }
 
-    @media screen and (min-width: getSize(desktop)) {
+    @include bpoint(desktop) {
         margin-bottom: 0;
         margin-right: 0;
     }
 }
 
 .about__img {
-    // width: 280px;
-    // height: 279px;
 
-    @media screen and (min-width: getSize(tablet)) {
+    @include bpoint(tablet) {
         width: 336px;
         height: 335px;
     }
 
-    @media screen and (min-width: getSize(desktop)) {
+    @include bpoint(desktop) {
         width: 501px;
         height: 501px;
     }
@@ -132,12 +130,12 @@
 .about__content {
     padding-right: 40px;
 
-    @media screen and (min-width: getSize(tablet)) {
+    @include bpoint(tablet) {
         width: 334px;
         padding: 0;
     }
 
-    @media screen and (min-width: getSize(desktop)) {
+    @include bpoint(desktop) {
         width: 463px;
         padding-top: 60px;
     }
@@ -146,12 +144,12 @@
 .about__subtitle {
     margin-bottom: 40px;
 
-    @media screen and (min-width: getSize(tablet)) {
+    @include bpoint(tablet) {
         font-size: 14px;
         line-height: 25px;
     }
 
-    @media screen and (min-width: getSize(desktop)) {
+    @include bpoint(desktop) {
         font-size: 16px;
         line-height: 28px;
     }
@@ -169,7 +167,7 @@
     @include btn--s-about(14px, 18px);
     padding: 17px 0;
 
-    @media screen and (min-width: getSize(tablet)) {
+    @include bpoint(tablet) {
         @include btn--s-about(16px, 25px);
     }
 }
@@ -214,7 +212,7 @@
     visibility: hidden;
     transition: all getProperty(time) getProperty(cubic);
 
-    @media screen and (min-width: getSize(tablet)) {
+    @include bpoint(tablet) {
         display: flex;
     }
 }
@@ -228,14 +226,15 @@
 
 // // ........................................Read more inform.
 .modal__content {
-    max-width: 250px;
-    padding: 30px;
-    margin-right: 15px;
-    background-color: rgba(212, 20, 67, 0.1);
+    display: none;
 
-
-    @media screen and (max-width: 767.98px) {
-        display: none;
+    @include bpoint(tablet) {
+        display: block;
+        max-width: 250px;
+        padding: 30px;
+        margin-right: 15px;
+        border-radius: 10px;
+        background-color: rgba(212, 20, 67, 0.1);
     }
 }
 
@@ -255,11 +254,24 @@
     height: 30px;
     padding: 0;
 
-    border: 1px solid getColor(accent);
+
+    outline: transparent;
+    fill: #d4144380;
+    border: 1px solid #d4144380;
     border-radius: 15%;
     background-color: transparent;
-
     cursor: pointer;
+    transition: border getProperty(time) getProperty(cubic);
+
+    &:hover,
+    &:focus {
+        border: 1px solid getColor(accent);
+        fill: getColor(accent);
+    }
+}
+
+.modal__icon {
+    transition: fill getProperty(time) getProperty(cubic);
 }
 
 .modal__title {
@@ -276,6 +288,7 @@
     display: block;
     margin-bottom: 20px;
     text-align: left;
+    cursor: pointer;
 }
 
 .form__label {
@@ -299,8 +312,13 @@
     padding: 10px 30px;
 
     border-radius: 5px;
-    border: 1px solid getColor(pagination-active);
+    border: 1px solid #d4144380;
     outline: transparent;
+
+    &:hover,
+    &:focus {
+        border: 1px solid getColor(accent);
+    }
 }
 
 // // ........................................Part of icons
@@ -315,17 +333,13 @@
     justify-content: center;
     width: 100%;
 
-    font-size: 10px;
+    font-size: 8px;
     letter-spacing: -0.6em;
     opacity: 0;
-    transition: 350ms getProperty(cubic) 100ms;
-}
+    transition: getProperty(time) getProperty(cubic) 100ms;
 
-.alert__warning.warning {
-    bottom: -40px;
-
-    @media screen and (min-width: getSize(tablet)) {
-        bottom: -22px;
+    @include bpoint(tablet) {
+        font-size: 10px;
     }
 }
 
@@ -337,17 +351,18 @@
     color: #ffc039;
 }
 
-.form__input:not(:placeholder-shown)~.alert__warning,
-.form__input:not(:placeholder-shown)~.alert__icon--warning {
-    opacity: 0;
-}
-
 .form__input:focus~.alert__warning,
 .form__input:focus~.alert__icon--warning {
     letter-spacing: 0.01em;
     opacity: 1;
     transform: scale(1);
 }
+
+.form__input:not(:placeholder-shown)~.alert__warning,
+.form__input:not(:placeholder-shown)~.alert__icon--warning {
+    opacity: 0;
+}
+
 
 .form__input:invalid:not(:placeholder-shown)~.alert__error,
 .form__input:invalid:not(:placeholder-shown)~.alert__icon--error {
@@ -361,13 +376,14 @@
     position: absolute;
     right: 10px;
     bottom: 12%;
-    transform: translateY(-12%);
+
+
     display: inline-flex;
     fill: currentColor;
     opacity: 0;
-    transform: scale(0.3);
 
-    transition: opacity 350ms getProperty(cubic) 100ms, transform 350ms getProperty(cubic) 100ms;
+    transform: translateY(-12%) scale(0.3);
+    transition: opacity getProperty(time) getProperty(cubic) 100ms, transform getProperty(time) getProperty(cubic) 100ms;
 }
 
 .alert__icon--error {
@@ -384,8 +400,9 @@
     bottom: 10px;
     left: 8px;
 
-    fill: getColor(accent);
-    transition: transform 350ms getProperty(cubic), fill 400ms getProperty(cubic);
+    fill: #d4144380;
+    transition: transform getProperty(time) getProperty(cubic), fill getProperty(time) getProperty(cubic);
+
 }
 
 .form__input:valid:not(:placeholder-shown)~.alert__icon--user {
@@ -413,8 +430,9 @@
     display: flex;
     justify-content: center;
     padding: 20px;
+    cursor: pointer;
 
-    @media screen and (min-width: getSize(tablet)) {
+    @include bpoint(tablet) {
         align-items: center;
         margin-bottom: 20px;
         padding: 10px;
@@ -437,20 +455,21 @@
     top: 0;
     left: 0;
     opacity: 0;
+
     border-radius: 4px;
     transform: scale(0.9);
-    transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1), transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    transition: opacity getProperty(time) getProperty(cubic), transform getProperty(time) getProperty(cubic);
 
     .form-policy__checkbox:checked+& {
         transform: scale(1);
         opacity: 1;
-        fill: #d4144380;
+        fill: getColor(accent);
     }
 }
 
 .form-policy__checkbox:hover~.form-policy__icon--uncheck,
 .form-policy__checkbox:focus~.form-policy__icon--uncheck {
-    border-color: red;
+    border-color: getColor(pagination-active);
 }
 
 .form-policy__checkbox:hover:checked~.form-policy__icon--uncheck {
@@ -461,15 +480,17 @@
     position: absolute;
     top: 0;
     left: 0;
+
     display: block;
     width: 20px;
     height: 20px;
+
     border-radius: 4px;
-    border: 2px solid #212121;
-    transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1), filter 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    border: 2px solid #d4144380;
+    transition: border-color getProperty(time) getProperty(cubic), filter getProperty(time) getProperty(cubic);
 
     .form-policy__checkbox:checked~& {
-        border-color: #d4144380;
+        border-color: getColor(accent);
     }
 }
 
@@ -477,6 +498,14 @@
 .form__btn {
     display: inline-block;
     padding: 5px;
+
     background-color: getColor(background-hero);
     text-transform: uppercase;
+    outline: transparent;
+    transition: box-shadow getProperty(time) getProperty(cubic);
+
+    &:hover,
+    &:focus {
+        box-shadow: getShadow(btn);
+    }
 }

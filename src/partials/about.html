@@ -88,117 +88,112 @@
         </button>
       </div>
     </div>
-    <div class="overlay js-overlay-modal">
-      <div class="modal" data-modal="2">
-        <p class="modal__content">
-          Curabitur lacinia enim at ex blandit, vel pellentesque odio elementum.
-          Mauris rhoncus orci in imperdiet placerat. Vestibulum euismod nisl
-          suscipit ligula volutpat, a feugiat urna maximus. Cras massa nibh,
-          tincidunt.
-        </p>
-        <div class="form__container">
-          <button class="modal__btn js-modal-close">
-            <svg class="modal__icon" width="15" height="15">
-              <use href="/src/images/about/symbol-defs.svg#icon-cross"></use>
+    <div class="modal" data-modal="2">
+      <p class="modal__content">
+        Curabitur lacinia enim at ex blandit, vel pellentesque odio elementum.
+        Mauris rhoncus orci in imperdiet placerat. Vestibulum euismod nisl
+        suscipit ligula volutpat, a feugiat urna maximus. Cras massa nibh,
+        tincidunt.
+      </p>
+      <div class="form__container">
+        <button class="modal__btn js-modal-close">
+          <svg class="modal__icon" width="12" height="15">
+            <use href="/src/images/about/symbol-defs.svg#icon-cross"></use>
+          </svg>
+        </button>
+        <strong class="modal__title">Contact form</strong>
+        <form class="form" autocomplete="off">
+          <label class="form__group">
+            <span class="form__label">Name</span>
+            <input
+              class="form__input"
+              type="text"
+              name="user-name"
+              minlength="3"
+              placeholder=" "
+              required
+            />
+            <span class="alert__warning">
+              The name must be at least 3 characters long
+            </span>
+            <svg class="alert__icon--warning" width="20" height="20">
+              <use
+                href="/src/images/about/symbol-defs.svg#icon-two-ice-creams"
+              ></use>
             </svg>
-          </button>
-          <strong class="modal__title">Contact form</strong>
-          <form class="form" autocomplete="off">
-            <label class="form__group">
-              <span class="form__label">Name</span>
+            <span class="alert__error"> You entered incorrect data </span>
+            <svg class="alert__icon--error" width="20" height="20">
+              <use
+                href="/src/images/about/symbol-defs.svg#icon-ice-cream"
+              ></use>
+            </svg>
+            <svg class="alert__icon--user" width="20" height="20">
+              <use href="/src/images/about/symbol-defs.svg#icon-person"></use>
+            </svg>
+          </label>
+          <label class="form__group">
+            <span class="form__label">Phone</span>
+            <input
+              class="form__input"
+              type="tel"
+              name="user-phone"
+              minlength="3"
+              placeholder=" "
+              required
+            />
+            <span class="alert__warning warning">
+              Enter your phone number in the format +38 097 111 11 11
+            </span>
+            <svg class="alert__icon--warning" width="20" height="20">
+              <use
+                href="/src/images/about/symbol-defs.svg#icon-two-ice-creams"
+              ></use>
+            </svg>
+            <span class="alert__error"> You entered incorrect data</span>
+            <svg class="alert__icon--error" width="20" height="20">
+              <use
+                href="/src/images/about/symbol-defs.svg#icon-ice-cream"
+              ></use>
+            </svg>
+            <svg class="alert__icon--user" width="20" height="20">
+              <use href="/src/images/about/symbol-defs.svg#icon-phone"></use>
+            </svg>
+          </label>
+          <label class="form-policy">
+            <div class="form-policy__container">
               <input
-                class="form__input"
-                type="text"
-                name="user-name"
-                minlength="3"
-                placeholder=" "
+                class="form-policy__checkbox hidden"
+                type="checkbox"
+                name="policy"
                 required
               />
-              <span class="alert__warning">
-                The name must be at least 3 characters long
-              </span>
-              <svg class="alert__icon--warning" width="20" height="20">
+              <svg
+                class="form-policy__icon form-policy__icon--check"
+                width="20"
+                height="20"
+              >
                 <use
-                  href="/src/images/about/symbol-defs.svg#icon-two-ice-creams"
+                  href="/src/images/about/symbol-defs.svg#icon-check-mark"
                 ></use>
               </svg>
-              <span class="alert__error"> You entered incorrect data </span>
-              <svg class="alert__icon--error" width="20" height="20">
-                <use
-                  href="/src/images/about/symbol-defs.svg#icon-ice-cream"
-                ></use>
-              </svg>
-              <svg class="alert__icon--user" width="20" height="20">
-                <use href="/src/images/about/symbol-defs.svg#icon-person"></use>
-              </svg>
-            </label>
-            <label class="form__group">
-              <span class="form__label">Phone</span>
-              <input
-                class="form__input"
-                type="tel"
-                name="user-phone"
-                minlength="3"
-                placeholder=" "
-                required
-              />
-              <span class="alert__warning warning">
-                Enter your phone number in the format +38 097 111 11 11
-              </span>
-              <svg class="alert__icon--warning" width="20" height="20">
-                <use
-                  href="/src/images/about/symbol-defs.svg#icon-two-ice-creams"
-                ></use>
-              </svg>
-              <span class="alert__error"> You entered incorrect data</span>
-              <svg class="alert__icon--error" width="20" height="20">
-                <use
-                  href="/src/images/about/symbol-defs.svg#icon-ice-cream"
-                ></use>
-              </svg>
-              <svg class="alert__icon--user" width="20" height="20">
-                <use href="/src/images/about/symbol-defs.svg#icon-phone"></use>
-              </svg>
-            </label>
-            <label class="form-policy">
-              <div class="form-policy__container">
-                <input
-                  class="form-policy__checkbox hidden"
-                  type="checkbox"
-                  name="policy"
-                  required
-                />
-                <svg
-                  class="form-policy__icon form-policy__icon--check"
-                  width="20"
-                  height="20"
-                >
-                  <use
-                    href="/src/images/about/symbol-defs.svg#icon-check-mark"
-                  ></use>
-                </svg>
-                <span
-                  class="form-policy__icon form-policy__icon--uncheck"
-                ></span>
-              </div>
-              <div class="form-policy__check">
-                I agree with the
-                <a
-                  class="form-policy--link"
-                  href="#"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  Privacy Statement</a
-                >
-              </div>
-            </label>
-            <button class="form__btn about__button" type="submit">
-              submit
-            </button>
-          </form>
-        </div>
+              <span class="form-policy__icon form-policy__icon--uncheck"></span>
+            </div>
+            <div class="form-policy__check">
+              I agree with the
+              <a
+                class="form-policy--link"
+                href="#"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Privacy Statement</a
+              >
+            </div>
+          </label>
+          <button class="form__btn about__button" type="submit">submit</button>
+        </form>
       </div>
     </div>
+    <div class="overlay js-overlay-modal"></div>
   </div>
 </section>
