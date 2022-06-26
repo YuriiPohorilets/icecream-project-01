@@ -126,7 +126,12 @@
     border-radius: 50%;
     cursor: pointer;
 
+    opacity: 0.7;
     z-index: 999;
+}
+
+.js-transparent {
+    display: none;
 }
 
 .scroll__face,
@@ -147,8 +152,6 @@
 }
 
 .scroll__back {
-    width: 100%;
-
     font-size: 26px;
     line-height: 1.14;
     color: getColor(accent);
