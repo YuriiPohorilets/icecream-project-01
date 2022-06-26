@@ -33,7 +33,7 @@ document.addEventListener('DOMContentLoaded', function() {
          overlay.classList.add('active');
          
          // Класс для body
-         document.body.classList.add('modal-open');
+         // document.body.classList.add('modal-open');
       }); // end click
 
    }); // end foreach
