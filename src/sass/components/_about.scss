@@ -230,12 +230,17 @@
 .modal__content {
     max-width: 250px;
     padding: 30px;
+    margin-right: 15px;
+    background-color: rgba(212, 20, 67, 0.1);
 
-    font-size: 12px;
 
     @media screen and (max-width: 767.98px) {
         display: none;
     }
+}
+
+.form__container {
+    flex-grow: 1;
 }
 
 .modal__btn {
@@ -269,7 +274,8 @@
 .form__group {
     position: relative;
     display: block;
-    margin-bottom: 15px;
+    margin-bottom: 20px;
+    text-align: left;
 }
 
 .form__label {
@@ -313,6 +319,14 @@
     letter-spacing: -0.6em;
     opacity: 0;
     transition: 350ms getProperty(cubic) 100ms;
+}
+
+.alert__warning.warning {
+    bottom: -40px;
+
+    @media screen and (min-width: getSize(tablet)) {
+        bottom: -22px;
+    }
 }
 
 .alert__error {
@@ -398,7 +412,13 @@
 .form-policy {
     display: flex;
     justify-content: center;
-    margin-bottom: 10px;
+    padding: 20px;
+
+    @media screen and (min-width: getSize(tablet)) {
+        align-items: center;
+        margin-bottom: 20px;
+        padding: 10px;
+    }
 }
 
 .form-policy__container {
@@ -453,6 +473,10 @@
     }
 }
 
-.form-policy--link {
-    display: block;
+// ........................Button
+.form__btn {
+    display: inline-block;
+    padding: 5px;
+    background-color: getColor(background-hero);
+    text-transform: uppercase;
 }
