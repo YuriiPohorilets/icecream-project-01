@@ -1,8 +1,6 @@
-<section class="contacts">
+<section class="contacts" id="contacts">
   <div class="container">
-    <h2 class="hidden">
-      Address, working hours and contacts
-    </h2>
+    <h2 class="hidden">Address, working hours and contacts</h2>
     <div class="contacts__card-wrap">
       <ul class="contacts__list">
         <li class="contacts__item">
@@ -37,7 +35,9 @@
           </ul>
         </li>
         <li class="contacts__item">
-            <span class="contacts__title contacts__title--green"><p>Food truck</p></span>
+          <span class="contacts__title contacts__title--green"
+            ><p>Food truck</p></span
+          >
           <div class="contacts__address">
             <h3 class="contacts__location">Los Angeles</h3>
             <p class="contacts__text">
@@ -102,16 +102,20 @@
     </div>
     <div class="contacts__button-wrap">
       <button
-        class="contacts__button--locations"
+        class="contacts__button--locations js-open-modal"
         type="button"
-        href="https://goo.gl/maps/SASpggLvsRJD93AF9"
+        data-modal="9"
       >
         Our Locations
         <svg class="contacts__button--svg" width="5" height="8">
           <use href="./images/icon-sprite.svg#icon-bracket"></use>
         </svg>
       </button>
-      <button class="contacts__button--franchise" type="button">
+      <button
+        class="contacts__button--franchise js-open-modal"
+        type="button"
+        data-modal="10"
+      >
         Franchise
         <svg class="contacts__button--svg" width="5" height="8">
           <use href="./images/icon-sprite.svg#icon-bracket"></use>
@@ -120,3 +124,78 @@
     </div>
   </div>
 </section>
+
+<div class="modal contacts-modal" data-modal="10">
+  <button class="contacts-franchise__btn js-modal-close">
+    <!-- <svg class="contacts-modal__icon" width="11" height="11">
+          <use href="./images/icon-sprite.svg#"></use>
+      </svg> -->
+  </button>
+  <p class="contacts-modal__title">Join us and be our partners!</p>
+  <form class="franchise-form" name="franchise-form" autocomplete="off">
+    <label class="franchise-form__label">
+      <span class="franchise-form__name">Name</span>
+      <span class="franchise-form__container">
+        <input class="franchise-form__input" type="text" name="name" required />
+        <!-- <svg class="franchise-form__icon" width="" height="">
+                 <use href=""></use>
+               </svg> -->
+      </span>
+    </label>
+
+    <label class="franchise-form__label">
+      <span class="franchise-form__name">Phone number</span>
+      <span class="franchise-form__container">
+        <input class="franchise-form__input" type="tel" name="tel" required />
+        <!-- <svg class="franchise-form__icon" width="" height="">
+                <use href=""></use>
+             </svg> -->
+      </span>
+    </label>
+
+    <label class="franchise-form__label">
+      <span class="franchise-form__name">Email</span>
+      <span class="franchise-form__container">
+        <input
+          class="franchise-form__input"
+          type="email"
+          name="mail"
+          required
+        />
+        <!-- <svg class="franchise-form__icon" width="" height="">
+               <use href=""></use>
+             </svg> -->
+      </span>
+    </label>
+
+    <label class="checkbox-franchise">
+      <input
+        class="checkbox-franchise__input hidden"
+        type="checkbox"
+        name="policy"
+        required
+      />
+      <svg class="checkbox-franchise__icon" width="15" height="15">
+        <!-- <use href="./images/icon-sprite.svg#icon-cross"></use> -->
+      </svg>
+
+      <span class="checkbox-franchise__label">
+        I agree to the use of my data.
+      </span>
+    </label>
+  </form>
+  <button type="submit" class="franchise-btn">Send</button>
+</div>
+
+<div class="modal contacts-location__modal" data-modal="9">
+  <button class="contacts-location__btn js-modal-close">
+    <!-- <svg>
+      <use></use>
+    </svg> -->
+  </button>
+  <p class="contacts-location__title">Come to us!</p>
+  <iframe class="frame" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2541.0352764852137!2d30.5114729156975!3d50.440443579474!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40d4cef96106f7b3%3A0x27b37ddfa711910!2z0YPQuy4g0JvRjNCy0LAg0KLQvtC70YHRgtC-0LPQviwgNywg0JrQuNC10LIsIDAyMDAw!5e0!3m2!1sru!2sua!4v1656268288318!5m2!1sru!2sua" width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+</div>
+
+<div class="overlay js-overlay-modal"></div>
+<!-- <script src="./js/modal.js"></script> -->
