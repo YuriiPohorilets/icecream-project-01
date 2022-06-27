@@ -164,12 +164,47 @@
 
 // .............................................Main button
 .about__button {
-    @include btn--s-about(14px, 18px);
-    padding: 17px 0;
+    position: relative;
+    width: 176px;
+    height: 44px;
+    padding: 14px 0;
+
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 18px;
+    color: getColor(accent);
+
+    background-color: getColor(primary);
+    border: none;
+    border-radius: 22px;
+
+    transition: background-color getProperty(time) getProperty(cubic), fill getProperty(time) getProperty(cubic);
+
+    cursor: pointer;
+
+    &:hover,
+    &:focus {
+        color: getColor(primary);
+        background-color: getColor(accent);
+    }
+
+    &:hover .about__icon,
+    &:focus .about__icon {
+        fill: getColor(primary);
+    }
+
 
     // @include bpoint(tablet) {
     //     @include btn--s-about(16px, 25px);
     // }
+
+}
+
+.about__icon {
+    position: absolute;
+    top: 18px;
+    right: 30px;
+    fill: getColor(accent);
 }
 
 // ...........................................Modal menu
