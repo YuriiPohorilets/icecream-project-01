@@ -33,27 +33,6 @@
     }
 }
 
-// Control
-.swiper-button-next.custom,
-.swiper-button-prev.custom {
-    display: none;
-
-    @include bpoint(tablet) {
-        display: block;
-
-        color: getColor(dots-slider);
-
-        opacity: 0.5;
-
-        transition: opacity getProperty(time) getProperty(cubic);
-
-        &:hover,
-        &:focus {
-            opacity: 1;
-        }
-    }
-}
-
 // Pagination
 .swiper-pagination.custom {
     position: relative;
