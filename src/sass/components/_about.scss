@@ -4,7 +4,7 @@
     background-image: url('/src/images/about/mobile/1x/sectionbg1x.png');
     background-size: 100%;
     background-repeat: no-repeat;
-    background-position: 70% 60%;
+    background-position: 70% 80%;
 
     @media (min-device-pixel-ratio: 2),
     (min-resolution: 192dpi),
@@ -137,7 +137,7 @@
 
     @include bpoint(desktop) {
         width: 463px;
-        padding-top: 60px;
+        padding-top: 50px;
     }
 }
 
@@ -157,8 +157,12 @@
 
 .about__description,
 .about__additional {
-    margin-bottom: 20px;
+    margin-bottom: 40px;
     color: getColor(copy);
+}
+
+.about__description--link {
+    color: getColor(accent);
 
 }
 
@@ -178,7 +182,8 @@
     border: none;
     border-radius: 22px;
 
-    transition: background-color getProperty(time) getProperty(cubic), fill getProperty(time) getProperty(cubic);
+    transition: background-color getProperty(time) getProperty(cubic),
+        fill getProperty(time) getProperty(cubic), color getProperty(time) getProperty(cubic);
 
     cursor: pointer;
 
@@ -233,11 +238,11 @@
     transform: translate(-50%, -50%);
 
     width: 90%;
-    max-width: 650px;
+    max-width: 700px;
     z-index: 30;
 
     padding: 20px;
-
+    font-size: 16px;
 
     background-color: getColor(primary);
     overflow-y: auto;
@@ -266,10 +271,14 @@
     @include bpoint(tablet) {
         display: block;
         max-width: 250px;
-        padding: 30px;
+        padding: 30px 15px 0 15px;
         margin-right: 15px;
         border-radius: 10px;
         background-color: rgba(212, 20, 67, 0.1);
+        background-image: url('/src/images/about/mobile/1x/sectionbg1x.png');
+        background-size: 100%;
+        background-repeat: no-repeat;
+        background-position-y: bottom;
     }
 }
 
@@ -316,6 +325,10 @@
     font-size: 16px;
     text-align: center;
     text-transform: uppercase;
+}
+
+.form {
+    padding: 7px;
 }
 
 .form__group {
