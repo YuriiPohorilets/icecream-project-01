@@ -65,17 +65,13 @@
 
 
 .products-card {
-	position: relative;
-	perspective: 1000px;
+	// position: relative;
 	margin: auto;
 
 	width: 280px;
 	height: 490px;
 	padding: 160px 40px 40px 40px;
 	border-radius: 24px;
-
-	transition-duration: 1s;
-	transform-style: preserve-3d;
 
 	// @include bpoint(tablet) {
 	// 	width: 224px;
@@ -124,50 +120,60 @@
 		// 	transform: translate(-50%, -65%);
 		// }
 	}
+}
 
-	&:hover {
-		transform: rotateY(180deg);
-	}
+.card {
+	position: relative;
+	// width: 280px;
+	// height: 490px;
+
+	// padding: 160px 40px 40px 40px;
+	// border-radius: 24px;
+
+	cursor: pointer;
+	transform-style: preserve-3d;
+	transform-origin: center right;
+	transition: transform 1s;
 }
 
 
-.products-card--back,
+.card.is-flipped {
+	transform: translateX(-100%) rotateY(-180deg);
+}
+
 .products-card--front {
 	position: absolute;
+	
 	width: 100%;
 	height: 100%;
+
 	-webkit-backface-visibility: hidden;
 	backface-visibility: hidden;
-	z-index: 9;
-}
 
-.products-card--front {
-	left: 0;
-	top: 0;
-
-	padding: 160px 40px 40px 40px;
-	border-radius: 24px;
-
-	// @include bpoint(tablet) {
+// @include bpoint(tablet) {
 	// 	padding: 100px 25px 40px 25px;
 	// }
 
 	// @include bpoint(desktop) {
 	// 	padding: 160px 40px 40px 40px;
 	// }
-
 }
 
-.products-card--back {
-	left: 0;
-	top: 0;
 
-	display: flex;
+.products-card--back {
+	position: absolute;
+
+	width: 100%;
+	height: 100%;
+
 	align-items: center;
 	padding: 160px 10px 20px 10px;
 	border-radius: 24px;
 
 	transform: rotateY(180deg);
+
+	-webkit-backface-visibility: hidden;
+	backface-visibility: hidden;
 
 	// @include bpoint(tablet) {
 	// 	padding: 150px 10px 20px 10px;
@@ -336,4 +342,8 @@
 	// @include bpoint(desktop) {
 	// 	margin-bottom: 60px;
 	// }
+}
+
+.products-card__description--back {
+	margin-bottom: 40px;
 }
