@@ -33,7 +33,7 @@ document.addEventListener('DOMContentLoaded', function() {
          overlay.classList.add('active');
          
          // Класс для body
-         // document.body.classList.add('modal-open');
+         document.body.classList.add('modal-open');
       }); // end click
 
    }); // end foreach
@@ -46,6 +46,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
          parentModal.classList.remove('active');
          overlay.classList.remove('active');
+         document.body.classList.remove('modal-open');
       });
 
    }); // end foreach
