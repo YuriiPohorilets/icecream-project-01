@@ -6,29 +6,29 @@
 	width: 100%;
 
 
-	// @include bpoint(mobile) {
-	// 	min-width: 320px;;
-	// }
+	@include bpoint(mobile) {
+		min-width: 320px;;
+	}
 
-	// @include bpoint(tablet) {
-	// 	max-width: 768px;
-	// }
+	@include bpoint(tablet) {
+		max-width: 768px;
+	}
 
-	// @include bpoint(desktop) {
-	// 	max-width: 1280px;
-	// }
+	@include bpoint(desktop) {
+		max-width: 1280px;
+	}
 }
 
 .products__wrapper {
 	margin-bottom: 148px;
 
-	// @include bpoint(tablet) {
-	// 	margin-bottom: 158px;
-	// }
+	@include bpoint(tablet) {
+		margin-bottom: 158px;
+	}
 
-	// @include bpoint(desktop) {
-	// 	margin-bottom: 281px;
-	// }
+	@include bpoint(desktop) {
+		margin-bottom: 281px;
+	}
 }
 
 .products__subtitle {
@@ -37,13 +37,13 @@
 	@extend %caption;
 	font-weight: 400;
 
-	// @include bpoint(tablet) {
-	// 	margin-bottom: 18px;
-	// }
+	@include bpoint(tablet) {
+		margin-bottom: 18px;
+	}
 
-	// @include bpoint(desktop) {
-	// 	margin-bottom: 16px;
-	// }
+	@include bpoint(desktop) {
+		margin-bottom: 16px;
+	}
 }
 
 .products__title {
@@ -56,38 +56,54 @@
 
 	@extend %list;
 
-	// @include bpoint(tablet) {
-	// 	display: flex;
-	// 	flex-wrap: wrap;
-	// 	justify-content: center;
-	// }
+	@include bpoint(tablet) {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: center;
+	}
 }
 
 
 .products-card {
-	// position: relative;
-	margin: auto;
+	margin: 0 auto;
 
-	width: 280px;
-	height: 490px;
-	padding: 160px 40px 40px 40px;
-	border-radius: 24px;
+	perspective: 600px;
 
-	// @include bpoint(tablet) {
-	// 	width: 224px;
-	// 	height: 470px;
-	// 	margin: 0;
+	
+	@include bpoint(mobile) {
+		width: 280px;
+		height: 490px;
+		&:not(:last-child) {
+				margin-bottom: 140px;
+			}
+	}
 
-	// 	&:not(:last-child) {
-	// 		margin-right: 15px;
-	// 	}
-	// }
+	@include bpoint(tablet) {
+		width: 224px;
+		height: 470px;
 
-	// @include bpoint(desktop) {
-	// 	width: 370px;
-	// 	height: 540px;
-	// 	margin: 0;
-	// }
+		&:not(:last-child) {
+			margin-right: 15px;
+			margin-bottom: 0;
+		}
+	}
+
+	@include bpoint(desktop) {
+		width: 370px;
+		height: 540px;
+		margin: 0;
+	}
+}
+
+.card {
+	position: relative;
+	width: 100%;
+	height: 100%;
+
+	cursor: pointer;
+	transform-style: preserve-3d;
+	transform-origin: center right;
+	transition: transform 1s;
 
 	&::before {
 		content: "";
@@ -104,36 +120,22 @@
 		width: 249px;
 		height: 252px;
 
-		// @include bpoint(tablet) {
-		// 	width: 224px;
-		// 	height: 224px;
-		// 	top: 0;
-		// 	left: 50%;
-		// 	transform: translate(-50%, -65%);
-		// }
+		@include bpoint(tablet) {
+			width: 224px;
+			height: 224px;
+			top: 0;
+			left: 50%;
+			transform: translate(-50%, -65%);
+		}
 
-		// @include bpoint(desktop) {
-		// 	width: 368px;
-		// 	height: 394px;
-		// 	top: 0;
-		// 	left: 50%;
-		// 	transform: translate(-50%, -65%);
-		// }
+		@include bpoint(desktop) {
+			width: 368px;
+			height: 394px;
+			top: 0;
+			left: 50%;
+			transform: translate(-50%, -65%);
+		}
 	}
-}
-
-.card {
-	position: relative;
-	// width: 280px;
-	// height: 490px;
-
-	// padding: 160px 40px 40px 40px;
-	// border-radius: 24px;
-
-	cursor: pointer;
-	transform-style: preserve-3d;
-	transform-origin: center right;
-	transition: transform 1s;
 }
 
 
@@ -147,18 +149,32 @@
 	width: 100%;
 	height: 100%;
 
-	-webkit-backface-visibility: hidden;
+	padding: 160px 40px 40px 40px;
+	border-radius: 24px;
+
 	backface-visibility: hidden;
 
-// @include bpoint(tablet) {
-	// 	padding: 100px 25px 40px 25px;
-	// }
+	@include bpoint(tablet) {
+		padding: 100px 25px 40px 25px;
+	}
 
-	// @include bpoint(desktop) {
-	// 	padding: 160px 40px 40px 40px;
-	// }
+	@include bpoint(desktop) {
+		padding: 160px 40px 40px 40px;
+	}
+
+	&--ice-cream {
+		background-color: getColor(background-hero);
+	}
+
+	&--ice-coffee {
+		background-color: getColor(background-label-a);
+	}
+
+	&--milk-shake {
+		background-color: getColor(background-label-b);
+	}
+
 }
-
 
 .products-card--back {
 	position: absolute;
@@ -167,34 +183,34 @@
 	height: 100%;
 
 	align-items: center;
-	padding: 160px 10px 20px 10px;
+	padding: 140px 10px 20px 10px;
 	border-radius: 24px;
 
 	transform: rotateY(180deg);
 
-	-webkit-backface-visibility: hidden;
 	backface-visibility: hidden;
 
-	// @include bpoint(tablet) {
-	// 	padding: 150px 10px 20px 10px;
-	// }
+	&--ice-cream {
+			background-color: getColor(background-hero);
+		}
 
-	// @include bpoint(desktop) {
-	// 	padding: 180px 30px 20px 30px;
-	// }
+	&--ice-coffee {
+		background-color: getColor(background-label-a);
+	}
+
+	&--milk-shake {
+		background-color: getColor(background-label-b);
+	}
+
+	@include bpoint(tablet) {
+		padding: 90px 10px 20px 10px;
+	}
+
+	@include bpoint(desktop) {
+		padding: 150px 30px 20px 30px;
+	}
 }
 
-.products-card--back--ice-cream {
-	background-color: getColor(background-hero);
-}
-
-.products-card--back--ice-coffee {
-	background-color: getColor(background-label-a);
-}
-
-.products-card--back--milk-shake {
-	background-color: getColor(background-label-b);
-}
 
 .products-card__title {
 	font-family: getFont(accent);
@@ -207,10 +223,10 @@
 
 	color: getColor(active-white);
 
-	// @include bpoint(desktop) {
-	// 	font-size: 30px;
-	// 	line-height: 1.33;
-	// }
+	@include bpoint(desktop) {
+		font-size: 30px;
+		line-height: 1.33;
+	}
 
 	&::after {
 		content: "...";
@@ -221,6 +237,26 @@
 		letter-spacing: 3px;
 	}
 }
+
+.products-card__title--back{
+	margin-bottom: 20px;
+
+	font-family: getFont(accent);
+	font-weight: 400;
+	font-size: 20px;
+	line-height: 1.15;
+	text-align: center;
+	letter-spacing: 0.04em;
+	text-transform: uppercase;
+
+	color: getColor(active-white);
+
+	@include bpoint(desktop) {
+		font-size: 30px;
+		line-height: 1.33;
+	}
+}
+
 
 .products-card__description {
 	margin-bottom: 32;
@@ -234,24 +270,17 @@
 
 	color: getColor(active-white);
 
-	// @include bpoint(tablet) {
-	// 	line-height: 176%;
-	// }
+	@include bpoint(tablet) {
+		line-height: 176%;
+	}
 
-	// @include bpoint(desktop) {
-	// 	margin-bottom: 60px;
-	// 	font-size: 17px;
-	// }
+	@include bpoint(desktop) {
+		margin-bottom: 60px;
+		font-size: 17px;
+	}
 }
 
-.products-card--ice-cream {
-	margin-bottom: 140px;
-
-	background-color: getColor(background-hero);
-
-	// @include bpoint(tablet) {
-	// 	margin-bottom: 0px;
-	// }
+.card--ice-cream {
 
 	&::before {
 		background-image: url(../images/products/320/ice-cream_mob@1x.png);
@@ -259,91 +288,106 @@
 		background-repeat: no-repeat;
 
 
-		// @include bpoint(mobile) {
-		// 	background-image: url(../images/products/320/ice-cream_mob@1x.png);
-		// }
+		@include bpoint(mobile) {
+			background-image: url(../images/products/320/ice-cream_mob@1x.png);
+		}
 
-		// @include bpoint(tablet) {
-		// 	background-image: url(../images/products/768/ice-cream_tablet@2x.png);
-		// }
+		@include bpoint(tablet) {
+			background-image: url(../images/products/768/ice-cream_tablet@1x.png);
+		}
 
-		// @include bpoint(desktop) {
-		// 	background-image: url(../images/products/1280/ice-cream_desc@3x.png);
-		// }
+		@include bpoint(desktop) {
+			background-image: url(../images/products/1280/ice-cream_desc@1x.png);
+		}
 	}
 }
 
-.products-card--ice-coffee {
-	margin-bottom: 140px;
-
-	background-color: getColor(background-label-a);
-
-	// @include bpoint(tablet) {
-	// 	margin-bottom: 0px;
-	// }
-
+.card--ice-coffee {
+	
 	&::before {
 		background-image: url(../images/products/320/ice-coffe_mob@1x.png);
 		background-size: contain;
 		background-repeat: no-repeat;
 
-		// @include bpoint(mobile) {
-		// 	background-image: url(../images/products/320/ice-coffe_mob@1x.png);
-		// }
+		@include bpoint(mobile) {
+			background-image: url(../images/products/320/ice-coffe_mob@1x.png);
+		}
 
-		// @include bpoint(tablet) {
-		// 	background-image: url(../images/products/768/ice-coffe_tablet@2x.png);
-		// }
+		@include bpoint(tablet) {
+			background-image: url(../images/products/768/ice-coffe_tablet@1x.png);
+		}
 
-		// @include bpoint(desktop) {
-		// 	background-image: url(../images/products/1280/ice-coffe_desc@3x.png);
-		// }
+		@include bpoint(desktop) {
+			background-image: url(../images/products/1280/ice-coffe_desc@1x.png);
+		}
 	}
 }
 
-.products-card--milk-shake {
-	background-color: getColor(background-label-b);
-
+.card--milk-shake {
+	
 	&::before {
 		background-image: url(../images/products/320/milkshakes_mob@1x.png);
 		background-size: contain;
 		background-repeat: no-repeat;
 
-		// @include bpoint(mobile) {
-		// 	background-image: url(../images/products/320/milkshakes_mob@1x.png);
-		// }
+		@include bpoint(mobile) {
+			background-image: url(../images/products/320/milkshakes_mob@1x.png);
+			
+		}
 
-		// @include bpoint(tablet) {
-		// 	background-image: url(../images/products/768/milkshakes_tablet@2x.png);
-		// }
+		@include bpoint(tablet) {
+			background-image: url(../images/products/768/milkshakes_tablet@1x.png);
+		}
 
-		// @include bpoint(desktop) {
-		// 	background-image: url(../images/products/1280/milkshakes_desc@3x.png);
-		// }
+		@include bpoint(desktop) {
+			background-image: url(../images/products/1280/milkshakes_desc@1x.png);
+		}
 	}
 }
 
+
+
 .products-card__button {
-	display: block;
+	display:flex;
+	justify-content: center;
+	align-items: center;
 	margin: 0 auto;
 	width: 40px;
 	height: 40px;
-	padding-bottom: 40;
+	margin-bottom: 40px;
 
 	border-radius: 50%;
-	border: none;
 
-
-	cursor: pointer;
 	background-color: getColor(active-white);
-	background-image: url(../images/products/arrow-right.svg);
 	background-repeat: no-repeat;
 
-	// @include bpoint(desktop) {
-	// 	margin-bottom: 60px;
-	// }
+	@include bpoint(desktop) {
+		margin-bottom: 60px;
+	}
 }
 
-.products-card__description--back {
-	margin-bottom: 40px;
+
+.products__arrow-icon{
+	fill: getColor(alarm-error);
+}
+
+.products__arrow-icon--front {
+	transform: rotate(180deg);
+}
+
+.products-card__list{
+	margin-bottom: 40;
+	padding-left: 25px;
+
+	@include bpoint(tablet) {
+		margin-bottom: 10px;
+	}
+
+	@include bpoint(desktop) {
+		margin-bottom: 0px;
+	}
+}
+
+.products-card__item {
+	color: getColor(active-white);
 }
