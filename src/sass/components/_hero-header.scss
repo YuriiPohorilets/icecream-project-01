@@ -128,6 +128,7 @@
 
 // End modal
 .header {
+
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -138,9 +139,14 @@
     z-index: 20;
     margin-left: auto;
     margin-right: auto;
-
-    @media screen and (max-width: 320px) {
+   
+    @media screen and (min-width: 320px) and (max-width: 767px) {
         padding-top: 8px;
+        left: 0;
+    }
+
+    @media screen and (min-width: 768px) and (max-width: 1199px) {
+        padding-top: 32px;
         left: 0;
     }
 
@@ -166,7 +172,11 @@
     align-items: center;
     color: #ffffff;
 
-    @media screen and (max-width: 320px) {
+    @media screen and (min-width: 320px) and (max-width: 767px) {
+        display: none;
+    }
+
+    @media screen and (min-width: 768px) and (max-width: 1199px)  {
         display: none;
     }
 }
@@ -209,7 +219,7 @@
         background-color: #ECEBEB;
     }
 
-    @media screen and (max-width: 320px) {
+    @media screen and (min-width: 320px) and (max-width: 767px) {
         display: none;
     }
 }
@@ -245,7 +255,7 @@
     fill: #d41443;
     margin-left: 12px;
 
-    @media screen and (max-width: 320px) {
+    @media screen and (min-width: 320px) and (max-width: 767px) {
         margin-left: 15px;
     }
 }
@@ -274,7 +284,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    position: relative;
+    position: absolute;
     top: 0;
     left: 0;
 
@@ -310,6 +320,15 @@
         border-radius: 4px;
         transition: transform getProperty(time) getProperty(cubic),
             background-color getProperty(time) getProperty(cubic);
+    }
+    @media screen and (min-width: 320px) and (max-width: 767px) {
+        left: 270px;
+        top: 20px;
+    }
+
+    @media screen and (min-width: 768px) and (max-width: 1199px)  {
+        left: 524px;
+        top: 40px;
     }
 
     @media screen and (min-width: 1200px) {
@@ -366,13 +385,26 @@
     transform: translateY(-100%);
     transition: transform getProperty(time) getProperty(cubic);
 
+    &.is-open {
+        transform: translateX(0);
+    }
+
+    @media screen and (min-width: 320px) and (max-width: 767px) {
+
+    }
+
+    @media screen and (min-width: 768px) and (max-width: 1199px)  {
+        width: 300px;
+        height: 416px;
+        left: 280px;
+    }
+
     @media screen and (min-width: 1200px) {
         display: none;
     }
 
-    &.is-open {
-        transform: translateX(0);
-    }
+
+
 }
 
 
@@ -397,7 +429,7 @@
     margin-left: auto;
     margin-right: auto;
 
-    @media screen and (max-width: 320px) {
+    @media screen and (min-width: 320px) and (max-width: 767px) {
         background-image: url(../images/hero-header/icecream.png), url(../images/hero-header/circle.png);
         background-size: 171px, 346px;
         background-position: 117px bottom, 36px 83px;
@@ -405,10 +437,18 @@
         padding: 194px 82px 158px 20px;
     }
 
+    @media screen and (min-width: 768px) and (max-width: 1199px)  {
+        padding: 102px 32px 56px 32px;
+        height: 416px;
+        background-size: 143px, 190px, 152px, 335px;
+        background-position: 322px bottom, 546px bottom, 32px 246px, 248px 43px;
+    }
+
     @media screen and (min-width: 1200px) {
         max-height: 664px;
         padding: 144px 16px 60px 16px;
     }
+
 }
 
 .hero__text {
@@ -423,10 +463,16 @@
     width: 260px;
     margin-bottom: 24px;
 
-    @media screen and (max-width: 320px) {
+    @media screen and (min-width: 320px) and (max-width: 767px) {
         font-size: 26px;
         line-height: 1.15;
         width: 200px;
+        margin-bottom: 20px;
+    }
+
+    @media screen and (min-width: 768px) and (max-width: 1199px)  {
+        font-size: 22px;
+        width: 162px;
         margin-bottom: 20px;
     }
 }
@@ -442,9 +488,13 @@
     color: #d41443;
 
 
-    @media screen and (max-width: 320px) {
+    @media screen and (min-width: 320px) and (max-width: 767px) {
         font-size: 48px;
         line-height: 0.97;
+    }
+
+    @media screen and (min-width: 768px) and (max-width: 1199px)  {
+        font-size: 34px;
     }
 }
 
@@ -465,9 +515,13 @@
     border: none;
     margin-right: 12px;
 
-    @media screen and (max-width: 320px) {
+    @media screen and (min-width: 320px) and (max-width: 767px) {
         font-size: 8px;
         line-height: 1.25;
+    }
+
+    @media screen and (min-width: 768px) and (max-width: 1199px)  {
+        font-size: 8px;
     }
 }
 
@@ -492,14 +546,18 @@
         background-color: #ECEBEB;
     }
 
-    @media screen and (max-width: 320px) {
+    @media screen and (min-width: 320px) and (max-width: 767px) {
         font-size: 8px;
         line-height: 1.25;
+    }
+
+    @media screen and (min-width: 768px) and (max-width: 1199px)  {
+        font-size: 8px;
     }
 }
 
 .hero__list {
-    @media screen and (max-width: 320px) {
+    @media screen and (min-width: 320px) and (max-width: 767px) {
         display: none;
     }
 }
@@ -531,10 +589,21 @@
         border-radius: 50%;
         left: 57px;
         bottom: 48px;
+
+        @media screen and (min-width: 768px) and (max-width: 1199px)  {
+            width: 16px;
+            height: 16px;
+            left: 40px;
+            bottom: 25px;
+        }
     }
 
     &:first-child {
         margin-bottom: 15px;
+    }
+
+    @media screen and (min-width: 768px) and (max-width: 1199px)  {
+        font-size: 8px;
     }
 }
 
@@ -549,6 +618,10 @@
     text-transform: uppercase;
     color: #d41443;
     z-index: 10;
+
+    @media screen and (min-width: 768px) and (max-width: 1199px)  {
+        font-size: 28px;
+    }
 }
 
 .hero__slide {
@@ -562,8 +635,16 @@
     margin-bottom: 20px;
     margin-left: 213px;
 
-    @media screen and (max-width: 320px) {
+    @media screen and (min-width: 320px) and (max-width: 767px) {
         display: none;
+    }
+
+    @media screen and (min-width: 768px) and (max-width: 1199px)  {
+        margin-left: 184px;
+        font-size: 8px;
+        width: 120px;
+        line-height: 1.5;
+        margin-bottom: 7px;
     }
 }
 
@@ -579,8 +660,14 @@
     margin-left: 213px;
     color: #d41443;
 
-    @media screen and (max-width: 320px) {
+    @media screen and (min-width: 320px) and (max-width: 767px) {
         display: none;
+    }
+
+    @media screen and (min-width: 768px) and (max-width: 1199px)  {
+        width: 18px;
+        height: 18px;
+        margin-left: 184px;
     }
 
     &:hover,
@@ -597,4 +684,8 @@
     display: flex;
     justify-content: space-between;
     margin-bottom: 108px;
+
+    @media screen and (min-width: 768px) and (max-width: 1199px)  {
+        margin-bottom: 61px;
+    }
 }
