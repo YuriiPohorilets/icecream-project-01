@@ -211,15 +211,15 @@
 	backface-visibility: hidden;
 
 	&--ice-cream {
-		background-color: getColor(background-hero);
+		background-color: getColor(card-backface-a);
 	}
 
 	&--ice-coffee {
-		background-color: getColor(background-label-a);
+		background-color: getColor(card-backface-b);
 	}
 
 	&--milk-shake {
-		background-color: getColor(background-label-b);
+		background-color: getColor(card-backface-c);
 	}
 
 	@include bpoint(tablet) {
