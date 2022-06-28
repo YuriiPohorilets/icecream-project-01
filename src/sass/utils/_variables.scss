@@ -11,6 +11,11 @@ $colors: (
     'background-section': #FFF5F6,
     'background-slider': #FAFAFA,
     'background-menu': #E17992,
+    'background-backdrop': rgba(255, 145, 173, 0.502),
+
+    'card-backface-a': #ff86a4,
+    'card-backface-b': #ffc471,
+    'card-backface-c': #a0d757,
 
     'active-accent': #FFA5BA,
     'active-white': #FFFFFF,
@@ -25,7 +30,6 @@ $colors: (
     'pagination': #D9D9D9,
     'pagination-active': #D31342,
 
-    'background-backdrop': rgba(212, 20, 67, 0.502),
     'alarm-error': #E22F37,
     'alarm-warning': #FFC039,
     'alarm-valid': #69E883,
