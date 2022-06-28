@@ -1,3 +1,132 @@
+// Modal
+.modal.modal--first {
+    display: block;
+
+    border-radius: 25px;
+    background-image: url('../images/hero-header/icecream-pattern.jpg');
+    background-size: contain;
+}
+
+.form-a__list {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.form-a__title {
+    @extend %title;
+    font-size: 18px;
+    margin-bottom: 10px;
+
+    @include bpoint(tablet) {
+        font-size: 24px;
+    }
+}
+
+.input-group {
+    padding: 10px;
+    width: 100%;
+
+    background-color: getColor(active-white);
+    border: 2px solid getColor(active-accent);
+    border-radius: 25px;
+
+    &:not(:last-child) {
+        margin-bottom: 20px;
+    }
+}
+
+.input-group__box {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+
+    @include bpoint(tablet) {
+        flex-wrap: nowrap;
+    }
+}
+
+.input-group__title {
+    font-weight: 700;
+    font-size: 18px;
+}
+
+.form-a__list {
+    text-align: left;
+}
+
+.input-group__item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+
+    @include bpoint(tablet) {
+        flex-direction: column;
+    }
+}
+
+.input-group__img {
+    margin-bottom: 10px;
+
+    width: 50px;
+    height: 50px;
+
+    transition: transform getProperty(time) getProperty(cubic);
+
+    &:hover,
+    &:focus {
+        transform: scale(1.2);
+    }
+
+    @include bpoint(tablet) {
+        width: 100px;
+        height: 100px;
+    }
+}
+
+.input-group__label {
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    font-size: 14px;
+    text-align: center;
+    color: getColor(copy);
+
+    &:hover,
+    &:focus {
+        color: getColor(active-accent);
+    }
+
+    &:last-child {
+        margin-bottom: 0;
+    }
+
+    @include bpoint(tablet) {
+        flex-direction: column;
+    }
+}
+
+.input-group__input {
+    padding: 5px 10px;
+    margin-left: 5px;
+    max-width: 150px;
+
+    border: 1px solid getColor(active-accent);
+    border-radius: 4px;
+    color: getColor(copy);
+}
+
+.btn__form-a {
+    @include btn--dark(150px, 40px);
+}
+
+
+// End modal
 .header {
     display: flex;
     align-items: center;
