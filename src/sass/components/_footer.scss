@@ -188,6 +188,8 @@
 
     transition: opacity getProperty(time) getProperty(cubic),
         visibility getProperty(time) getProperty(cubic);
+
+    animation: slide-top 1s linear 2s infinite alternate both;
 }
 
 .js-transparent {
@@ -229,4 +231,14 @@
 .scroll-to-top:hover .scroll__back,
 .scroll-to-top:focus .scroll__back {
     transform: rotateY(360deg);
+}
+
+@keyframes slide-top {
+    from {
+        transform: translateY(-5px);
+    }
+
+    to {
+        transform: translateY(5px);
+    }
 }
