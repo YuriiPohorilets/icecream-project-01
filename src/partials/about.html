@@ -1,7 +1,7 @@
 <section class="about section about--overlay" id="about">
   <div class="container">
     <p class="about__uppertitle">tradition and love</p>
-    <h2 class="about__title">how it's made?</h2>
+    <h2 class="about__title about__title--anim">how it's made?</h2>
     <div class="about__container">
       <div class="about__container--img">
         <picture>
@@ -62,27 +62,37 @@
           />
           <img
             class="about__img"
-            src="./images/about/tablet/2x/home-pic2x.png"
+            src="./images/about/desktop/2x/home-pic2x.png"
             alt="You can see a Cow and some Milk"
           />
         </picture>
       </div>
       <div class="about__content">
         <p class="about__subtitle">
-          Fusce ut velit laoreet, tempus arcu eu, molestie tortor. Nam vel justo
-          cursus, faucibus lorem eget, egestas eros. Maecenas eleifend erat at
-          justo fringilla.
+          We have been working for 10 years. Our clients become our partners and
+          bring their loved ones. We are very proud of our achievements.
         </p>
         <p class="about__description">
-          Curabitur lacinia enim at ex blandit, vel pellentesque odio elementum.
-          Mauris rhoncus orci in imperdiet placerat. Vestibulum euismod nisl
-          suscipit ligula volutpat, a feugiat urna maximus. Cras massa nibh,
-          tincidunt.
+          How did we get started? First we opened our first cafe, it was very
+          scary that people would not like our products. We have established
+          contacts with certified suppliers of homemade dairy products. We
+          developed, opened more and more cafes and we decided to open our own
+          farm.
         </p>
-        <p class="about__additional">Aliquam erat volutpat. Aenean accumsan.</p>
+        <p class="about__additional">
+          You can see them on the map:
+          <a
+            class="about__description--link"
+            href="https://goo.gl/maps/DoXyVDVoQpJnmiSt6"
+            target="_blank"
+            rel="noopener noreferrer"
+            >clicking here will take you to the map.</a
+          >
+          We have developed a network of deliveries to the home, to the office.
+        </p>
         <button class="about__button js-open-modal" data-modal="2">
           Read more
-          <svg class="about__icon" width="11" height="11">
+          <svg class="about__icon" width="9" height="9">
             <use href="./images/icon-sprite.svg#icon-arrow-right"></use>
           </svg>
         </button>
@@ -90,10 +100,9 @@
     </div>
     <div class="modal" data-modal="2">
       <p class="modal__content">
-        Curabitur lacinia enim at ex blandit, vel pellentesque odio elementum.
-        Mauris rhoncus orci in imperdiet placerat. Vestibulum euismod nisl
-        suscipit ligula volutpat, a feugiat urna maximus. Cras massa nibh,
-        tincidunt.
+        You motivate us by buying our products, we are very happy to see your
+        happy eyes with a milkshake in your hands. If you want to learn more
+        about our products, share ideas or new recipes, send contacts.
       </p>
       <div class="form__container">
         <button class="modal__btn js-modal-close">
@@ -168,7 +177,7 @@
               </svg>
               <span class="form-policy__icon form-policy__icon--uncheck"></span>
             </div>
-            <div class="form-policy__check">
+            <span class="form-policy__check">
               I agree with the
               <a
                 class="form-policy--link"
@@ -178,9 +187,9 @@
               >
                 Privacy Statement</a
               >
-            </div>
+            </span>
           </label>
-          <button class="form__btn about__button" type="submit">submit</button>
+          <button class="form__btn about__button" type="submit">send</button>
         </form>
       </div>
     </div>
