@@ -1,39 +1,37 @@
 .contacts {
-    padding-bottom: 40px;
     background: linear-gradient(180deg, #fff 302px, #fff5f6 0);
 
-    // @include bpoint(tablet) {
-    //     padding-top: 20px;
-    //     background: linear-gradient(180deg, #fff 316px,#fff5f6 0);
-    // }
+    @include bpoint(tablet) {
+        padding-top: 20px;
+        background: linear-gradient(180deg, #fff 316px,#fff5f6 0);
+    }
 
-    // @include bpoint(desktop) {
-    //     padding-top: 60px;
-    //     padding-bottom: 120px;
-    //     background: linear-gradient(180deg, #fff 159px,#fff5f6 0);
-    // }
+    @include bpoint(desktop) {
+        padding-top: 60px;
+        background: linear-gradient(180deg, #fff 159px,#fff5f6 0);
+    }
 }
 
 .contacts__card-wrap {
     margin-bottom: 32px;
 
-    // @include bpoint(tablet) {
-    //     margin-bottom: 60px;
-    // }
+    @include bpoint(tablet) {
+        margin-bottom: 60px;
+    }
 }
 
 .contacts__list {
     @extend %list;
 
-    // @include bpoint(tablet) {
-    //     display: flex;
-    //     flex-wrap: wrap;
-    // }
+    @include bpoint(tablet) {
+        display: flex;
+        flex-wrap: wrap;
+    }
 }
 
 .contacts__item {
-    // width: 100%;
-    max-width: 280px;
+    width: 100%;
+    // max-width: 280px;
     padding: 40px 32px;
     margin-left: auto;
     margin-right: auto;
@@ -42,22 +40,22 @@
     border-radius: 24px;
     transition: transform getProperty(time) getProperty(cubic), box-shadow getProperty(time) getProperty(cubic);
 
-    // @include bpoint(mobile){
-    //     width: 280px;
-    // }
+    @include bpoint(mobile){
+        width: 280px;
+    }
 
-    // @include bpoint(tablet) {
-    //     flex-basis: calc((100% - 64px) /3);
+    @include bpoint(tablet) {
+        flex-basis: calc((100% - 64px) /3);
 
-    //     &:not(:last-child) {
-    //         margin-right: 32px;
-    //     }
-    // }
+        &:not(:last-child) {
+            margin-right: 32px;
+        }
+    }
 
-    // @include bpoint(desktop) {
-    //     padding: 40px;
+    @include bpoint(desktop) {
+        padding: 40px;
 
-    // }
+    }
     &:hover {
         transform: scale(1.05);
         box-shadow: 0px 8px 30px rgba(212, 20, 67, 0.3);
@@ -73,9 +71,9 @@
 
 .contacts__address {
     padding-bottom: 24px;
-    // @include bpoint(tablet){
-    //     padding-bottom: 32px;
-    // }
+    @include bpoint(tablet){
+        padding-bottom: 32px;
+    }
 }
 
 .contacts__title {
@@ -92,22 +90,22 @@
     background-color: getColor(background-label-a);
     border-radius: 4px;
 
-    // @include bpoint(tablet) {
-    //     margin-bottom: 32px;
-    //     width: 73px;
-    //     height: 28px;
-    //     font-size: 16px;
+    @include bpoint(tablet) {
+        margin-bottom: 32px;
+        width: 73px;
+        height: 28px;
+        font-size: 16px;
 
-    //     @include lh(30px, 16px);
+        @include lh(30px, 16px);
 
-    // }
+    }
 
     &--green {
         width: 130px;
         background-color: getColor(background-label-b);
-        // @include bpoint(tablet){
-        //     width: 138px;
-        // }
+        @include bpoint(tablet){
+            width: 138px;
+        }
     }
 }
 
@@ -115,27 +113,27 @@
     margin-bottom: 8px;
     color: getColor(secondary);
 
-    // @include bpoint(tablet) {
-    //     @include lh(26px, 14px);
-    //     margin-bottom: 12px;
-    // }
+    @include bpoint(tablet) {
+        @include lh(26px, 14px);
+        margin-bottom: 12px;
+    }
 
-    // @include bpoint(desktop) {
-    //     @include lh(30px, 16px);
-    //     margin-bottom: 8px;
-    // }
+    @include bpoint(desktop) {
+        @include lh(30px, 16px);
+        margin-bottom: 8px;
+    }
 }
 
 .contacts__text {
     color: getColor(copy);
 
-    // @include bpoint(tablet) {
-    //     @include lh(23px, 14px);
-    // }
+    @include bpoint(tablet) {
+        @include lh(23px, 14px);
+    }
 
-    // @include bpoint(desktop) {
-    //     @include lh(30px, 16px);
-    // }
+    @include bpoint(desktop) {
+        @include lh(30px, 16px);
+    }
 }
 
 .contacts__work {
@@ -144,10 +142,10 @@
     border-top: 1px solid getColor(line);
     border-bottom: 1px solid getColor(line);
 
-    // @include bpoint(tablet) {
-    //     padding: 32px 0;
+    @include bpoint(tablet) {
+        padding: 32px 0;
 
-    // }
+    }
 
 }
 
@@ -159,23 +157,23 @@
 
 }
 
-// @include bpoint(tablet){
-//         .contacts__work-time:not(:last-child){
-//             margin-bottom: 12px;
-//         }
-//     }
+@include bpoint(tablet){
+        .contacts__work-time:not(:last-child){
+            margin-bottom: 12px;
+        }
+    }
 
 .contacts__day {
 
     color: getColor(secondary);
 
-    // @include bpoint(tablet) {
-    //     @include lh(26px, 14px);
-    // }
+    @include bpoint(tablet) {
+        @include lh(26px, 14px);
+    }
 
-    // @include bpoint(desktop) {
-    //     @include lh(30px, 16px);
-    // }
+    @include bpoint(desktop) {
+        @include lh(30px, 16px);
+    }
 }
 
 .contacts__time {
@@ -187,9 +185,9 @@
     padding-top: 24px;
     @extend %list;
 
-    // @include bpoint(tablet){
-    //     padding-top: 32px;
-    // }
+    @include bpoint(tablet){
+        padding-top: 32px;
+    }
 }
 
 .contacts__link {
@@ -198,13 +196,13 @@
     text-decoration: none;
     transition: color getProperty(time) getProperty(cubic);
 
-    // @include bpoint(tablet) {
-    //     @include lh(26px, 14px);
-    // }
+    @include bpoint(tablet) {
+        @include lh(26px, 14px);
+    }
 
-    // @include bpoint(desktop) {
-    //     @include lh(30px, 16px);
-    // }
+    @include bpoint(desktop) {
+        @include lh(30px, 16px);
+    }
 
     &:hover,
     &:focus {
@@ -214,26 +212,28 @@
 
 .contacts__button-wrap {
     display: flex;
+    padding: 0;
     flex-direction: column;
     align-items: center;
     justify-content: center;
 
 
-    // @include bpoint(tablet){
-    //   flex-direction: row;
-    // }
+    @include bpoint(tablet){
+      flex-direction: row;
+    }
 }
 
 .contacts__button--locations {
     margin-bottom: 10px;
+    padding: 0;
     @include btn--dark(160px, 44px);
 
     color: getColor(primary);
 
-    // @include bpoint(tablet){
-    //     margin: 0 15px 0 0;
-    //     @include  btn--dark(200px, 44px)
-    // }
+    @include bpoint(tablet){
+        margin: 0 15px 0 0;
+        @include  btn--dark(200px, 44px)
+    }
 }
 
 .contacts__button--franchise {
@@ -241,18 +241,18 @@
 
     color: getColor(accent);
 
-    // @include bpoint(tablet){
-    //     @include  btn--light(200px, 44px)
-    // }
+    @include bpoint(tablet){
+        @include  btn--light(200px, 44px)
+    }
 }
 
 .contacts__button--svg {
     margin-left: 8px;
     fill: currentColor;
 
-    // @include bpoint(tablet){
-    //     margin-left: 14px;
-    // }
+    @include bpoint(tablet){
+        margin-left: 14px;
+    }
 }
 
 
@@ -280,19 +280,21 @@
     width: 30px;
     height: 30px;
 
+    background-color: getColor(active-accent);
     border: 2px solid getColor(accent);
     border-radius: 50%;
     cursor: pointer;
+    transition: background-color getProperty(time) getProperty(cubic);
 
     &:hover,
     &:focus {
-        background-color: getColor(btn-hover-dark);
+        background-color: getColor(primary);
         // border: 3px solid getColor(btn-hover-dark);
     }
 }
 
 .contacts-modal__icon {
-    fill: currentColor;
+    fill: getColor(accent);
 }
 
 .contacts-modal__title {
@@ -339,6 +341,7 @@
         padding: 12px 12px 12px 42px;
 
         color: getColor(accent);
+        background-color: getColor(active-accent);
         border: 2px solid getColor(accent);
         border-radius: 4px;
         cursor: pointer;
@@ -347,11 +350,30 @@
         transition: border getProperty(time) getProperty(cubic);
 
     }
+    &__icon{
+        position: absolute;
+        top: 50%;
+        left: 15px;
+        cursor: pointer;
+        transform: translateY(-50%);
+    
+        color: getColor(primary);
+        fill: currentColor;
+        transition: fill getProperty(time) getProperty(cubic);
+    
+    }
 }
+
+
 
 .franchise-form__label:hover .franchise-form__input,
 .franchise-form__label:focus-within .franchise-form__input {
     border: 2px solid getColor(btn-hover-dark);
+}
+
+.franchise-form__label:hover .franchise-form__icon,
+.franchise-form__label:focus-within .franchise-form__icon {
+    fill: getColor(accent);
 }
 
 
@@ -370,28 +392,30 @@
     &__input {
         position: absolute;
     }
+
 }
 
+
 .checkbox-franchise__icon {
-    fill: getColor(primary);
+    fill: getColor(active-accent);
     margin-right: 8px;
 
-    background-color: getColor(primary);
+    background-color: getColor(active-accent);
     border: 2px solid getColor(accent);
     border-radius: 4px;
 
-    transition: border getProperty(time) getProperty(cubic);
+    transition: border getProperty(time) getProperty(cubic), fill getProperty(time) getProperty(cubic), background-color getProperty(time) getProperty(cubic);
 
     .checkbox-franchise__input:checked+& {
         // border-color: getColor(active-black);
-        background-color: getColor(active-accent);
+        background-color: getColor(primary);
         fill: getColor(secondary);
         background-size: contain;
         background-origin: border-box;
     }
 
     .checkbox-franchice__input:hover~&,
-    .checkbox-franchice__input:focus~& {
+    .checkbox-franchice__input:focus-within~& {
         border: 2px solid getColor(btn-hover-dark);
     }
 
@@ -404,6 +428,7 @@
 .franchise-btn {
     display: flex;
     margin: 8px auto 0 auto;
+    padding: 0;
     align-items: center;
     justify-content: center;
 
@@ -416,11 +441,12 @@
     @include lh (30px, 18px);
     color: getColor(accent);
 
-    // background-color: getColor(accent);
+    background-color: getColor(active-accent);
     border: 2px solid getColor(accent);
     border-radius: 22px;
 
-    transition: color getProperty(time) getProperty(cubic), background-color getProperty(time) getProperty(cubic);
+    transition: color getProperty(time) getProperty(cubic), background-color getProperty(time) getProperty(cubic),
+    box-shadow getProperty(time) getProperty(cubic);
 
     cursor: pointer;
 
@@ -428,6 +454,8 @@
     &:focus {
         color: getColor(primary);
         background-color: getColor(btn-hover-dark);
+        box-shadow: getShadow(btn);
+        
     }
 }
 
@@ -436,7 +464,7 @@
 .contacts-location__modal {
     position: fixed;
     background-color: getColor(active-accent);
-    width: 90vw;
+    width: 90%;
     height: 500px;
 }
 
@@ -453,13 +481,15 @@
     width: 30px;
     height: 30px;
 
+    background-color: getColor(active-accent);
     border: 2px solid getColor(accent);
     border-radius: 50%;
     cursor: pointer;
+    transition: background-color getProperty(time) getProperty(cubic);
 
     &:hover,
     &:focus {
-        background-color: getColor(btn-hover-dark);
+        background-color: getColor(primary);
         // border: 3px solid getColor(btn-hover-dark);
     }
 }
@@ -476,5 +506,5 @@
 }
 .frame{
     width: 90%;
-    height: 80%;
+    height: 85%;
 }
