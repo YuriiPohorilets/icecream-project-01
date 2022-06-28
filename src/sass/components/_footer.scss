@@ -3,13 +3,13 @@
 }
 
 .footer__container {
-   padding: 40px 20px;
+    padding: 40px 20px;
 
-  @include bpoint(tablet) {
-    display: flex;
-    justify-content: space-between;
-    align-items: baseline;
-   }
+    @include bpoint(tablet) {
+        display: flex;
+        justify-content: space-between;
+        align-items: baseline;
+    }
 }
 
 .footer__text {
@@ -99,7 +99,8 @@
     transition: background-color getProperty(time) getProperty(cubic);
     border-radius: 50%;
 
-    &:hover, &:focus {
+    &:hover,
+    &:focus {
         background-color: getColor(btn-hover-dark);
     }
 
@@ -140,7 +141,8 @@
     color: getColor(accent);
     transition: color getProperty(time) getProperty(cubic);
 
-    &:hover, &:focus {
+    &:hover,
+    &:focus {
         color: getColor(copy);
     }
 }
@@ -183,10 +185,15 @@
 
     opacity: 0.7;
     z-index: 999;
+
+    transition: opacity getProperty(time) getProperty(cubic),
+        visibility getProperty(time) getProperty(cubic);
 }
 
 .js-transparent {
-    display: none;
+    // display: none;
+    opacity: 0;
+    visibility: hidden;
 }
 
 .scroll__face,
