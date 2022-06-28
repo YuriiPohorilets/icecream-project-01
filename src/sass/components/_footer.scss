@@ -4,11 +4,25 @@
 
 .footer__container {
    padding: 40px 20px;
+
+  @include bpoint(tablet) {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+   }
 }
 
 .footer__text {
     max-width: 234px;
     margin-bottom: 40px;
+
+    @include bpoint(tablet) {
+        max-width: 340px;
+    }
+
+    @include bpoint(desktop) {
+        max-width: 50%;
+    }
 }
 
 .footer__title {
@@ -19,6 +33,18 @@
     color: getColor(active-accent);
 
     margin-bottom: 16px;
+
+    @include bpoint(tablet) {
+        font-size: 26px;
+        line-height: 1.15;
+        margin-bottom: 16px;
+    }
+
+    @include bpoint(desktop) {
+        font-size: 30px;
+        line-height: 1.133;
+        margin-bottom: 15px;
+    }
 }
 
 .footer__subtitle {
@@ -28,7 +54,19 @@
     line-height: 1.14;
 
     color: getColor(accent);
+
+    @include bpoint(tablet) {
+        font-size: 48px;
+        letter-spacing: .06em;
+        margin-bottom: 0;
+    }
+
+    @include bpoint(desktop) {
+        font-size: 58px;
+        line-height: 1.138;
+    }
 }
+
 
 .footer__socials-list {
     @extend %list;
@@ -40,7 +78,11 @@
 }
 
 .footer__socials-item:not(:last-child) {
-    margin-right: 30px;
+    margin-right: 28px;
+
+    @include bpoint(tablet) {
+        margin-right: 30px;
+    }
 }
 
 .footer__socials-link {
@@ -61,6 +103,11 @@
         background-color: getColor(btn-hover-dark);
     }
 
+    @include bpoint(tablet) {
+        width: 34px;
+        height: 34px;
+    }
+
 }
 
 .footer__socials-icon {
@@ -75,6 +122,14 @@
     line-height: 1.833;
 
     color: getColor(active-black);
+
+    @include bpoint(tablet) {
+        font-size: 14px;
+    }
+
+    @include bpoint(desktop) {
+        font-size: 16px;
+    }
 }
 
 .footer__contacts-link {
@@ -131,7 +186,7 @@
 }
 
 .js-transparent {
-    display: none;
+    // display: none;
 }
 
 .scroll__face,
