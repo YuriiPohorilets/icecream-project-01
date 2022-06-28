@@ -5,10 +5,13 @@
 .products__container {
 	width: 100%;
 
+	@media screen and (max-width:320px ) {
+		display: none;
+	}
 
 	@include bpoint(mobile) {
 		min-width: 320px;
-		;
+		display: block;
 	}
 
 	@include bpoint(tablet) {
@@ -524,9 +527,10 @@
 	fill: getColor(alarm-error);
 }
 
-// .products__arrow-icon--front {
-// 	transform: rotate(180deg);
-// }
+
+.products__arrow-icon--back {
+	transform: rotate(180deg)
+}
 
 .products-card__list {
 	padding-left: 25px;
