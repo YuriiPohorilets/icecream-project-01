@@ -1,4 +1,55 @@
 <header class="header container" id="home">
+    <!-- Modal -->
+    <div class="modal modal--first" data-modal="1">
+        <button class="modal__btn js-modal-close">
+            <svg class="modal__icon" width="12" height="15">
+                <use href="./images/icon-sprite.svg#icon-cross"></use>
+            </svg>
+        </button>
+        <form class="form-a">
+            <p class="form-a__title">Make your choice...</p>
+
+            <div class="form-a__list">
+                <div class="input-group input-group--products" role="group" aria-labelledby="products-items-head">
+                    <p class="input-group__title" id="products-items-head">Choose product</p>
+                    <div class="input-group__box">
+                        <div class="input-group__item">
+                            <label class="input-group__label" for="product-ice">
+                                <img class="input-group__img" src="./images/products/1280/ice-cream_desc@1x.png"
+                                    alt="Icecream">
+                                Ice cream
+                            </label>
+                            <input class="input-group__input" name="product" id="product-ice" type="number" value="0"
+                                min="0" max="10">
+                        </div>
+
+                        <div class="input-group__item">
+                            <label class="input-group__label" for="product-coffee">
+                                <img class="input-group__img" src="./images/products/1280/milkshakes_desc@1x.png"
+                                    alt="milkshake">
+                                Ice coffee
+                            </label>
+                            <input class="input-group__input" name="product" id="product-coffee" type="number" value="0"
+                                min="0" max="10">
+                        </div>
+
+                        <div class="input-group__item">
+                            <label class="input-group__label" for="product-milk">
+                                <img class="input-group__img" src="./images/products/1280/ice-coffe_desc@1x.png"
+                                    alt="coffee">
+                                Milkshakes
+                            </label>
+                            <input class="input-group__input" name="product" id="product-milk" type="number" value="0"
+                                min="0" max="10">
+                        </div>
+                    </div>
+                </div>
+                <button class="btn__form-a" type="submit">Buy</button>
+            </div>
+        </form>
+    </div>
+    <div class="overlay js-overlay-modal"></div>
+    <!-- End modal -->
     <a href="#"><img class="header__logo" src="./images/hero-header/logo.png" alt="Логотип Компании" /></a>
     <ul class="header__list">
         <li class="header__item"> <a class="header__link" href="#home">Home</a> </li>
@@ -7,7 +58,7 @@
         <li class="header__item"> <a class="header__link" href="#products">Our products</a> </li>
         <li class="header__item"> <a class="header__link" href="#contacts">Contact</a> </li>
     </ul>
-    <button class="header__btn" type="button">
+    <button class="header__btn js-open-modal" type="button" data-modal="1">
         Buy now
         <svg class="header__svg" width="4" height="8">
             <use href="./images/icon-sprite.svg#icon-bracket"></use>
@@ -16,8 +67,8 @@
     <div href="#" class="burger js-menu">
         <span class="burger__icon"></span>
     </div>
-    <div class="header__menu" is-open>
-        <button class="header__mobile-btn" type="button">
+    <div class="header__menu">
+        <button class="header__mobile-btn js-open-modal" type="button" data-modal="1">
             Buy now
             <svg class="header__svg" width="4" height="8">
                 <use href="./images/icon-sprite.svg#icon-bracket"></use>
