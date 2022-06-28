@@ -1,10 +1,11 @@
 .header {
+
     display: flex;
     align-items: center;
     justify-content: space-between;
     position: absolute;
     top: 0;
-    left: 5.35%;
+    left: 2.6%;
     width: 100vw;
     z-index: 20;
     margin-left: auto;
@@ -27,6 +28,7 @@
 }
 
 .header__list {
+    @extend %list;
     display: flex;
     font-family: "DM Sans";
     font-style: normal;
@@ -41,7 +43,17 @@
     }
 }
 
-.header__link:not(:last-child) {
+.header__link {
+    @extend %link;
+    outline: transparent;
+
+    &:hover,
+    &:focus {
+        color: #D41443;
+    }
+}
+
+.header__item:not(:last-child) {
     margin-right: 35px;
 }
 
@@ -61,14 +73,73 @@
     padding-left: 37px;
     padding-right: 37px;
     height: 44px;
+    cursor: pointer;
+    outline: transparent;
+
+    &:hover,
+    &:focus {
+        background-color: #ECEBEB;
+    }
 
     @media screen and (max-width: 320px) {
         display: none;
     }
 }
 
+.header__mobile-btn {
+    font-family: 'DM Sans';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 21px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    cursor: pointer;
+    color: #D41443;
+    background-color: #ffffff;
+    margin-bottom: 20px;
+
+    padding: 10px 43px;
+
+    margin-left: 20px;
+    border-radius: 20px;
+    outline: transparent;
+    border: none;
+
+    &:hover,
+    &:focus {
+        background-color: #ECEBEB;
+    }
+}
+
 .header__svg {
+    fill: #d41443;
     margin-left: 12px;
+
+    @media screen and (max-width: 320px) {
+        margin-left: 15px;
+    }
+}
+
+.header__mobile-item {
+    padding-top: 14px;
+    padding-bottom: 12px;
+    padding-left: 20px;
+
+    font-family: 'DM Sans';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 18px;
+    display: flex;
+    align-items: center;
+    color: #FFFFFF;
+
+    &:hover,
+    &:focus {
+        color: #D41443;
+    }
 }
 
 .burger {
@@ -167,23 +238,51 @@
     }
 }
 
+.header__menu {
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 250px;
+    height: 502px;
+    background-color: #E17992;
+    padding-top: 60px;
+    padding-bottom: 171px;
+    transform: translateX(100%);
+
+    @media screen and (min-width: 1200px) {
+        display: none;
+    }
+
+    &.is-open {
+        transform: translateX(0);
+    }
+}
+
+
+
+.header__list-mobile {
+    list-style: none;
+}
+
 .hero {
+
     background-color: #ffb8ca;
 }
 
 .hero__container {
+
     background-image: url(../images/hero-header/icecream.png), url(../images/hero-header/girl.png),
         url(../images/hero-header/milk.png), url(../images/hero-header/circle.png);
     background-repeat: no-repeat;
     background-position: 636px bottom, right bottom, 16px 368px, 517px 54px;
     align-items: center;
-    background-size: auto, auto, 213px, auto;
+    background-size: 236px, 304px, 213px, 534px;
     margin-left: auto;
     margin-right: auto;
 
     @media screen and (max-width: 320px) {
         background-image: url(../images/hero-header/icecream.png), url(../images/hero-header/circle.png);
-        background-size: 171px, auto;
+        background-size: 171px, 346px;
         background-position: 117px bottom, 36px 83px;
         height: 502px;
         padding: 194px 82px 158px 20px;
@@ -205,11 +304,13 @@
     text-transform: uppercase;
     color: #ffffff;
     width: 260px;
+    margin-bottom: 24px;
 
     @media screen and (max-width: 320px) {
         font-size: 26px;
         line-height: 1.15;
         width: 200px;
+        margin-bottom: 20px;
     }
 }
 
@@ -222,7 +323,7 @@
     letter-spacing: 0.04em;
     text-transform: uppercase;
     color: #d41443;
-    margin-bottom: 24px;
+
 
     @media screen and (max-width: 320px) {
         font-size: 48px;
@@ -230,7 +331,8 @@
     }
 }
 
-.hero__btn-product {
+.hero__link-product {
+    @extend %link;
     font-family: "DM Sans";
     font-style: normal;
     font-weight: 400;
@@ -252,7 +354,8 @@
     }
 }
 
-.hero__btn-made {
+.hero__link-made {
+    @extend %link;
     font-family: "DM Sans";
     font-style: normal;
     font-weight: 400;
@@ -266,6 +369,11 @@
     border-radius: 20px;
     padding: 11px 23px;
     border: none;
+
+    &:hover,
+    &:focus {
+        background-color: #ECEBEB;
+    }
 
     @media screen and (max-width: 320px) {
         font-size: 8px;
@@ -356,6 +464,10 @@
 
     @media screen and (max-width: 320px) {
         display: none;
+    }
+    &:hover,
+    &:focus {
+        background-color: #ECEBEB;
     }
 }
 
