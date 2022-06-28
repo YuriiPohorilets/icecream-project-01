@@ -524,9 +524,10 @@
 	fill: getColor(alarm-error);
 }
 
-// .products__arrow-icon--front {
-// 	transform: rotate(180deg);
-// }
+
+.products__arrow-icon--back {
+	transform: rotate(180deg)
+}
 
 .products-card__list {
 	padding-left: 25px;
