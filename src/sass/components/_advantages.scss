@@ -91,6 +91,21 @@
     }
 }
 
+.t_2::after{
+    content: 'kg';
+    position: absolute;
+    top: 5px;
+    left: 45px;
+
+    @include bpoint(tablet) {
+        left: 133px;
+    }
+
+    @include bpoint(desktop) {
+        left: 232px;
+    }
+}
+
 .t_3::before {
     content: '';
     position: absolute;
@@ -109,6 +124,8 @@
         left: 180px;
     }
 }
+
+
 
 .advantage__descr {
     font-style: normal;
