@@ -1,5 +1,4 @@
 .header {
-
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -165,9 +164,10 @@
         right: 0;
         width: 20px;
         height: 2px;
-        background-color: #d41443;
-
-        transition: transform 500ms cubic-bezier(0.4, 0, 0.2, 1);
+        background-color: getColor(accent);
+        border-radius: 4px;
+        transition: transform getProperty(time) getProperty(cubic),
+            background-color getProperty(time) getProperty(cubic);
     }
 
     &::before {
@@ -177,8 +177,10 @@
         right: 0;
         width: 20px;
         height: 2px;
-        background-color: #d41443;
-        transition: transform 500ms cubic-bezier(0.4, 0, 0.2, 1);
+        background-color: getColor(accent);
+        border-radius: 4px;
+        transition: transform getProperty(time) getProperty(cubic),
+            background-color getProperty(time) getProperty(cubic);
     }
 
     @media screen and (min-width: 1200px) {
@@ -192,8 +194,10 @@
     right: 0;
     width: 20px;
     height: 2px;
-    background-color: #d41443;
-    transition: transform 500ms cubic-bezier(0.4, 0, 0.2, 1);
+    background-color: getColor(accent);
+    border-radius: 4px;
+    transition: transform getProperty(time) getProperty(cubic),
+        background-color getProperty(time) getProperty(cubic);
 
     @media screen and (min-width: 1200px) {
         display: none;
@@ -206,33 +210,16 @@
     }
 
     &::after {
+        background-color: getColor(active-white);
         transform: translateY(7px) rotate(-45deg);
     }
 
     &::before {
+        background-color: getColor(active-white);
         transform: translateY(-7px) rotate(45deg);
     }
 
-    &~.nav {
-        visibility: visible;
-        transform: translateY(0);
-    }
-}
-
-.burger.is-open {
-    & .burger__icon {
-        transform: translateX(180%);
-    }
-
-    &::after {
-        transform: translateY(7px) rotate(-45deg);
-    }
-
-    &::before {
-        transform: translateY(-7px) rotate(45deg);
-    }
-
-    &~.nav {
+    &~.header__menu {
         visibility: visible;
         transform: translateY(0);
     }
@@ -242,12 +229,13 @@
     position: absolute;
     right: 0;
     top: 0;
-    width: 250px;
-    height: 502px;
+    width: 100vw;
+    height: 100vh;
     background-color: #E17992;
     padding-top: 60px;
     padding-bottom: 171px;
-    transform: translateX(100%);
+    transform: translateY(-100%);
+    transition: transform getProperty(time) getProperty(cubic);
 
     @media screen and (min-width: 1200px) {
         display: none;
@@ -261,7 +249,7 @@
 
 
 .header__list-mobile {
-    list-style: none;
+    @extend %list;
 }
 
 .hero {
@@ -465,6 +453,7 @@
     @media screen and (max-width: 320px) {
         display: none;
     }
+
     &:hover,
     &:focus {
         background-color: #ECEBEB;
