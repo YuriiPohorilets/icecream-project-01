@@ -576,11 +576,14 @@
 }
 
 .about__bubbles {
+    display: none;
+
     @include bpoint(tablet) {
         position: absolute;
         bottom: 0;
         left: 15%;
         height: 100%;
+        display: block;
         transform: translate(-15%);
     }
 }
