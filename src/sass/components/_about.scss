@@ -76,7 +76,7 @@
 }
 
 // ............................................Animation
-.about__title--anim {
+.title--anim {
     background: 50% 100% / 50% 50% no-repeat radial-gradient(ellipse at bottom, getColor(accent), transparent, transparent);
     background-clip: text;
     color: transparent;
@@ -178,14 +178,21 @@
     color: getColor(copy);
 }
 
-.about__description--link {
+.about__description--link,
+.form-policy--link {
     color: getColor(accent);
 
+    &:focus {
+        outline: 1px solid getColor(accent);
+    }
 }
 
 // .............................................Main button
 .about__button {
-    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
     width: 176px;
     height: 44px;
     padding: 14px 0;
@@ -223,9 +230,7 @@
 }
 
 .about__icon {
-    position: absolute;
-    top: 18px;
-    right: 30px;
+    margin-left: 8px;
     fill: getColor(accent);
 }
 
@@ -247,6 +252,7 @@
     visibility: hidden;
     transition: all getProperty(time) getProperty(cubic);
 }
+
 
 .modal {
     position: fixed;
@@ -271,7 +277,13 @@
 
     @include bpoint(tablet) {
         display: flex;
+        background-image: url('/src/images/about/milk.png');
+        background-size: 100%;
+        background-repeat: no-repeat;
+        background-position-y: top;
     }
+
+
 }
 
 .modal.active,
@@ -286,16 +298,17 @@
     display: none;
 
     @include bpoint(tablet) {
-        display: block;
+        display: flex;
+        align-items: center;
         max-width: 250px;
-        padding: 30px 15px 0 15px;
+
+        padding: 5px;
         margin-right: 15px;
+
+        font-family: getFont(accent);
+        font-size: 14px;
+        color: getColor(accent);
         border-radius: 10px;
-        background-color: rgba(212, 20, 67, 0.1);
-        background-image: url('/src/images/about/milk.png');
-        background-size: 100%;
-        background-repeat: no-repeat;
-        background-position-y: bottom;
     }
 }
 
@@ -339,8 +352,9 @@
     display: inline-block;
     margin-bottom: 10px;
 
-    font-size: 16px;
-    text-align: center;
+    font-family: getFont(accent);
+    font-size: 18px;
+    color: getColor(accent);
     text-transform: uppercase;
 }
 
@@ -351,7 +365,7 @@
 .form__group {
     position: relative;
     display: block;
-    margin-bottom: 20px;
+    margin-bottom: 25px;
     text-align: left;
     cursor: pointer;
 }
@@ -361,7 +375,9 @@
     display: inline-block;
     margin-bottom: 5px;
 
+    font-family: getFont(accent);
     font-size: 14px;
+    color: getColor(accent);
 
     &:before {
         content: "\002A";
@@ -379,6 +395,7 @@
     border-radius: 5px;
     border: 1px solid getColor(background-backdrop);
     outline: transparent;
+    transition: border getProperty(time) getProperty(cubic);
 
     &:hover,
     &:focus {
@@ -401,7 +418,7 @@
     font-size: 8px;
     letter-spacing: -0.6em;
     opacity: 0;
-    transition: getProperty(time) getProperty(cubic) 100ms;
+    transition: all getProperty(time) getProperty(cubic) 100ms;
 
     @include bpoint(tablet) {
         font-size: 10px;
@@ -448,7 +465,9 @@
     opacity: 0;
 
     transform: translateY(-12%) scale(0.3);
-    transition: opacity getProperty(time) getProperty(cubic) 100ms, transform getProperty(time) getProperty(cubic) 100ms;
+    transition: opacity getProperty(time) getProperty(cubic) 100ms,
+        transform getProperty(time) getProperty(cubic) 100ms,
+        fill getProperty(time) getProperty(cubic);
 }
 
 .alert__icon--error {
@@ -466,8 +485,13 @@
     left: 8px;
 
     fill: getColor(background-backdrop);
-    transition: transform getProperty(time) getProperty(cubic), fill getProperty(time) getProperty(cubic);
+    transition: transform getProperty(time) getProperty(cubic),
+        fill getProperty(time) getProperty(cubic),
+        border-color getProperty(time) getProperty(cubic);
 
+    .form__input:hover~& {
+        fill: getColor(accent);
+    }
 }
 
 .form__input:valid:not(:placeholder-shown)~.alert__icon--user {
@@ -476,6 +500,7 @@
 
 .form__input:focus~.alert__icon--user {
     fill: getColor(alarm-warning);
+
 }
 
 .form__input:invalid:not(:placeholder-shown)~.alert__icon--user {
@@ -492,82 +517,70 @@
 
 // ...............................Checkbox
 .form-policy {
+    position: relative;
+
     display: flex;
     justify-content: center;
-    padding: 20px;
+    align-items: center;
+    margin-bottom: 20px;
+
+    font-family: getFont(accent);
+    font-size: 10px;
+
+    color: getColor(accent);
     cursor: pointer;
 
     @include bpoint(tablet) {
-        align-items: center;
-        margin-bottom: 20px;
-        padding: 10px;
+        font-size: 14px;
     }
 }
 
-.form-policy__container {
-    position: relative;
-
-    display: block;
-    width: 20px;
-    height: 20px;
-    margin-right: 8px;
-
-    cursor: pointer;
-}
-
-.form-policy__icon--check {
+.form-policy__input {
     position: absolute;
-    top: 0;
-    left: 0;
-    opacity: 0;
 
-    border-radius: 4px;
-    transform: scale(0.9);
-    transition: opacity getProperty(time) getProperty(cubic), transform getProperty(time) getProperty(cubic);
+    transition: border-color getProperty(time) getProperty(cubic);
 
-    .form-policy__checkbox:checked+& {
-        transform: scale(1);
-        opacity: 1;
-        fill: getColor(accent);
-    }
-}
-
-.form-policy__checkbox:hover~.form-policy__icon--uncheck,
-.form-policy__checkbox:focus~.form-policy__icon--uncheck {
-    border-color: getColor(pagination-active);
-}
-
-.form-policy__checkbox:hover:checked~.form-policy__icon--uncheck {
-    filter: getShadows(btn);
-}
-
-.form-policy__icon--uncheck {
-    position: absolute;
-    top: 0;
-    left: 0;
-
-    display: block;
-    width: 20px;
-    height: 20px;
-
-    border-radius: 4px;
-    border: 2px solid getColor(background-backdrop);
-    transition: border-color getProperty(time) getProperty(cubic), filter getProperty(time) getProperty(cubic);
-
-    .form-policy__checkbox:checked~& {
+    &:hover+.form-policy__icon,
+    &:focus+.form-policy__icon {
         border-color: getColor(accent);
     }
 }
 
-// ........................Button
+.form-policy__icon {
+    margin-right: 10px;
+
+    fill: transparent;
+    border-radius: 4px;
+    border: 2px solid getColor(background-backdrop);
+
+    transform: scale(0.9);
+    transition: border getProperty(time) getProperty(cubic),
+        transform getProperty(time) getProperty(cubic),
+        fill getProperty(time) getProperty(cubic);
+
+
+    .form-policy__input:checked+& {
+        transform: scale(1);
+        fill: getColor(accent);
+        border: 2px solid getColor(accent);
+    }
+
+}
+
+// ........................................Button
 .form__btn {
     display: inline-block;
     padding: 5px;
 
+    font-family: getFont(accent);
+    font-size: 18px;
+    color: getColor(accent);
     background-color: getColor(background-hero);
     text-transform: uppercase;
     outline: transparent;
-    transition: box-shadow getProperty(time) getProperty(cubic);
+
+    transition: box-shadow getProperty(time) getProperty(cubic),
+        background-color getProperty(time) getProperty(cubic);
 
     &:hover,
     &:focus {
@@ -575,6 +588,7 @@
     }
 }
 
+// ...........................................Animation
 .about__bubbles {
     display: none;
 
