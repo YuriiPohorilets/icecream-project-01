@@ -273,6 +273,7 @@
         display: flex;
         flex-direction: column;
         max-width: 700px;
+        // height: 95vh;
     }
 
     // @include bpoint(desktop) {
@@ -296,6 +297,7 @@
     background-color: getColor(active-accent);
     border: 2px solid getColor(accent);
     border-radius: 50%;
+    outline: transparent;
     cursor: pointer;
     transition: background-color getProperty(time) getProperty(cubic);
 
@@ -315,8 +317,7 @@
 
     @include bpoint(tablet) {
         display: block;
-        margin-bottom: 15px;
-        padding-top: 20px;
+        margin-bottom: 10px;
         justify-content: center;
 
         font-family: getFont(accent);
@@ -355,7 +356,6 @@
 
     @include bpoint(tablet) {
         width: calc(100% / 5 - 20px);
-        margin-left: 20px;
         margin-bottom: 10px;
 
         .contacts-modal__item:nth-last-child(n + 6){
@@ -383,8 +383,8 @@
     color: getColor(accent);
     
     @include bpoint(tablet) {
-       margin-bottom: 20px;
-       padding-top: 30px;
+       margin-bottom: 5px;
+       padding-top: 10px;
     }
 }
 
@@ -531,6 +531,7 @@
     background-color: getColor(active-accent);
     border: 2px solid getColor(accent);
     border-radius: 22px;
+    outline: transparent;
 
     transition: color getProperty(time) getProperty(cubic), background-color getProperty(time) getProperty(cubic),
         box-shadow getProperty(time) getProperty(cubic);
@@ -558,6 +559,7 @@
         display: flex;
         flex-direction: column;
     }
+
 }
 
 .contacts-location__btn {
@@ -576,6 +578,7 @@
     background-color: getColor(active-accent);
     border: 2px solid getColor(accent);
     border-radius: 50%;
+    outline: transparent;
     cursor: pointer;
     transition: background-color getProperty(time) getProperty(cubic);
 
