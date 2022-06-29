@@ -233,6 +233,13 @@
 
     color: getColor(primary);
 
+    transition: box-shadow getProperty(time) getProperty(cubic);
+    &:hover,
+    &:focus{
+        box-shadow: getShadow(btn);
+    }
+    
+
     @include bpoint(tablet) {
         margin: 0 15px 0 0;
         @include btn--dark(200px, 44px)
@@ -243,6 +250,12 @@
     @include btn--light(160px, 44px);
 
     color: getColor(accent);
+    transition: box-shadow getProperty(time) getProperty(cubic);
+
+    &:hover,
+    &:focus{
+        box-shadow: getShadow(btn);
+    }
 
     @include bpoint(tablet) {
         @include btn--light(200px, 44px)
