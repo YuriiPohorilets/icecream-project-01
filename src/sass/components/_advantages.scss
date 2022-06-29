@@ -1,30 +1,30 @@
-.advantages{
+.advantages {
     background-color: getColor(background-section);
 }
 
-.advantages__list{
-    @include bpoint(tablet){
+.advantages__list {
+    @include bpoint(tablet) {
         display: flex;
         // align-items: center;
         justify-content: center;
     }
 }
 
-.advantage{
+.advantage {
     padding-top: 60px;
     list-style: none;
 }
 
-.advantage:not(:last-child){
+.advantage:not(:last-child) {
     margin-bottom: 32px;
 
     @include bpoint(tablet) {
-       margin-bottom: 0;
-       margin-right: 4px;
+        margin-bottom: 0;
+        margin-right: 4px;
     }
 }
 
-.advantage__title{
+.advantage__title {
     position: relative;
     font-family: 'Titan One';
     font-style: normal;
@@ -53,14 +53,14 @@
     }
 }
 
-.t_1::before{
+.t_1::before {
     content: '';
     position: absolute;
     top: -60px;
     left: 0;
     width: 50px;
     height: 50px;
-    background-image: url('/src/images/advantages/milk.svg');
+    background-image: url('../images/advantages/milk.svg');
     background-repeat: no-repeat;
 
     @include bpoint(tablet) {
@@ -79,7 +79,7 @@
     left: 0;
     width: 50px;
     height: 50px;
-    background-image: url('/src/images/advantages/fruits.svg');
+    background-image: url('../images/advantages/fruits.svg');
     background-repeat: no-repeat;
 
     @include bpoint(tablet) {
@@ -91,7 +91,7 @@
     }
 }
 
-.t_2::after{
+.t_2::after {
     content: 'kg';
     position: absolute;
     top: 5px;
@@ -113,11 +113,11 @@
     left: 0;
     width: 50px;
     height: 50px;
-    background-image: url('/src/images/advantages/heart.svg');
+    background-image: url('../images/advantages/heart.svg');
     background-repeat: no-repeat;
 
     @include bpoint(tablet) {
-      left: 88px;
+        left: 88px;
     }
 
     @include bpoint(desktop) {
@@ -144,8 +144,8 @@
         font-size: 16px;
         line-height: 176%;
         /* or 28px */
-    
+
         letter-spacing: 0.02em;
     }
-   
+
 }
