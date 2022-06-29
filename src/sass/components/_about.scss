@@ -5,7 +5,7 @@
 
 .about--overlay {
     background-color: getColor(background-section);
-    background-image: url('/src/images/about/mobile/1x/sectionbg1x.png');
+    background-image: url('../images/about/mobile/1x/sectionbg1x.png');
     background-size: 100%;
     background-repeat: no-repeat;
     background-position: 70% 80%;
@@ -14,7 +14,7 @@
     (min-resolution: 192dpi),
     (min-resolution: 2dppx) {
         & {
-            background-image: url('/src/images/about/mobile/2x/sectionbg2x.png');
+            background-image: url('../images/about/mobile/2x/sectionbg2x.png');
         }
     }
 
@@ -22,7 +22,7 @@
     (min-resolution: 288dpi),
     (min-resolution: 3dppx) {
         & {
-            background-image: url('/src/images/about/mobile/3x/sectionbg3x.png');
+            background-image: url('../images/about/mobile/3x/sectionbg3x.png');
         }
     }
 
@@ -31,7 +31,7 @@
     }
 
     @include bpoint(desktop) {
-        background-image: url('/src/images/about/desktop/1x/sectionbg1x.png');
+        background-image: url('../images/about/desktop/1x/sectionbg1x.png');
         background-size: 100%;
         background-repeat: no-repeat;
         background-position: 70% 60%;
@@ -40,7 +40,7 @@
         (min-resolution: 192dpi),
         (min-resolution: 2dppx) {
             & {
-                background-image: url('/src/images/about/desktop/2x/sectionbg2x.png');
+                background-image: url('../images/about/desktop/2x/sectionbg2x.png');
             }
         }
 
@@ -48,7 +48,7 @@
         (min-resolution: 288dpi),
         (min-resolution: 3dppx) {
             & {
-                background-image: url('/src/images/about/desktop/3x/sectionbg3x.png');
+                background-image: url('../images/about/desktop/3x/sectionbg3x.png');
             }
         }
     }
@@ -277,7 +277,7 @@
 
     @include bpoint(tablet) {
         display: flex;
-        background-image: url('/src/images/about/milk.png');
+        background-image: url('../images/about/milk.png');
         background-size: 100%;
         background-repeat: no-repeat;
         background-position-y: top;
