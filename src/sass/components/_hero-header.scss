@@ -129,17 +129,16 @@
 // End modal
 .header {
 
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+
     position: absolute;
     top: 0;
-    left: 2.6%;
+    left: auto;
+
     width: 100vw;
     z-index: 20;
     margin-left: auto;
     margin-right: auto;
-   
+
     @media screen and (min-width: 320px) and (max-width: 767px) {
         padding-top: 8px;
         left: 0;
@@ -152,10 +151,22 @@
 
     @media screen and (min-width: 1200px) {
         padding-top: 37px;
+        left: 50%;
+        transform: translateX(-50%);
     }
 }
 
+.header__section {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
 .header__logo {
+    @media screen and (min-width: 768px) and (max-width: 1199px) {
+        margin-right: 250px;
+    }
+
     @media screen and (min-width: 1200px) {
         padding-left: 16px;
     }
@@ -176,7 +187,7 @@
         display: none;
     }
 
-    @media screen and (min-width: 768px) and (max-width: 1199px)  {
+    @media screen and (min-width: 768px) and (max-width: 1199px) {
         display: none;
     }
 }
@@ -189,10 +200,17 @@
     &:focus {
         color: #D41443;
     }
+
 }
 
-.header__item:not(:last-child) {
-    margin-right: 35px;
+.header__item {
+    &:not(:last-child) {
+        margin-right: 35px;
+    }
+
+    &:first-child {
+        color: #D41443;
+    }
 }
 
 .header__btn {
@@ -284,12 +302,11 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    position: absolute;
-    top: 0;
-    left: 0;
 
-    display: inline-block;
-    width: 20px;
+    /* top: 0;
+    left: 0; */
+
+    width: 40px;
     height: 40px;
 
     overflow: hidden;
@@ -299,36 +316,54 @@
     &::after {
         content: "";
         position: absolute;
-        top: 12px;
-        right: 0;
+
         width: 20px;
         height: 2px;
         background-color: getColor(accent);
         border-radius: 4px;
         transition: transform getProperty(time) getProperty(cubic),
             background-color getProperty(time) getProperty(cubic);
+
+        @media screen and (min-width: 320px) and (max-width: 767px) {
+            top: 25px;
+            right: auto;
+        }
+        @media screen and (min-width: 768px) and (max-width: 1199px) {
+            right: 10px;
+            bottom: 26px;
+        }
     }
 
     &::before {
         content: "";
         position: absolute;
-        bottom: 12px;
-        right: 0;
+
         width: 20px;
         height: 2px;
         background-color: getColor(accent);
         border-radius: 4px;
         transition: transform getProperty(time) getProperty(cubic),
             background-color getProperty(time) getProperty(cubic);
+
+        @media screen and (min-width: 320px) and (max-width: 767px) {
+            right: 30px;
+            bottom: 17px;
+        }
+        @media screen and (min-width: 768px) and (max-width: 1199px) {
+            right: 10px;
+            bottom: 12px;
+        }
+        
     }
+
     @media screen and (min-width: 320px) and (max-width: 767px) {
         left: 270px;
         top: 20px;
+
     }
 
-    @media screen and (min-width: 768px) and (max-width: 1199px)  {
-        left: 524px;
-        top: 40px;
+    @media screen and (min-width: 768px) and (max-width: 1199px) {
+        position: relative;
     }
 
     @media screen and (min-width: 1200px) {
@@ -337,9 +372,9 @@
 }
 
 .burger__icon {
-    position: absolute;
+    /* position: absolute;
     top: 19px;
-    right: 0;
+    right: 0; */
     width: 20px;
     height: 2px;
     background-color: getColor(accent);
@@ -389,11 +424,9 @@
         transform: translateX(0);
     }
 
-    @media screen and (min-width: 320px) and (max-width: 767px) {
+    @media screen and (min-width: 320px) and (max-width: 767px) {}
 
-    }
-
-    @media screen and (min-width: 768px) and (max-width: 1199px)  {
+    @media screen and (min-width: 768px) and (max-width: 1199px) {
         width: 300px;
         height: 416px;
         left: 280px;
@@ -420,12 +453,11 @@
 
 .hero__container {
 
-    background-image: url(../images/hero-header/icecream.png), url(../images/hero-header/girl.png),
-        url(../images/hero-header/milk.png), url(../images/hero-header/circle.png);
+    background-image: url(../images/hero-header/icecream.png), url(../images/hero-header/girl.png), url(../images/hero-header/circle.png);
     background-repeat: no-repeat;
-    background-position: 636px bottom, right bottom, 16px 368px, 517px 54px;
+    background-position: 636px bottom, right bottom, 517px 54px;
     align-items: center;
-    background-size: 236px, 304px, 213px, 534px;
+
     margin-left: auto;
     margin-right: auto;
 
@@ -435,21 +467,44 @@
         background-position: 117px bottom, 36px 83px;
         height: 502px;
         padding: 194px 82px 158px 20px;
+
+
     }
 
-    @media screen and (min-width: 768px) and (max-width: 1199px)  {
-        padding: 102px 32px 56px 32px;
+    @media screen and (min-width: 768px) and (max-width: 1199px) {
+        padding: 102px 32px 16px 32px;
         height: 416px;
-        background-size: 143px, 190px, 152px, 335px;
-        background-position: 322px bottom, 546px bottom, 32px 246px, 248px 43px;
+        background-size: 143px, 190px, 335px;
+        background-position: 322px bottom, 546px bottom, 248px 43px;
     }
 
     @media screen and (min-width: 1200px) {
         max-height: 664px;
         padding: 144px 16px 60px 16px;
+        background-size: 216px, 304px, 534px;
+
     }
 
+    @media (min-device-pixel-ratio: 2),
+    (min-resolution: 192dpi),
+    (min-resolution: 2dppx) {
+        & {
+            background-image: url(../images/hero-header/icecream@2x.png), url(../images/hero-header/girl@2x.png), url(../images/hero-header/circle@2x.png);
+        }
+    }
+
+    @media (min-device-pixel-ratio: 3),
+    (min-resolution: 288dpi),
+    (min-resolution: 3dppx) {
+        & {
+            background-image: url(../images/hero-header/icecream@3x.png), url(../images/hero-header/girl@3x.png), url(../images/hero-header/circle@3x.png);
+        }
+    }
+
+
 }
+
+
 
 .hero__text {
     font-family: "Titan One";
@@ -470,7 +525,7 @@
         margin-bottom: 20px;
     }
 
-    @media screen and (min-width: 768px) and (max-width: 1199px)  {
+    @media screen and (min-width: 768px) and (max-width: 1199px) {
         font-size: 22px;
         width: 162px;
         margin-bottom: 20px;
@@ -493,7 +548,7 @@
         line-height: 0.97;
     }
 
-    @media screen and (min-width: 768px) and (max-width: 1199px)  {
+    @media screen and (min-width: 768px) and (max-width: 1199px) {
         font-size: 34px;
     }
 }
@@ -520,7 +575,7 @@
         line-height: 1.25;
     }
 
-    @media screen and (min-width: 768px) and (max-width: 1199px)  {
+    @media screen and (min-width: 768px) and (max-width: 1199px) {
         font-size: 8px;
     }
 }
@@ -551,7 +606,7 @@
         line-height: 1.25;
     }
 
-    @media screen and (min-width: 768px) and (max-width: 1199px)  {
+    @media screen and (min-width: 768px) and (max-width: 1199px) {
         font-size: 8px;
     }
 }
@@ -590,7 +645,7 @@
         left: 57px;
         bottom: 48px;
 
-        @media screen and (min-width: 768px) and (max-width: 1199px)  {
+        @media screen and (min-width: 768px) and (max-width: 1199px) {
             width: 16px;
             height: 16px;
             left: 40px;
@@ -602,7 +657,7 @@
         margin-bottom: 15px;
     }
 
-    @media screen and (min-width: 768px) and (max-width: 1199px)  {
+    @media screen and (min-width: 768px) and (max-width: 1199px) {
         font-size: 8px;
     }
 }
@@ -619,7 +674,7 @@
     color: #d41443;
     z-index: 10;
 
-    @media screen and (min-width: 768px) and (max-width: 1199px)  {
+    @media screen and (min-width: 768px) and (max-width: 1199px) {
         font-size: 28px;
     }
 }
@@ -633,14 +688,14 @@
     color: #ffffff;
     width: 200px;
     margin-bottom: 20px;
-    margin-left: 213px;
+
 
     @media screen and (min-width: 320px) and (max-width: 767px) {
         display: none;
     }
 
-    @media screen and (min-width: 768px) and (max-width: 1199px)  {
-        margin-left: 184px;
+    @media screen and (min-width: 768px) and (max-width: 1199px) {
+
         font-size: 8px;
         width: 120px;
         line-height: 1.5;
@@ -656,18 +711,18 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-bottom: 84px;
-    margin-left: 213px;
+
+
     color: #d41443;
 
     @media screen and (min-width: 320px) and (max-width: 767px) {
         display: none;
     }
 
-    @media screen and (min-width: 768px) and (max-width: 1199px)  {
+    @media screen and (min-width: 768px) and (max-width: 1199px) {
         width: 18px;
         height: 18px;
-        margin-left: 184px;
+
     }
 
     &:hover,
@@ -683,9 +738,21 @@
 .hero__passion {
     display: flex;
     justify-content: space-between;
-    margin-bottom: 108px;
 
-    @media screen and (min-width: 768px) and (max-width: 1199px)  {
-        margin-bottom: 61px;
+
+    @media screen and (min-width: 768px) and (max-width: 1199px) {
+        margin-bottom: 20px;
     }
+}
+
+.hero__milk-img {
+    @media screen and (min-width: 1200px) {
+        width: 213px;
+        height: 216px;
+    }
+}
+
+.hero__milk {
+    display: flex;
+    align-items: center;
 }
