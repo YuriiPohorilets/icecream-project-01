@@ -1,13 +1,13 @@
 .products {
 	background-color: getColor(active-white);
-}
-
-.products__container {
-	width: 100%;
 
 	@media screen and (max-width:320px ) {
 		display: none;
 	}
+}
+
+.products__container {
+	width: 100%;
 
 	@include bpoint(mobile) {
 		min-width: 320px;
@@ -53,6 +53,31 @@
 .products__title {
 	font-weight: 400;
 	@extend %title;
+}
+
+.title--anim {
+	background: 50% 100% / 50% 50% no-repeat radial-gradient(ellipse at bottom, getColor(accent), transparent, transparent);
+	background-clip: text;
+	color: transparent;
+
+	animation: reveal 3000ms ease-in-out forwards 200ms,
+		glow 3500ms linear infinite 4000ms;
+
+	@keyframes reveal {
+		80% {
+			letter-spacing: 8px;
+		}
+
+		100% {
+			background-size: 600% 600%;
+		}
+	}
+
+	@keyframes glow {
+		40% {
+			text-shadow: 0 5px 0 getColor(active-accent);
+		}
+	}
 }
 
 .products__list {
