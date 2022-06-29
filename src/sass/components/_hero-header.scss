@@ -227,19 +227,21 @@
 // Header
 .header {
     position: relative;
-    // padding: 10px 0;
+
+    padding: 10px 0;
     background-color: getColor(background-hero);
 
     @include bpoint(tablet) {
-        // padding-top: 32px;
+        padding-top: 32px;
     }
 
     @include bpoint(desktop) {
-        // padding-top: 37px;
+        padding-top: 37px;
     }
 }
 
 .header__container {
+    // position: relative;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -350,6 +352,9 @@
     @include bpoint(desktop) {
         margin-right: 35px;
         padding: 20px 0;
+        font-size: 16px;
+        line-height: 1.31;
+
         border: none;
 
         &:last-child {
@@ -361,6 +366,13 @@
 
 .nav__link {
     @extend %link;
+
+    transition: color getProperty(time) getProperty(cubic);
+
+    &:hover,
+    &:focus {
+        color: getColor(accent);
+    }
 }
 
 .btn--nav {
@@ -488,24 +500,27 @@
 }
 
 @keyframes girl {
-    
+
     0% {
         transform: translateX(110%);
-        
+
     }
+
     50% {
         transform: translateX(-10%);
-        
+
     }
+
     70% {
         transform: translateX(10%);
-        
+
     }
+
     100% {
         transform: translateX(0);
-        
+
     }
-    
+
 }
 
 .hero__title {
@@ -516,6 +531,11 @@
     letter-spacing: 0.04em;
     text-transform: uppercase;
     color: getColor(primary);
+
+    @include bpoint(desktop) {
+        font-size: 38px;
+        line-height: 1.158;
+    }
 }
 
 .hero__subtitle {
@@ -525,6 +545,12 @@
     line-height: 0.965;
     text-transform: uppercase;
     color: getColor(accent);
+
+    @include bpoint(desktop) {
+        font-size: 58px;
+        line-height: 0.95;
+    }
+
 }
 
 .hero__list {
@@ -662,11 +688,13 @@
 
 .hero__more {
     width: 114px;
-   
+
+    @include bpoint(desktop) {
+        width: 200px;
+    }
 }
 
 .hero__text {
-    
     display: none;
 
     font-weight: 400;
@@ -676,6 +704,8 @@
 
     @include bpoint(desktop) {
         display: block;
+        font-size: 14px;
+        line-height: 1.4;
     }
 }
 
@@ -690,6 +720,9 @@
 
     background-color: getColor(active-white);
     border-radius: 50%;
+    transition: background-color getProperty(time) getProperty(cubic);
+    cursor: pointer;
+
     &:hover {
         background-color: getColor(copy);
     }
@@ -703,5 +736,5 @@
     width: 14px;
     height: 14px;
     fill: getColor(accent);
-    
+
 }
