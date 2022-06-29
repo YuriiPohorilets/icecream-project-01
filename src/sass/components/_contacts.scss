@@ -3,12 +3,12 @@
 
     @include bpoint(tablet) {
         padding-top: 20px;
-        background: linear-gradient(180deg, #fff 316px,#fff5f6 0);
+        background: linear-gradient(180deg, #fff 316px, #fff5f6 0);
     }
 
     @include bpoint(desktop) {
         padding-top: 60px;
-        background: linear-gradient(180deg, #fff 159px,#fff5f6 0);
+        background: linear-gradient(180deg, #fff 159px, #fff5f6 0);
     }
 }
 
@@ -40,7 +40,7 @@
     border-radius: 24px;
     transition: transform getProperty(time) getProperty(cubic), box-shadow getProperty(time) getProperty(cubic);
 
-    @include bpoint(mobile){
+    @include bpoint(mobile) {
         width: 280px;
     }
 
@@ -56,6 +56,7 @@
         padding: 40px;
 
     }
+
     &:hover {
         transform: scale(1.05);
         box-shadow: 0px 8px 30px rgba(212, 20, 67, 0.3);
@@ -71,7 +72,8 @@
 
 .contacts__address {
     padding-bottom: 24px;
-    @include bpoint(tablet){
+
+    @include bpoint(tablet) {
         padding-bottom: 32px;
     }
 }
@@ -103,7 +105,8 @@
     &--green {
         width: 130px;
         background-color: getColor(background-label-b);
-        @include bpoint(tablet){
+
+        @include bpoint(tablet) {
             width: 138px;
         }
     }
@@ -157,11 +160,11 @@
 
 }
 
-@include bpoint(tablet){
-        .contacts__work-time:not(:last-child){
-            margin-bottom: 12px;
-        }
+@include bpoint(tablet) {
+    .contacts__work-time:not(:last-child) {
+        margin-bottom: 12px;
     }
+}
 
 .contacts__day {
 
@@ -185,7 +188,7 @@
     padding-top: 24px;
     @extend %list;
 
-    @include bpoint(tablet){
+    @include bpoint(tablet) {
         padding-top: 32px;
     }
 }
@@ -218,8 +221,8 @@
     justify-content: center;
 
 
-    @include bpoint(tablet){
-      flex-direction: row;
+    @include bpoint(tablet) {
+        flex-direction: row;
     }
 }
 
@@ -230,9 +233,9 @@
 
     color: getColor(primary);
 
-    @include bpoint(tablet){
+    @include bpoint(tablet) {
         margin: 0 15px 0 0;
-        @include  btn--dark(200px, 44px)
+        @include btn--dark(200px, 44px)
     }
 }
 
@@ -241,8 +244,8 @@
 
     color: getColor(accent);
 
-    @include bpoint(tablet){
-        @include  btn--light(200px, 44px)
+    @include bpoint(tablet) {
+        @include btn--light(200px, 44px)
     }
 }
 
@@ -250,7 +253,7 @@
     margin-left: 8px;
     fill: currentColor;
 
-    @include bpoint(tablet){
+    @include bpoint(tablet) {
         margin-left: 14px;
     }
 }
@@ -264,7 +267,17 @@
     position: fixed;
     background-color: getColor(active-accent);
     width: 90vw;
-    height: 500px;
+    max-width: 440px;
+    // width: 90%;
+    @include bpoint(tablet) {
+        display: flex;
+        flex-direction: column;
+        max-width: 700px;
+    }
+
+    // @include bpoint(desktop) {
+    //     max-width: 900px;
+    // }
 }
 
 .contacts-franchise__btn {
@@ -298,6 +311,67 @@
 }
 
 .contacts-modal__title {
+    display: none;
+
+    @include bpoint(tablet) {
+        display: block;
+        margin-bottom: 15px;
+        padding-top: 20px;
+        justify-content: center;
+
+        font-family: getFont(accent);
+        line-height: 30px;
+        font-size: 18px;
+        color: getColor(accent);
+    }
+}
+
+.contacts-modal__list {
+    display: none;
+    @extend %list;
+
+    @include bpoint(tablet) {
+        display: flex;
+        flex-wrap: wrap;
+        // margin-left: -20px;
+        justify-content: start;
+        align-items: center;
+       
+        
+
+    }
+}
+
+.contacts-modal__item {
+    margin-left: 20px;
+    box-sizing: border-box;
+    transform: scale(1.1);
+    transition: transform getProperty(time) getProperty(cubic);
+
+    &:hover,
+    &:focus {
+        transform: scale(1.3);
+    }
+
+    @include bpoint(tablet) {
+        width: calc(100% / 5 - 20px);
+        margin-left: 20px;
+        margin-bottom: 10px;
+
+        .contacts-modal__item:nth-last-child(n + 6){
+            margin-bottom: 0;
+        }
+
+        .contacts-modal__item:nth-last-child(5n + 5){
+            margin-left: 0;
+        }
+    }
+}
+
+
+
+
+.franchise-form__title {
     // display: flex;
     margin-bottom: 30px;
     padding-top: 40px;
@@ -307,6 +381,11 @@
     line-height: 30px;
     font-size: 18px;
     color: getColor(accent);
+    
+    @include bpoint(tablet) {
+       margin-bottom: 20px;
+       padding-top: 30px;
+    }
 }
 
 .franchise-form {
@@ -317,6 +396,10 @@
         display: block;
         flex-direction: column;
         margin-bottom: 10px;
+
+        @include bpoint(tablet) {
+            margin-bottom: 5px;
+         }
 
     }
 
@@ -350,17 +433,18 @@
         transition: border getProperty(time) getProperty(cubic);
 
     }
-    &__icon{
+
+    &__icon {
         position: absolute;
         top: 50%;
         left: 15px;
         cursor: pointer;
         transform: translateY(-50%);
-    
+
         color: getColor(primary);
         fill: currentColor;
         transition: fill getProperty(time) getProperty(cubic);
-    
+
     }
 }
 
@@ -386,8 +470,11 @@
     align-items: center;
     justify-content: center;
     cursor: pointer;
-    margin-top: 10px;
+    // margin-top: 10px;
     margin-bottom: 30px;
+    @include bpoint(tablet) {
+        margin-bottom: 10px;
+     }
 
     &__input {
         position: absolute;
@@ -427,7 +514,7 @@
 
 .franchise-btn {
     display: flex;
-    margin: 8px auto 0 auto;
+    margin: 0 auto;
     padding: 0;
     align-items: center;
     justify-content: center;
@@ -446,7 +533,7 @@
     border-radius: 22px;
 
     transition: color getProperty(time) getProperty(cubic), background-color getProperty(time) getProperty(cubic),
-    box-shadow getProperty(time) getProperty(cubic);
+        box-shadow getProperty(time) getProperty(cubic);
 
     cursor: pointer;
 
@@ -455,7 +542,7 @@
         color: getColor(primary);
         background-color: getColor(btn-hover-dark);
         box-shadow: getShadow(btn);
-        
+
     }
 }
 
@@ -466,6 +553,11 @@
     background-color: getColor(active-accent);
     width: 90%;
     height: 500px;
+
+    @include bpoint(tablet) {
+        display: flex;
+        flex-direction: column;
+    }
 }
 
 .contacts-location__btn {
@@ -494,7 +586,7 @@
     }
 }
 
-.contacts-location__title{
+.contacts-location__title {
     margin-bottom: 15px;
     padding-top: 15px;
     justify-content: center;
@@ -504,7 +596,13 @@
     font-size: 18px;
     color: getColor(accent);
 }
-.frame{
+
+.frame {
     width: 90%;
     height: 85%;
+
+    @include bpoint(tablet) {
+        width: 100%;
+        height: 100%;
+    }
 }
