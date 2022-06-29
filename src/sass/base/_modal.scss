@@ -11,7 +11,7 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, .5);
+    background-color: rgba(255, 145, 173, 0.502);
     z-index: 20;
     transition: .3s all;
 }
@@ -78,6 +78,12 @@
     right: 0;
     top: 0;
     z-index: -1;
+
+    display: none;
+}
+
+.overlay.js-overlay-modal.active #background-wrap {
+    display: block;
 }
 
 /* KEYFRAMES */
