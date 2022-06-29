@@ -140,6 +140,7 @@
     overflow: hidden;
     background-color: transparent;
     z-index: 999;
+    cursor: pointer;
 
     &::after {
         content: '';
@@ -390,6 +391,7 @@
     background-size: 344px 344px;
     background-position: 36px 83px;
     background-repeat: no-repeat;
+    overflow: hidden;
 
     @include bpoint(tablet) {
         padding-top: 20px;
@@ -441,6 +443,8 @@
 
             width: 304px;
             height: 241px;
+            animation: girl 5s ease-in-out;
+
         }
     }
 
@@ -450,6 +454,7 @@
 
         width: 171px;
         height: 410px;
+
 
         @include bpoint(tablet) {
             bottom: 0;
@@ -465,8 +470,42 @@
 
             width: 236px;
             height: 557px;
+            animation: ice-cream 2s;
         }
     }
+}
+
+@keyframes ice-cream {
+    from {
+        transform: translateY(100%);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes girl {
+    
+    0% {
+        transform: translateX(110%);
+        
+    }
+    50% {
+        transform: translateX(-10%);
+        
+    }
+    70% {
+        transform: translateX(10%);
+        
+    }
+    100% {
+        transform: translateX(0);
+        
+    }
+    
 }
 
 .hero__title {
@@ -623,9 +662,11 @@
 
 .hero__more {
     width: 114px;
+   
 }
 
 .hero__text {
+    
     display: none;
 
     font-weight: 400;
@@ -649,6 +690,9 @@
 
     background-color: getColor(active-white);
     border-radius: 50%;
+    &:hover {
+        background-color: getColor(copy);
+    }
 
     @include bpoint (desktop) {
         margin-top: 7px;
@@ -659,4 +703,5 @@
     width: 14px;
     height: 14px;
     fill: getColor(accent);
+    
 }
