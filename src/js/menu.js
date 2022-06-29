@@ -1,8 +1,7 @@
 (() => {
   const mobileMenu = document.querySelector('.js-menu');
   const openMenuBtn = document.querySelector('.js-menu');
-  const closeMenuBtn = document.querySelector('.js-menu');
-  // const closeMenuLink = document.querySelector('.js-link');
+  const closeMenuBtn = document.querySelector('.js-menu-close');
 
   const toggleMenu = () => {
     const isMenuOpen =
@@ -17,9 +16,11 @@
     // bodyScrollLock[scrollLockMethod](document.body);
   };
 
+
+
   openMenuBtn.addEventListener('click', toggleMenu);
   closeMenuBtn.addEventListener('click', toggleMenu);
-  // closeMenuLink.addEventListener('click', toggleMenu);
+
 
   // Закрываем мобильное меню на более широких экранах
   // в случае изменения ориентации устройства.
@@ -30,3 +31,20 @@
     bodyScrollLock.enableBodyScroll(document.body);
   });
 })();
+
+// (() => {
+//   const menuBtnRef = document.querySelector("[data-menu-button]");
+//   const mobileMenuRef = document.querySelector("[data-menu]");
+
+//   menuBtnRef.addEventListener("click", () => {
+//     const expanded =
+//       menuBtnRef.getAttribute("aria-expanded") === "true" || false;
+
+//     menuBtnRef.classList.toggle("is-open");
+//     menuBtnRef.setAttribute("aria-expanded", !expanded);
+
+//     mobileMenuRef.classList.toggle("is-open");
+
+    
+//   });
+// })();
