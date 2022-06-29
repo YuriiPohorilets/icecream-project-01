@@ -125,16 +125,14 @@
     @include btn--dark(150px, 40px);
 }
 
-
 // End modal
+
 .header {
-
-
     position: absolute;
     top: 0;
     left: auto;
 
-    width: 100vw;
+    width: 100%;
     z-index: 20;
     margin-left: auto;
     margin-right: auto;
@@ -328,6 +326,7 @@
             top: 25px;
             right: auto;
         }
+
         @media screen and (min-width: 768px) and (max-width: 1199px) {
             right: 10px;
             bottom: 26px;
@@ -349,11 +348,12 @@
             right: 30px;
             bottom: 17px;
         }
+
         @media screen and (min-width: 768px) and (max-width: 1199px) {
             right: 10px;
             bottom: 12px;
         }
-        
+
     }
 
     @media screen and (min-width: 320px) and (max-width: 767px) {
