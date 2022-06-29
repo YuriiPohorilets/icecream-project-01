@@ -236,33 +236,9 @@
 
 // ...........................................Modal menu
 
-.overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    z-index: 20;
-
-    width: 100%;
-    height: 100%;
-
-
-    background-color: getColor(background-backdrop);
-
-    opacity: 0;
-    visibility: hidden;
-    transition: all getProperty(time) getProperty(cubic);
-}
-
-
-.modal {
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-
+.modal--about {
     width: 90%;
     max-width: 700px;
-    z-index: 30;
 
     padding: 20px;
     font-size: 16px;
@@ -270,9 +246,6 @@
     background-color: getColor(primary);
     overflow-y: auto;
     border-radius: 15px;
-
-    opacity: 0;
-    visibility: hidden;
     transition: all getProperty(time) getProperty(cubic);
 
     @include bpoint(tablet) {
@@ -285,13 +258,6 @@
 
 
 }
-
-.modal.active,
-.overlay.active {
-    opacity: 1;
-    visibility: visible;
-}
-
 
 // // ........................................Read more inform.
 .modal__content {
