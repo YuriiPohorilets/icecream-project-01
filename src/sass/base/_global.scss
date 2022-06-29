@@ -17,9 +17,11 @@ body {
     }
 }
 
-body.modal-open {
+body.modal-open,
+body.is-open {
     overflow: hidden;
 }
+
 
 h1,
 h2,
