@@ -379,35 +379,93 @@
 
 // Hero
 // BG
-.hero__bg {
-    position: absolute;
-    display: none;
-}
-
 .hero {
     position: relative;
+
     padding-top: 136px;
     padding-bottom: 158px;
 
     background-color: getColor(background-hero);
+    background-image: url('../images/hero-header/circle.png');
+    background-size: 344px 344px;
+    background-position: 36px 83px;
+    background-repeat: no-repeat;
 
     @include bpoint(tablet) {
         padding-top: 20px;
         padding-bottom: 20px;
+
+        background-size: 335px 335px;
+        background-position: 58% 10%;
     }
 
     @include bpoint(desktop) {
         padding-top: 60px;
         padding-bottom: 60px;
+
+        background-size: 534px 534px;
+        background-position: 80% 0px;
     }
 }
 
 .hero__container {
+    position: relative;
+    z-index: 3;
 
     @include bpoint (tablet) {
         display: flex;
         align-items: baseline;
         justify-content: space-between;
+    }
+}
+
+.hero__bg {
+    position: absolute;
+    z-index: 1;
+
+    &--girl {
+        display: none;
+
+        @include bpoint(tablet) {
+            bottom: 0;
+            right: 10%;
+
+            display: block;
+            width: 190px;
+            height: 150px;
+        }
+
+        @include bpoint(desktop) {
+            bottom: 0;
+            right: 1%;
+
+            width: 304px;
+            height: 241px;
+        }
+    }
+
+    &--icecream {
+        bottom: 0;
+        right: 10%;
+
+        width: 171px;
+        height: 410px;
+
+        @include bpoint(tablet) {
+            bottom: 0;
+            right: 39.5%;
+
+            width: 143px;
+            height: 336px;
+        }
+
+        @include bpoint(desktop) {
+            bottom: 0;
+            right: 20%;
+
+            width: 236px;
+            height: 557px;
+        }
     }
 }
 
