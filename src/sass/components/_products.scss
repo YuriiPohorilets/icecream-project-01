@@ -1,17 +1,20 @@
 .products {
 	background-color: getColor(active-white);
+
+	@media screen and (max-width:320px) {
+		display: none;
+	}
+
+	@include bpoint(mobile) {
+		display: block;
+	}
 }
 
 .products__container {
 	width: 100%;
 
-	@media screen and (max-width:320px ) {
-		display: none;
-	}
-
 	@include bpoint(mobile) {
 		min-width: 320px;
-		display: block;
 	}
 
 	@include bpoint(tablet) {
@@ -103,6 +106,7 @@
 	@include bpoint(mobile) {
 		width: 280px;
 		height: 490px;
+
 		&:not(:last-child) {
 			margin-bottom: 140px;
 		}
@@ -114,12 +118,14 @@
 		margin-left: 0;
 		margin-right: 16px;
 
-		&:nth-child(3n){
+		&:nth-child(3n) {
 			margin-right: 0;
 		}
-		&:nth-child(n+4){
+
+		&:nth-child(n+4) {
 			margin-top: 60px;
 		}
+
 		&:not(:last-child) {
 			margin-bottom: 0;
 		}
