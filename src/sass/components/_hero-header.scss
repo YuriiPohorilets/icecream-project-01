@@ -232,10 +232,13 @@
 
 // Header
 .header {
-    position: relative;
-
+    position: absolute;
+    top: 0;
+    width: 100vw;
+    z-index: 2;
     padding: 10px 0;
-    background-color: getColor(background-hero);
+    background-color: transparent;
+    z-index: 100;
 
     @include bpoint(tablet) {
         padding-top: 32px;
@@ -406,9 +409,9 @@
 .hero {
     position: relative;
 
-    padding-top: 136px;
+    padding-top: 194px;
     padding-bottom: 158px;
-
+    height: 502px;
     background-color: getColor(background-hero);
     background-image: url('../images/hero-header/circle.png');
     background-size: 344px;
@@ -417,19 +420,19 @@
     overflow: hidden;
 
     @include bpoint(tablet) {
-        padding-top: 20px;
+        padding-top: 102px;
         padding-bottom: 20px;
-
+        height: 416px;
         background-size: 335px 335px;
-        background-position: 58% 10%;
+        background-position: 58% 43px;
     }
 
     @include bpoint(desktop) {
-        padding-top: 60px;
+        padding-top: 147px;
         padding-bottom: 60px;
-
+        height: 664px;
         background-size: 534px 534px;
-        background-position: 80% 0px;
+        background-position: 80% 54px;
     }
 }
 
@@ -475,14 +478,16 @@
         bottom: 0;
         right: 10%;
 
+
         width: 171px;
         height: 410px;
 
+       
 
         @include bpoint(tablet) {
             bottom: 0;
             right: 39.5%;
-
+  
             width: 143px;
             height: 336px;
         }
@@ -543,6 +548,9 @@
     text-transform: uppercase;
     color: getColor(primary);
 
+    @include bpoint(tablet) {
+        font-size: 22px;
+    }
     @include bpoint(desktop) {
         font-size: 38px;
         line-height: 1.158;
@@ -557,12 +565,17 @@
     text-transform: uppercase;
     color: getColor(accent);
 
+    @include bpoint(tablet) {
+        font-size: 34px;
+    }
     @include bpoint(desktop) {
         font-size: 58px;
         line-height: 0.95;
     }
 
 }
+
+    
 
 .hero__list {
     @extend %list;
@@ -746,13 +759,11 @@
     justify-content: center;
     width: 18px;
     height: 18px;
-    transition: 2s getProperty(cubic);
+   
     background-color: getColor(active-white);
     border-radius: 50%;
 
-    &:hover {
-        background-color: getColor(line-menu);
-    }
+  
 
     @include bpoint (desktop) {
         margin-top: 7px;

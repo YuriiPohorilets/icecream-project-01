@@ -165,17 +165,17 @@
             <div class="hero__description">
                 <picture>
 
-                    <source media="(min-width: 768px)" srcset="
-                                    ./images/hero-header/milk_tablet.png    1x,
-                                    ./images/hero-header/milk_tablet@2x.png 2x,
-                                    ./images/hero-header/milk_tablet@3x.png 3x
-                                  " type="image/png" />
                     <source media="(min-width: 1280px)" srcset="
                                     ./images/hero-header/milk.png    1x,
                                     ./images/hero-header/milk@2x.png 2x,
                                     ./images/hero-header/milk@3x.png 3x
-                                  " type="image/png" />
-                    <img src="./images/hero-header/milk.png" alt="Jug of milk" width="213" height="216" />
+                                  " />
+                    <source media="(min-width: 768px)" srcset="
+                                    ./images/hero-header/milk_tablet.png    1x,
+                                    ./images/hero-header/milk_tablet@2x.png 2x,
+                                    ./images/hero-header/milk_tablet@3x.png 3x
+                                  " />
+                    <img class="hero__img" src="./images/hero-header/milk.png" alt="Jug of milk" />
                 </picture>
                 <div class="hero__more">
                     <p class="hero__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
