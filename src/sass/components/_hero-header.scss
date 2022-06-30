@@ -222,6 +222,12 @@
         visibility: visible;
         transform: translateY(0);
     }
+
+    @include bpoint(tablet) {
+        position: absolute;
+        top: 40%;
+        right: 6%;
+    }
 }
 
 // Header
@@ -271,6 +277,11 @@
         opacity getProperty(time) getProperty(cubic),
         visibility getProperty(time) getProperty(cubic);
 
+
+    @include bpoint(tablet) {
+        width: 45vw;
+    }
+
     @include bpoint(desktop) {
         position: static;
 
@@ -304,6 +315,10 @@
     display: flex;
     align-items: center;
 
+    @include bpoint(tablet) {
+        margin-top: 90px;
+    }
+
     @include bpoint(desktop) {
         margin: 0;
         width: 159px;
@@ -320,10 +335,6 @@
 
 .nav__list {
     @extend %list;
-
-    @include bpoint(tablet) {
-        text-align: center;
-    }
 
     @include bpoint(desktop) {
         margin-right: 141px;
@@ -408,7 +419,7 @@
     @include bpoint(tablet) {
         padding-top: 20px;
         padding-bottom: 20px;
-       
+
         background-size: 335px 335px;
         background-position: 58% 10%;
     }
