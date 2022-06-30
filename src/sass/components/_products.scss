@@ -1,13 +1,13 @@
 .products {
 	background-color: getColor(active-white);
-
-	@media screen and (max-width:320px ) {
-		display: none;
-	}
 }
 
 .products__container {
 	width: 100%;
+
+	@media screen and (max-width:320px ) {
+		display: none;
+	}
 
 	@include bpoint(mobile) {
 		min-width: 320px;
